@@ -1,949 +1,217 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Catalogue Clubs de Padel — Raquettes location & boutique, accessoires, réassort et partenariat long terme. Pack test + solution club." />
-  <title>Catalogue Clubs Padel — Solution Équipement + Réassort</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Catalogue Clubs Padel</title>
 
-  <!--
-    ✅ IMAGES (recommandé)
-    Crée un dossier /images à côté de ce fichier puis ajoute :
-      - images/hero-rackets.webp (visuel hero)
-      - images/jv12.webp
-      - images/jv21.webp
-      - images/jv13.webp
-      - images/accessoires.webp (optionnel)
-    Tu peux remplacer .webp par .png/.jpg.
-  -->
+<style>
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#0b1022;
+  color:white;
+  margin:0;
+}
 
-  <style>
-    :root{
-      --bg:#070A12;
-      --bg2:#0B1022;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.10);
-      --stroke:rgba(255,255,255,.14);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.72);
-      --muted2:rgba(255,255,255,.55);
-      --accent:#7C5CFF;
-      --accent2:#00E0FF;
-      --good:#2EE59D;
-      --warn:#FFCC66;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --radius:18px;
-      --radius2:24px;
-      --max:1120px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
-    }
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:var(--sans);
-      color:var(--text);
-      background:
-        radial-gradient(1100px 650px at 15% 10%, rgba(124,92,255,.22), transparent 60%),
-        radial-gradient(900px 520px at 85% 20%, rgba(0,224,255,.16), transparent 55%),
-        radial-gradient(1000px 680px at 50% 110%, rgba(46,229,157,.08), transparent 60%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-      line-height:1.45;
-      overflow-x:hidden;
-    }
+h1,h2,h3{margin:0 0 10px 0;}
 
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:16px;
+}
 
-    /* Top nav */
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(180deg, rgba(7,10,18,.78), rgba(7,10,18,.35));
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .nav-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:14px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:750;
-      letter-spacing:.2px;
-      white-space:nowrap;
-    }
-    .logo{
-      width:34px; height:34px; border-radius:12px;
-      background:
-        radial-gradient(18px 18px at 25% 25%, rgba(255,255,255,.35), transparent 60%),
-        linear-gradient(135deg, rgba(124,92,255,1), rgba(0,224,255,1));
-      box-shadow: 0 10px 30px rgba(124,92,255,.18);
-      border:1px solid rgba(255,255,255,.18);
-    }
-    .nav-links{
-      display:flex; align-items:center; gap:14px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .chip{
-      font-size:13px;
-      color:var(--muted);
-      padding:8px 10px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
-      border-radius:999px;
-      transition:.18s ease;
-    }
-    .chip:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.18); color:rgba(255,255,255,.85)}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      border-radius:999px;
-      padding:11px 14px;
-      font-weight:700;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.05);
-      color:rgba(255,255,255,.92);
-      transition:.18s ease;
-      box-shadow:none;
-      cursor:pointer;
-      user-select:none;
-    }
-    .btn:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.22)}
-    .btn-primary{
-      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(0,224,255,1));
-      border-color: rgba(255,255,255,.22);
-      color:#071018;
-      box-shadow: 0 14px 40px rgba(124,92,255,.18);
-    }
-    .btn-primary:hover{box-shadow: 0 18px 54px rgba(0,224,255,.16)}
-    .btn-ghost{background:rgba(255,255,255,.03)}
-    .kbd{
-      font-family:var(--mono);
-      font-size:12px;
-      opacity:.85;
-      padding:2px 7px;
-      border-radius:8px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);
-    }
+.card{
+  background:#111733;
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;
+  padding:16px;
+}
 
-    /* Hero */
-    .hero{padding:52px 0 22px}
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:22px;
-      align-items:stretch;
-    }
-    .panel{
-      border-radius:var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background:
-        radial-gradient(700px 420px at 20% 15%, rgba(124,92,255,.20), transparent 55%),
-        radial-gradient(520px 360px at 85% 25%, rgba(0,224,255,.14), transparent 55%),
-        rgba(255,255,255,.04);
-      box-shadow: var(--shadow);
-    }
-    .hero-copy{padding:28px}
-    .tagline{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.04);
-      color:var(--muted);
-      font-size:13px;
-      margin-bottom:14px;
-    }
-    .pulse{
-      width:10px; height:10px; border-radius:50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 6px rgba(124,92,255,.16);
-    }
-    h1{
-      margin:0 0 10px;
-      font-size: clamp(30px, 3.2vw, 46px);
-      line-height:1.05;
-      letter-spacing:-.4px;
-    }
-    .lead{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size: 15.5px;
-      max-width: 58ch;
-    }
-    .hero-cta{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
-    .mini{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:16px;
-      color:var(--muted2);
-      font-size:13px;
-    }
-    .mini span{
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      padding:7px 10px;
-      border-radius:999px;
-    }
+.pill{
+  background:#1c234a;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  display:inline-block;
+  margin-top:6px;
+}
 
-    .hero-media{
-      padding:16px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .media-box{
-      border-radius:20px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      min-height: 250px;
-      position:relative;
-    }
-    .media-box::after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        linear-gradient(180deg, transparent 40%, rgba(7,10,18,.65) 100%),
-        radial-gradient(500px 250px at 30% 10%, rgba(124,92,255,.18), transparent 55%);
-      pointer-events:none;
-    }
-    .media-caption{
-      position:absolute; left:14px; right:14px; bottom:12px; z-index:2;
-      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
-      color:rgba(255,255,255,.9);
-    }
-    .media-caption strong{display:block; font-size:13px}
-    .media-caption small{color:rgba(255,255,255,.68)}
-    .stats{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:10px;
-    }
-    .stat{
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
-      padding:12px;
-    }
-    .stat b{display:block; font-size:15px}
-    .stat span{display:block; color:var(--muted2); font-size:12px; margin-top:4px}
+.btn{
+  background:linear-gradient(135deg,#7C5CFF,#00E0FF);
+  border:none;
+  color:#071018;
+  padding:12px 16px;
+  border-radius:999px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    /* Sections */
-    section{padding:34px 0}
-    .section-head{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
-      margin-bottom:14px;
-    }
-    h2{
-      margin:0;
-      font-size: clamp(22px, 2.2vw, 30px);
-      letter-spacing:-.2px;
-    }
-    .sub{
-      margin:6px 0 0;
-      color:var(--muted);
-      max-width: 70ch;
-      font-size: 14.5px;
-    }
+.onDemand{
+  margin-top:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#111733;
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:18px;
+  padding:16px;
+}
 
-    .grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
-    .grid-2{display:grid; grid-template-columns: repeat(2, 1fr); gap:12px}
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
 
-    .card{
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-      padding:16px;
-      box-shadow: 0 10px 40px rgba(0,0,0,.22);
-      overflow:hidden;
-      position:relative;
-    }
-    .card::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(420px 120px at 20% 0%, rgba(0,224,255,.10), transparent 55%),
-                  radial-gradient(420px 140px at 80% 0%, rgba(124,92,255,.12), transparent 60%);
-      pointer-events:none;
-      opacity:.9;
-    }
-    .card > *{position:relative}
-    .eyebrow{
-      font-family:var(--mono);
-      letter-spacing:.8px;
-      text-transform:uppercase;
-      font-size:11px;
-      color:rgba(255,255,255,.62);
-      margin-bottom:8px;
-    }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      border-radius:999px;
-      padding:6px 10px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.03);
-      color:rgba(255,255,255,.82);
-      font-size:12px;
-      margin:6px 6px 0 0;
-    }
-    .check{
-      width:18px; height:18px; border-radius:6px;
-      display:inline-flex; align-items:center; justify-content:center;
-      background: rgba(46,229,157,.14);
-      border: 1px solid rgba(46,229,157,.25);
-      color: rgba(46,229,157,1);
-      font-weight:900;
-      font-size:12px;
-    }
+.modal[open]{display:flex;}
 
-    /* Product cards */
-    .product{
-      display:grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    .product .img{
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      overflow:hidden;
-      background: rgba(255,255,255,.03);
-      min-height: 180px;
-    }
-    .product h3{margin:0 0 6px; font-size:18px}
-    .product p{margin:0 0 10px; color:var(--muted); font-size:14px}
-    .bullets{margin:0; padding-left:18px; color:rgba(255,255,255,.78); font-size:13.5px}
-    .bullets li{margin:6px 0}
+.modal-card{
+  background:#0b1022;
+  border-radius:20px;
+  padding:20px;
+  width:600px;
+  border:1px solid rgba(255,255,255,0.2);
+}
 
-    /* Plans */
-    .plan{
-      padding:18px;
-      border-radius:22px;
-    }
-    .plan.highlight{
-      border-color: rgba(124,92,255,.38);
-      background:
-        radial-gradient(600px 220px at 10% 0%, rgba(124,92,255,.20), transparent 55%),
-        radial-gradient(600px 220px at 90% 0%, rgba(0,224,255,.14), transparent 55%),
-        rgba(255,255,255,.05);
-    }
-    .price-note{
-      color:var(--muted2);
-      font-size:12.5px;
-      margin:8px 0 0;
-    }
+.choice-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
 
-    /* Form */
-    form{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-      margin-top: 10px;
-    }
-    .field{display:flex; flex-direction:column; gap:7px}
-    label{font-size:12px; color:rgba(255,255,255,.74)}
-    input, textarea, select{
-      width:100%;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      padding:12px 12px;
-      outline:none;
-      font-size:14px;
-      transition:.16s ease;
-    }
-    input:focus, textarea:focus, select:focus{border-color: rgba(0,224,255,.35); box-shadow: 0 0 0 6px rgba(0,224,255,.10)}
-    textarea{min-height:110px; grid-column:1/-1; resize:vertical}
-    .form-actions{grid-column:1/-1; display:flex; gap:10px; align-items:center; flex-wrap:wrap}
-    .fine{
-      color:var(--muted2);
-      font-size:12px;
-      margin:0;
-    }
+.choice{
+  background:#111733;
+  padding:12px;
+  border-radius:12px;
+}
 
-    /* Footer + sticky bar */
-    footer{
-      padding:26px 0 40px;
-      border-top:1px solid rgba(255,255,255,.08);
-      color:rgba(255,255,255,.62);
-      font-size:13px;
-    }
-    .sticky{
-      position:fixed; left:0; right:0; bottom:14px;
-      display:flex; justify-content:center;
-      pointer-events:none;
-      z-index:60;
-    }
-    .sticky-inner{
-      pointer-events:auto;
-      width:min(var(--max), calc(100% - 28px));
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(7,10,18,.72);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 16px 60px rgba(0,0,0,.5);
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
-      padding:10px 12px;
-    }
-    .sticky-inner .left{
-      display:flex; flex-direction:column; gap:2px;
-      min-width: 0;
-    }
-    .sticky-inner .left b{font-size:13px}
-    .sticky-inner .left span{font-size:12px; color:var(--muted2)}
-    .sticky-inner .right{display:flex; gap:8px; align-items:center; flex-wrap:wrap}
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr; }
-      .stats{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-      .product{grid-template-columns:1fr}
-      form{grid-template-columns:1fr}
-      .nav-links{display:none}
-    }
-  </style>
+@media(max-width:700px){
+.choice-grid{grid-template-columns:1fr;}
+.onDemand{flex-direction:column;gap:12px;}
+}
+</style>
 </head>
 
 <body>
-  <header class="nav" aria-label="Navigation">
-    <div class="container">
-      <div class="nav-inner">
-        <a class="brand" href="#top" aria-label="Retour en haut">
-          <span class="logo" aria-hidden="true"></span>
-          <span>Club Partner Padel</span>
-        </a>
 
-        <nav class="nav-links" aria-label="Sections">
-          <a class="chip" href="#catalogue">Catalogue</a>
-          <a class="chip" href="#solution">Solution Club</a>
-          <a class="chip" href="#packs">Packs</a>
-          <a class="chip" href="#ambassadeur">Ambassadeur</a>
-          <a class="chip" href="#contact">Pack test</a>
-        </nav>
+<div class="container">
 
-        <a class="btn btn-primary" href="#contact">
-          Recevoir un pack test <span class="kbd">↵</span>
-        </a>
-      </div>
-    </div>
-  </header>
+<h1>Catalogue Clubs de Padel</h1>
+<p>Équipement club • Boutique • Réassort • Collaboration</p>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="panel hero-copy">
-            <div class="tagline">
-              <span class="pulse" aria-hidden="true"></span>
-              Solution clubs : location + boutique + réassort (long terme)
-            </div>
+<h2>Gamme principale clubs</h2>
 
-            <h1>Équipement & partenariat pour clubs de padel.</h1>
-            <p class="lead">
-              Un catalogue club pensé “terrain” : raquettes résistantes pour l’enseignement et la location, gamme boutique premium,
-              accessoires essentiels, et un réassort simple dès que votre club en a besoin.
-            </p>
+<div class="grid">
 
-            <div class="hero-cta">
-              <a class="btn btn-primary" href="#contact">Demander un pack test</a>
-              <a class="btn btn-ghost" href="#catalogue">Voir le catalogue</a>
-            </div>
+<div class="card">
+<h3>JV12 — Fibre de verre — 38mm</h3>
+<p>Raquette idéale pour enseignement et location.</p>
+<span class="pill">Durable</span>
+<span class="pill">Contrôle</span>
+</div>
 
-            <div class="mini" aria-label="Points clés">
-              <span>✅ Matériel club durable</span>
-              <span>✅ Offre boutique rentable</span>
-              <span>✅ Approvisionnement simplifié</span>
-              <span>✅ Collaboration récurrente</span>
-            </div>
-          </div>
+<div class="card">
+<h3>JV21 — Fibre de verre — 38mm</h3>
+<p>Parfaite pour utilisation club intensive.</p>
+<span class="pill">Stable</span>
+<span class="pill">Location</span>
+</div>
 
-          <aside class="panel hero-media" aria-label="Aperçu">
-            <div class="media-box">
-              <!-- Remplace src par ton image -->
-              <img src="images/hero-rackets.webp" alt="Raquettes de padel — visuel catalogue" onerror="this.style.display='none'">
-              <div class="media-caption">
-                <div>
-                  <strong>Catalogue Clubs Padel</strong>
-                  <small>Pack test • Devis club • Partenariat</small>
-                </div>
-                <span class="pill"><span class="check">✓</span> Ready-to-send</span>
-              </div>
-            </div>
+<div class="card">
+<h3>JV13 — Carbone — 40mm</h3>
+<p>Raquette premium pour boutique club.</p>
+<span class="pill">Puissance</span>
+<span class="pill">Carbone</span>
+</div>
 
-            <div class="stats" aria-label="Promesses">
-              <div class="stat">
-                <b>Location</b>
-                <span>Raquettes tolérantes + durables</span>
-              </div>
-              <div class="stat">
-                <b>Boutique club</b>
-                <span>Gamme premium carbone</span>
-              </div>
-              <div class="stat">
-                <b>Réassort</b>
-                <span>Process simple & récurrent</span>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
+</div>
 
-    <!-- SOLUTION -->
-    <section id="solution">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>La solution club (simple, rentable, scalable)</h2>
-            <p class="sub">
-              Les clubs veulent du matériel fiable, un stock maîtrisé, et une boutique qui tourne. Notre modèle : équiper + sécuriser le réassort,
-              puis développer la valeur du club (option).
-            </p>
-          </div>
-        </div>
+<h2 style="margin-top:30px;">Options supplémentaires</h2>
 
-        <div class="grid-3">
-          <div class="card">
-            <div class="eyebrow">PILIER 1</div>
-            <h3 style="margin:0 0 8px;">Équipement location / enseignement</h3>
-            <p style="margin:0 0 10px; color:var(--muted); font-size:14px;">
-              Raquettes robustes et tolérantes, adaptées aux débutants et à l’utilisation intensive (cours + location).
-            </p>
-            <div>
-              <span class="pill"><span class="check">✓</span> Durable</span>
-              <span class="pill"><span class="check">✓</span> Confort</span>
-              <span class="pill"><span class="check">✓</span> Contrôle</span>
-            </div>
-          </div>
+<div class="grid">
 
-          <div class="card">
-            <div class="eyebrow">PILIER 2</div>
-            <h3 style="margin:0 0 8px;">Boutique club (gamme premium)</h3>
-            <p style="margin:0 0 10px; color:var(--muted); font-size:14px;">
-              Une raquette carbone dédiée à la vente en pro-shop : sensation premium pour joueurs intermédiaires/avancés.
-            </p>
-            <div>
-              <span class="pill"><span class="check">✓</span> Carbone</span>
-              <span class="pill"><span class="check">✓</span> Puissance</span>
-              <span class="pill"><span class="check">✓</span> Upsell</span>
-            </div>
-          </div>
+<div class="card">
+<h3>JV14 — Contrôle — 38mm</h3>
+<p>Alternative confortable pour apprentissage.</p>
+</div>
 
-          <div class="card">
-            <div class="eyebrow">PILIER 3</div>
-            <h3 style="margin:0 0 8px;">Réassort & partenariat long terme</h3>
-            <p style="margin:0 0 10px; color:var(--muted); font-size:14px;">
-              Un process clair : demande → validation → livraison. Le club reste focus sur son activité, le stock reste fluide.
-            </p>
-            <div>
-              <span class="pill"><span class="check">✓</span> Réactivité</span>
-              <span class="pill"><span class="check">✓</span> Simplicité</span>
-              <span class="pill"><span class="check">✓</span> Récurrence</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="card">
+<h3>JV22 — Polyvalent — 38mm</h3>
+<p>Mix location + joueurs loisirs.</p>
+</div>
 
-    <!-- CATALOGUE -->
-    <section id="catalogue">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Catalogue clubs</h2>
-            <p class="sub">
-              Sélection optimisée pour démarrer : 2 modèles “location/enseignement” (38mm fibre de verre) + 1 modèle “boutique club” (40mm carbone).
-              La personnalisation peut venir plus tard : priorité à la qualité et au marché club.
-            </p>
-          </div>
-          <a class="btn" href="#contact">Obtenir un devis club</a>
-        </div>
+<div class="card">
+<h3>JV34 — Puissance — 38mm</h3>
+<p>Option dynamique pour boutique club.</p>
+</div>
 
-        <div class="grid-2">
-          <article class="card product" aria-label="JV12">
-            <div class="img">
-              <img src="images/jv12.webp" alt="Raquette JV12 — fibre de verre 38mm" onerror="this.style.display='none'">
-            </div>
-            <div>
-              <div class="eyebrow">LOCATION / ENSEIGNEMENT</div>
-              <h3>JV12 — Fibre de verre — 38mm</h3>
-              <p>
-                Raquette “club ready” : confortable, tolérante et pensée pour l’utilisation intensive (cours + location). Idéale débutants et intermédiaires.
-              </p>
-              <ul class="bullets">
-                <li>Surface : fibre de verre</li>
-                <li>Mousse : EVA</li>
-                <li>Profil : contrôle & confort</li>
-                <li>Use-case : parc de location / école de padel</li>
-              </ul>
-              <div style="margin-top:10px">
-                <span class="pill"><span class="check">✓</span> Durabilité</span>
-                <span class="pill"><span class="check">✓</span> Tolérance</span>
-                <span class="pill"><span class="check">✓</span> Contrôle</span>
-              </div>
-            </div>
-          </article>
+</div>
 
-          <article class="card product" aria-label="JV21">
-            <div class="img">
-              <img src="images/jv21.webp" alt="Raquette JV21 — fibre de verre 38mm" onerror="this.style.display='none'">
-            </div>
-            <div>
-              <div class="eyebrow">LOCATION / CLUB INTENSIF</div>
-              <h3>JV21 — Fibre de verre — 38mm</h3>
-              <p>
-                Modèle fiable pour la location club : stabilité, contrôle et résistance. Parfait pour un parc utilisé en continu.
-              </p>
-              <ul class="bullets">
-                <li>Surface : fibre de verre</li>
-                <li>Mousse : EVA</li>
-                <li>Profil : contrôle stable</li>
-                <li>Use-case : location club & cours réguliers</li>
-              </ul>
-              <div style="margin-top:10px">
-                <span class="pill"><span class="check">✓</span> Stabilité</span>
-                <span class="pill"><span class="check">✓</span> Résistance</span>
-                <span class="pill"><span class="check">✓</span> Club-use</span>
-              </div>
-            </div>
-          </article>
+<div class="onDemand">
+<div>
+<b>Plus de modèles disponibles sur demande</b>
+<p style="margin:4px 0 0;color:#bbb;">Contrôle • Polyvalence • Puissance • Toutes formes</p>
+</div>
 
-          <article class="card product" aria-label="JV13">
-            <div class="img">
-              <img src="images/jv13.webp" alt="Raquette JV13 — carbone 40mm" onerror="this.style.display='none'">
-            </div>
-            <div>
-              <div class="eyebrow">BOUTIQUE CLUB / PREMIUM</div>
-              <h3>JV13 — Carbone — 40mm</h3>
-              <p>
-                Raquette boutique club : sensation premium, plus de répondant, idéale pour joueurs intermédiaires/avancés. Parfaite pour booster le panier moyen en pro-shop.
-              </p>
-              <ul class="bullets">
-                <li>Surface : carbone</li>
-                <li>Mousse : EVA</li>
-                <li>Profil : puissance & sensation premium</li>
-                <li>Use-case : vente boutique / pro-shop</li>
-              </ul>
-              <div style="margin-top:10px">
-                <span class="pill"><span class="check">✓</span> Carbone</span>
-                <span class="pill"><span class="check">✓</span> Puissance</span>
-                <span class="pill"><span class="check">✓</span> Premium</span>
-              </div>
-            </div>
-          </article>
+<button class="btn" onclick="openModal()">
+Voir toutes les options
+</button>
+</div>
 
-          <article class="card product" aria-label="Accessoires">
-            <div class="img">
-              <img src="images/accessoires.webp" alt="Accessoires padel — balles, grips, protections" onerror="this.style.display='none'">
-            </div>
-            <div>
-              <div class="eyebrow">ACCESSOIRES / RÉASSORT</div>
-              <h3>Accessoires club</h3>
-              <p>
-                Pack accessoires pour l’usage quotidien du club : balles, grips, protections et essentiels boutique. Objectif : zéro rupture, expérience joueur clean.
-              </p>
-              <ul class="bullets">
-                <li>Balles padel</li>
-                <li>Grips & surgrips</li>
-                <li>Protections raquette</li>
-                <li>Sacs & consommables</li>
-              </ul>
-              <div style="margin-top:10px">
-                <span class="pill"><span class="check">✓</span> Réassort simple</span>
-                <span class="pill"><span class="check">✓</span> Récurrence</span>
-                <span class="pill"><span class="check">✓</span> Club-first</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+</div>
 
-    <!-- PACKS -->
-    <section id="packs">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Packs clubs (location + boutique)</h2>
-            <p class="sub">
-              Packs structurés pour démarrer vite : parc de location + gamme boutique + accessoires. Les quantités exactes se définissent selon votre nombre de terrains et votre fréquentation.
-            </p>
-          </div>
-        </div>
+<!-- MODAL -->
+<div class="modal" id="modalOptions">
+<div class="modal-card">
 
-        <div class="grid-3">
-          <div class="card plan">
-            <div class="eyebrow">PACK STARTER</div>
-            <h3 style="margin:0 0 8px;">Lancement club</h3>
-            <ul class="bullets">
-              <li>Parc location (JV12/JV21)</li>
-              <li>Mini stock boutique (JV13)</li>
-              <li>Accessoires essentiels</li>
-              <li>Process réassort standard</li>
-            </ul>
-            <p class="price-note">Devis personnalisé selon volume + objectifs club.</p>
-          </div>
+<h3>Catalogue complet fournisseur</h3>
 
-          <div class="card plan highlight">
-            <div class="eyebrow">PACK PRO (RECOMMANDÉ)</div>
-            <h3 style="margin:0 0 8px;">Location optimisée + boutique rentable</h3>
-            <ul class="bullets">
-              <li>Parc location dimensionné (JV12/JV21)</li>
-              <li>Stock boutique structuré (JV13)</li>
-              <li>Accessoires récurrents</li>
-              <li>Priorité réassort</li>
-              <li>Suivi partenariat</li>
-            </ul>
-            <p class="price-note">Le meilleur ratio : simplicité / marge / récurrence.</p>
-          </div>
+<div class="choice-grid" style="margin-top:10px;">
 
-          <div class="card plan">
-            <div class="eyebrow">PACK ELITE</div>
-            <h3 style="margin:0 0 8px;">Partenariat long terme</h3>
-            <ul class="bullets">
-              <li>Stock club + boutique renforcé</li>
-              <li>Réassort prioritaire</li>
-              <li>Conditions partenaires</li>
-              <li>Option “Valorisation club” (visuels / contenu)</li>
-            </ul>
-            <p class="price-note">Pour clubs en croissance / multi-sites.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="choice">
+<b>Contrôle</b>
+JV11 / JV12 / JV14
+</div>
 
-    <!-- PROCESS -->
-    <section id="process">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Process (de pack test à collaboration)</h2>
-            <p class="sub">Un cadre simple : test → validation → déploiement → réassort.</p>
-          </div>
-        </div>
+<div class="choice">
+<b>Polyvalent</b>
+JV21 / JV22 / JV23 / JV24
+</div>
 
-        <div class="grid-3">
-          <div class="card">
-            <div class="eyebrow">01</div>
-            <h3 style="margin:0 0 8px;">Pack test</h3>
-            <p style="margin:0; color:var(--muted); font-size:14px;">
-              Le club teste JV12/JV21 (location) + JV13 (boutique). Retour terrain rapide.
-            </p>
-          </div>
-          <div class="card">
-            <div class="eyebrow">02</div>
-            <h3 style="margin:0 0 8px;">Déploiement</h3>
-            <p style="margin:0; color:var(--muted); font-size:14px;">
-              Mise en place du parc de location + stock boutique + accessoires selon votre usage.
-            </p>
-          </div>
-          <div class="card">
-            <div class="eyebrow">03</div>
-            <h3 style="margin:0 0 8px;">Réassort récurrent</h3>
-            <p style="margin:0; color:var(--muted); font-size:14px;">
-              Quand le club a besoin : demande simple → validation → livraison. Objectif : zéro friction.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="choice">
+<b>Puissance</b>
+JV31 / JV33 / JV34
+</div>
 
-    <!-- AMBASSADEUR -->
-    <section id="ambassadeur">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Programme ambassadeur clubs</h2>
-            <p class="sub">
-              Si un club nous recommande un autre club, il peut bénéficier d’avantages sur ses prochains approvisionnements.
-              Simple, transparent, win-win.
-            </p>
-          </div>
-        </div>
+</div>
 
-        <div class="grid-2">
-          <div class="card">
-            <div class="eyebrow">COMMENT ÇA MARCHE</div>
-            <ul class="bullets">
-              <li>Un club partenaire recommande un autre club</li>
-              <li>Le club recommandé démarre un pack test</li>
-              <li>Validation → collaboration</li>
-              <li>Le club ambassadeur reçoit un avantage (à définir)</li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="eyebrow">AVANTAGES POSSIBLES</div>
-            <ul class="bullets">
-              <li>Crédit d’achat sur commande suivante</li>
-              <li>Remise partenaire sur accessoires</li>
-              <li>Priorité de réassort</li>
-              <li>Option valorisation club (sur demande)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+<div style="margin-top:20px;">
+<button class="btn" onclick="closeModal()">Fermer</button>
+</div>
 
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>FAQ (clubs)</h2>
-            <p class="sub">Réponses rapides — pour avancer vite.</p>
-          </div>
-        </div>
+</div>
+</div>
 
-        <div class="grid-2">
-          <div class="card">
-            <h3 style="margin:0 0 8px;">Personnalisation logo ?</h3>
-            <p style="margin:0; color:var(--muted); font-size:14px;">
-              Possible plus tard. Priorité : validation qualité/usage club et mise en place du réassort.
-            </p>
-          </div>
-          <div class="card">
-            <h3 style="margin:0 0 8px;">À qui s’adresse la gamme ?</h3>
-            <p style="margin:0; color:var(--muted); font-size:14px;">
-              Clubs : enseignement, location, et pro-shop. JV12/JV21 pour le parc club, JV13 pour la boutique.
-            </p>
-          </div>
-          <div class="card">
-            <h3 style="margin:0 0 8px;">Comment définir les quantités ?</h3>
-            <p style="margin:0; color:var(--muted); font-size:14px;">
-              Selon vos terrains, votre fréquentation et votre stratégie boutique. On ajuste en mode “club-first”.
-            </p>
-          </div>
-          <div class="card">
-            <h3 style="margin:0 0 8px;">Délai & réassort ?</h3>
-            <p style="margin:0; color:var(--muted); font-size:14px;">
-              On structure un process simple : demande → validation → livraison. Le but : éviter les ruptures.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+<script>
+function openModal(){
+document.getElementById("modalOptions").setAttribute("open","");
+}
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Demander un pack test / devis club</h2>
-            <p class="sub">
-              Remplissez ce formulaire : on vous recontacte avec une proposition adaptée (parc location + boutique + accessoires).
-            </p>
-          </div>
-        </div>
+function closeModal(){
+document.getElementById("modalOptions").removeAttribute("open");
+}
+</script>
 
-        <div class="card" style="padding:18px;">
-          <!-- Option Formspree: remplace action par ton endpoint Formspree -->
-          <form action="#" method="post">
-            <div class="field">
-              <label for="club">Nom du club</label>
-              <input id="club" name="club" placeholder="Ex : Padel Center Montpellier" required />
-            </div>
-
-            <div class="field">
-              <label for="name">Contact</label>
-              <input id="name" name="name" placeholder="Nom + Prénom" required />
-            </div>
-
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="contact@club.fr" required />
-            </div>
-
-            <div class="field">
-              <label for="city">Ville</label>
-              <input id="city" name="city" placeholder="Ex : Montpellier" />
-            </div>
-
-            <div class="field">
-              <label for="courts">Nombre de terrains</label>
-              <select id="courts" name="courts">
-                <option value="">Sélectionner</option>
-                <option>1–2</option>
-                <option>3–5</option>
-                <option>6–10</option>
-                <option>10+</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="need">Objectif</label>
-              <select id="need" name="need">
-                <option value="">Sélectionner</option>
-                <option>Pack test (JV12/JV21/JV13)</option>
-                <option>Parc location + boutique</option>
-                <option>Accessoires + réassort</option>
-                <option>Partenariat long terme</option>
-              </select>
-            </div>
-
-            <div class="field" style="grid-column:1/-1;">
-              <label for="msg">Message</label>
-              <textarea id="msg" name="msg" placeholder="Décrivez votre besoin : location, boutique, accessoires, délais, etc."></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit">Envoyer la demande</button>
-              <a class="btn btn-ghost" href="#catalogue">Revoir le catalogue</a>
-              <p class="fine">Astuce : ajoutez un lien WhatsApp / téléphone dans cette zone si besoin.</p>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-          <div>
-            <b style="color:rgba(255,255,255,.82)">Club Partner Padel</b><br/>
-            <span>Catalogue clubs • Location • Boutique • Réassort</span>
-          </div>
-          <div>
-            <span>© <span id="year"></span> — Tous droits réservés</span>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Sticky CTA -->
-    <div class="sticky" aria-hidden="false">
-      <div class="sticky-inner">
-        <div class="left">
-          <b>Pack test JV12 + JV21 + JV13</b>
-          <span>Valider la qualité → déployer au club → réassort récurrent</span>
-        </div>
-        <div class="right">
-          <a class="btn btn-primary" href="#contact">Demander le pack test</a>
-          <a class="btn" href="#packs">Voir les packs</a>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <script>
-    // Année footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Raccourci clavier "Entrée" -> scroll contact (optionnel)
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
-        const el = document.querySelector("#contact");
-        if (el) el.scrollIntoView({behavior:"smooth", block:"start"});
-      }
-    });
-  </script>
 </body>
 </html>
