@@ -7,28 +7,20 @@
   <title>Catalogue Clubs Padel — Solution Équipement + Réassort</title>
 
   <!--
-    ✅ STRUCTURE REPO (RECOMMANDÉ POUR VERCEL)
-    Option A (site statique pur) :
-      /
-        index.html
-        /images
-          jv12.png
-          hero-rackets.png
-          jv21.png
-          jv13.png
-          accessoires.png
+    ✅ STRUCTURE REPO (RECOMMANDÉ)
+    / (racine)
+      index.html
+      /images
+        hero-rackets.png
+        jv12.png
+        jv21.png
+        jv13.png
+        accessoires.png
 
-    Option B (si Vercel détecte Next.js / React) :
-      /
-        index.html
-        /public
-          /images
-            jv12.png ...
-      Dans ce cas, le chemin reste EXACTEMENT le même dans le HTML : /images/jv12.png
-
-    ✅ RÈGLE D’OR
-    - Utiliser des chemins ABSOLUS : /images/jv12.png (pas ./images/…)
-    - Respecter la casse : jv12.png ≠ JV12.png
+    ⚠️ IMPORTANT
+    - Les noms doivent être EXACTS (minuscules/majuscules).
+    - Sur Vercel, JV12.png ≠ jv12.png.
+    - PATCH APPLIQUÉ : suppression de <picture>/<source webp> pour éviter le bug de fallback.
   -->
 
   <style>
@@ -226,6 +218,12 @@
         radial-gradient(500px 250px at 30% 10%, rgba(124,92,255,.18), transparent 55%);
       pointer-events:none;
     }
+    .media-box img{
+      width:100%;
+      height:100%;
+      min-height:250px;
+      object-fit:cover;
+    }
     .media-caption{
       position:absolute; left:14px; right:14px; bottom:12px; z-index:2;
       display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
@@ -332,29 +330,23 @@
       justify-content:center;
       position:relative;
     }
-
-    /* ✅ intégration propre des visuels raquettes */
-    .product .img picture,
-    .product .img img{
-      width:100%;
-      height:100%;
-      display:block;
-    }
     .product .img img{
       width:100%;
       height:100%;
       max-height:320px;
-      object-fit:contain;
-      object-position:center;
+      object-fit:contain; /* clé pour ton visuel raquette */
       background: radial-gradient(420px 220px at 30% 10%, rgba(124,92,255,.18), transparent 60%),
                   radial-gradient(420px 220px at 80% 20%, rgba(0,224,255,.14), transparent 60%),
                   rgba(255,255,255,.02);
     }
+    .product h3{margin:0 0 6px; font-size:18px}
+    .product p{margin:0 0 10px; color:var(--muted); font-size:14px}
+    .bullets{margin:0; padding-left:18px; color:rgba(255,255,255,.78); font-size:13.5px}
+    .bullets li{margin:6px 0}
 
-    /* ✅ placeholder visible si asset manquant (ne masque plus silencieusement) */
+    /* Placeholder visible si asset manquant */
     .img-placeholder{
-      position:absolute;
-      inset:0;
+      position:absolute; inset:0;
       display:none;
       align-items:center;
       justify-content:center;
@@ -368,11 +360,6 @@
         rgba(255,255,255,.03);
     }
     .img-placeholder b{display:block; color:rgba(255,255,255,.88); margin-bottom:6px}
-
-    .product h3{margin:0 0 6px; font-size:18px}
-    .product p{margin:0 0 10px; color:var(--muted); font-size:14px}
-    .bullets{margin:0; padding-left:18px; color:rgba(255,255,255,.78); font-size:13.5px}
-    .bullets li{margin:6px 0}
 
     /* Plans */
     .plan{
@@ -604,14 +591,14 @@
 
           <aside class="panel hero-media" aria-label="Aperçu">
             <div class="media-box">
-              <!-- ✅ Chemins ABSOLUS + fallback + placeholder -->
-              <picture>
-                <source srcset="/images/hero-rackets.webp" type="image/webp">
-                <img src="/images/hero-rackets.png"
-                     alt="Raquettes de padel — visuel catalogue"
-                     loading="lazy" decoding="async"
-                     onerror="imgFail(this,'/images/hero-rackets.png (ou .webp)')">
-              </picture>
+              <!-- PATCH: PNG direct (pas de <picture>) -->
+              <img
+                src="/images/hero-rackets.png"
+                alt="Raquettes de padel — visuel catalogue"
+                loading="lazy"
+                decoding="async"
+                onerror="imgFail(this, '/images/hero-rackets.png')"
+              />
               <div class="media-caption">
                 <div>
                   <strong>Catalogue Clubs Padel</strong>
@@ -711,19 +698,21 @@
         </div>
 
         <div class="grid-2">
+          <!-- JV12 -->
           <article class="card product" aria-label="JV12">
             <div class="img">
-              <picture>
-                <source srcset="/images/jv12.webp" type="image/webp">
-                <img src="/images/jv12.png"
-                     alt="Raquette JV12 — 38mm"
-                     loading="lazy" decoding="async"
-                     onerror="imgFail(this,'/images/jv12.png (ou .webp)')">
-              </picture>
+              <!-- PATCH: PNG direct -->
+              <img
+                src="/images/jv12.png"
+                alt="Raquette JV12 — 38mm"
+                loading="lazy"
+                decoding="async"
+                onerror="imgFail(this, '/images/jv12.png')"
+              >
               <div class="img-placeholder">
                 <div>
                   <b>Image JV12 manquante</b>
-                  <div>Ajoute <span style="font-family:var(--mono)">/images/jv12.png</span> (ou <span style="font-family:var(--mono)">jv12.webp</span>)</div>
+                  <div>Ajoute <span style="font-family:var(--mono)">/images/jv12.png</span></div>
                 </div>
               </div>
             </div>
@@ -745,19 +734,20 @@
             </div>
           </article>
 
+          <!-- JV21 -->
           <article class="card product" aria-label="JV21">
             <div class="img">
-              <picture>
-                <source srcset="/images/jv21.webp" type="image/webp">
-                <img src="/images/jv21.png"
-                     alt="Raquette JV21 — 38mm"
-                     loading="lazy" decoding="async"
-                     onerror="imgFail(this,'/images/jv21.png (ou .webp)')">
-              </picture>
+              <img
+                src="/images/jv21.png"
+                alt="Raquette JV21 — 38mm"
+                loading="lazy"
+                decoding="async"
+                onerror="imgFail(this, '/images/jv21.png')"
+              >
               <div class="img-placeholder">
                 <div>
                   <b>Image JV21 manquante</b>
-                  <div>Ajoute <span style="font-family:var(--mono)">/images/jv21.png</span> (ou <span style="font-family:var(--mono)">jv21.webp</span>)</div>
+                  <div>Ajoute <span style="font-family:var(--mono)">/images/jv21.png</span></div>
                 </div>
               </div>
             </div>
@@ -779,19 +769,20 @@
             </div>
           </article>
 
+          <!-- JV13 -->
           <article class="card product" aria-label="JV13">
             <div class="img">
-              <picture>
-                <source srcset="/images/jv13.webp" type="image/webp">
-                <img src="/images/jv13.png"
-                     alt="Raquette JV13 — 40mm"
-                     loading="lazy" decoding="async"
-                     onerror="imgFail(this,'/images/jv13.png (ou .webp)')">
-              </picture>
+              <img
+                src="/images/jv13.png"
+                alt="Raquette JV13 — 40mm"
+                loading="lazy"
+                decoding="async"
+                onerror="imgFail(this, '/images/jv13.png')"
+              >
               <div class="img-placeholder">
                 <div>
                   <b>Image JV13 manquante</b>
-                  <div>Ajoute <span style="font-family:var(--mono)">/images/jv13.png</span> (ou <span style="font-family:var(--mono)">jv13.webp</span>)</div>
+                  <div>Ajoute <span style="font-family:var(--mono)">/images/jv13.png</span></div>
                 </div>
               </div>
             </div>
@@ -813,19 +804,20 @@
             </div>
           </article>
 
+          <!-- Accessoires -->
           <article class="card product" aria-label="Accessoires">
             <div class="img">
-              <picture>
-                <source srcset="/images/accessoires.webp" type="image/webp">
-                <img src="/images/accessoires.png"
-                     alt="Accessoires padel"
-                     loading="lazy" decoding="async"
-                     onerror="imgFail(this,'/images/accessoires.png (ou .webp)')">
-              </picture>
+              <img
+                src="/images/accessoires.png"
+                alt="Accessoires padel"
+                loading="lazy"
+                decoding="async"
+                onerror="imgFail(this, '/images/accessoires.png')"
+              >
               <div class="img-placeholder">
                 <div>
                   <b>Image Accessoires manquante</b>
-                  <div>Ajoute <span style="font-family:var(--mono)">/images/accessoires.png</span> (ou <span style="font-family:var(--mono)">accessoires.webp</span>)</div>
+                  <div>Ajoute <span style="font-family:var(--mono)">/images/accessoires.png</span></div>
                 </div>
               </div>
             </div>
@@ -848,6 +840,7 @@
           </article>
         </div>
 
+        <!-- OPTIONS SUPPLÉMENTAIRES -->
         <div class="section-head" style="margin-top:18px;">
           <div>
             <h2 style="font-size:20px; margin:0;">Options supplémentaires (sélection club)</h2>
@@ -1212,12 +1205,14 @@
     // Année footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Image fail => placeholder visible (ne cache plus silencieusement)
+    // Image fail => placeholder visible
     function imgFail(img, expected){
       try{
         console.warn("[IMG MISSING]", expected, "=>", img.currentSrc || img.src);
         const wrap = img.closest(".img") || img.parentElement;
         if(!wrap) return;
+
+        // cas HERO: pas de placeholder, on masque juste
         const ph = wrap.querySelector(".img-placeholder");
         if(ph){
           img.style.display = "none";
