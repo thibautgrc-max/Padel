@@ -465,6 +465,189 @@
     }
     .hero-placeholder b{display:block; color:rgba(255,255,255,.92); margin-bottom:6px}
 
+    /* ====== NEW: VALUE SECTION (MAX CONVERSION) ====== */
+    .valueHero{
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(860px 260px at 10% 0%, rgba(46,229,157,.16), transparent 55%),
+        radial-gradient(860px 260px at 90% 0%, rgba(124,92,255,.16), transparent 55%),
+        radial-gradient(860px 260px at 50% 120%, rgba(0,224,255,.12), transparent 60%),
+        rgba(255,255,255,.04);
+      box-shadow: var(--shadow2);
+      padding:18px;
+      overflow:hidden;
+      position:relative;
+    }
+    .valueHero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 140px at 12% 0%, rgba(0,224,255,.10), transparent 55%),
+        radial-gradient(520px 160px at 88% 0%, rgba(124,92,255,.12), transparent 60%);
+      pointer-events:none;
+      opacity:.95;
+    }
+    .valueHero > *{position:relative}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      border-radius:999px;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      color:rgba(255,255,255,.86);
+      font-size:13px;
+      margin-bottom:10px;
+      width:fit-content;
+    }
+    .kicker .spark{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--good), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(46,229,157,.12);
+    }
+    .valueHead{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .valueCopy h2{margin:0 0 8px}
+    .valueCopy .sub{margin:0; max-width: 80ch}
+    .valueCTAs{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      align-items:stretch;
+      justify-content:center;
+    }
+    .trustRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      color:var(--muted2);
+      font-size:12.5px;
+    }
+    .trustRow span{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      padding:7px 10px;
+      border-radius:999px;
+    }
+
+    .valueGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    .vcard{
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      box-shadow: 0 12px 46px rgba(0,0,0,.24);
+      padding:16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .vcard::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(560px 140px at 18% 0%, rgba(46,229,157,.12), transparent 55%),
+        radial-gradient(560px 160px at 82% 0%, rgba(0,224,255,.10), transparent 60%);
+      pointer-events:none;
+      opacity:.95;
+    }
+    .vcard > *{position:relative}
+    .vcard h3{margin:0 0 8px; font-size:16px}
+    .vcard p{margin:0 0 10px; color:var(--muted); font-size:14px}
+    .vlist{margin:0; padding:0; list-style:none; display:grid; gap:8px}
+    .vlist li{
+      display:flex; gap:10px; align-items:flex-start;
+      color: rgba(255,255,255,.82);
+      font-size:13.5px;
+      line-height:1.35;
+    }
+    .vlist .bullet{
+      width:18px; height:18px; border-radius:6px;
+      display:inline-flex; align-items:center; justify-content:center;
+      background: rgba(46,229,157,.14);
+      border: 1px solid rgba(46,229,157,.25);
+      color: rgba(46,229,157,1);
+      font-weight:900;
+      font-size:12px;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .vmetric{
+      margin-top:12px;
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+    }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(7,10,18,.50);
+      color: rgba(255,255,255,.88);
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .metric{
+      color: rgba(255,255,255,.78);
+      font-size:12.5px;
+      white-space:nowrap;
+    }
+
+    .beforeAfter{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    .ba{
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      padding:14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .ba::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 140px at 10% 0%, rgba(255,92,124,.10), transparent 55%),
+        radial-gradient(520px 160px at 90% 0%, rgba(0,224,255,.10), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .ba > *{position:relative}
+    .ba h4{margin:0 0 8px; font-size:13px; letter-spacing:.2px}
+    .ba ul{margin:0; padding-left:18px; color:rgba(255,255,255,.78); font-size:13.5px}
+    .ba li{margin:6px 0}
+    .ba .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      border-radius:999px;
+      padding:6px 10px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(7,10,18,.55);
+      color: rgba(255,255,255,.86);
+      font-size:12px;
+      margin-bottom:8px;
+      width:fit-content;
+    }
+    .ba .badge i{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--bad), var(--warn));
+      box-shadow: 0 0 0 6px rgba(255,92,124,.10);
+      display:inline-block;
+    }
+    .ba.good .badge i{
+      background: linear-gradient(135deg, var(--good), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(46,229,157,.10);
+    }
+
     /* Sim Card */
     .simGrid{
       display:grid;
@@ -733,6 +916,9 @@
       .summary{position:relative; top:auto;}
       .cfgForm{grid-template-columns:1fr}
       .media-box .hero-img{transform:none;}
+      .valueHead{grid-template-columns:1fr}
+      .valueGrid{grid-template-columns:1fr}
+      .beforeAfter{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -795,7 +981,6 @@
 
           <aside class="panel hero-media" aria-label="Aperçu premium">
             <div class="media-box" aria-label="Visuel premium">
-              <!-- ✅ MODIF: HERO ASSET -->
               <img
                 class="hero-img"
                 src="/images/hero-rackets.png"
@@ -840,58 +1025,144 @@
       </div>
     </section>
 
-    <!-- SOLUTION -->
+    <!-- SOLUTION (REPLACED BY MAX CONVERSION VALUE SECTION) -->
     <section id="solution">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>La solution club (simple, rentable, scalable)</h2>
+            <h2>Ce que le club gagne (résultat + cash + zéro stress)</h2>
             <p class="sub">
-              3 piliers : <b>parc durable</b> (enseignement/location), <b>gamme boutique</b> (premium), <b>réassort</b> (zéro friction).
-              Ensuite : option personnalisation logo + recommandations par profil club.
+              On ne te vend pas “un pack imposé”. On te met en place un <b>système</b> : parc durable, boutique rentable et réassort piloté.
+              Objectif : <b>moins de budget perdu</b>, <b>plus de marge</b>, <b>zéro friction</b> au quotidien.
             </p>
           </div>
           <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Simuler maintenant</button>
         </div>
 
-        <div class="grid-3">
-          <div class="card">
-            <div class="eyebrow">PILIER 1</div>
-            <h3 style="margin:0 0 8px;">Parc location / enseignement</h3>
-            <p style="margin:0 0 10px; color:var(--muted); font-size:14px;">
-              Tolérance + durabilité. On vise une config “club-proof” pour l’usage intensif.
-            </p>
-            <div>
-              <span class="pill"><span class="check">✓</span> FV / 3K / 12K</span>
-              <span class="pill"><span class="check">✓</span> 38/40mm</span>
-              <span class="pill"><span class="check">✓</span> Usage intensif</span>
+        <div class="valueHero" aria-label="Value system club">
+          <div class="valueHead">
+            <div class="valueCopy">
+              <div class="kicker"><span class="spark" aria-hidden="true"></span>Club System — piloté pour la saison</div>
+              <h2 style="margin:0 0 8px;">Un fournisseur. Une logique. Des résultats mesurables.</h2>
+              <p class="sub" style="margin:0">
+                Tu choisis le niveau (entrée / mid / premium) et l’usage (location / cours / boutique).
+                Nous structurons la config, le test, le déploiement et le réassort — pour que ton équipe reste focus sur les joueurs.
+              </p>
+            </div>
+
+            <div class="valueCTAs" aria-label="Actions rapides">
+              <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Lancer la simulation (WhatsApp)</button>
+              <a class="btn btn-primary" href="#catalogue">Voir modèles & configs</a>
+              <div class="trustRow" aria-label="Garanties">
+                <span>✅ Pack test possible</span>
+                <span>✅ Réassort à la demande</span>
+                <span>✅ Gamme flexible</span>
+                <span>✅ Brief WhatsApp structuré</span>
+              </div>
             </div>
           </div>
 
-          <div class="card">
-            <div class="eyebrow">PILIER 2</div>
-            <h3 style="margin:0 0 8px;">Boutique club (premium)</h3>
-            <p style="margin:0 0 10px; color:var(--muted); font-size:14px;">
-              Finition premium, sensations plus “pro”. Un levier de marge en pro-shop.
-            </p>
-            <div>
-              <span class="pill"><span class="check">✓</span> 3K / 12K</span>
-              <span class="pill"><span class="check">✓</span> Sandy / 3D</span>
-              <span class="pill"><span class="check">✓</span> Upsell</span>
+          <div class="valueGrid" aria-label="Gains clés">
+            <article class="vcard">
+              <div class="eyebrow">BUDGET</div>
+              <h3>Moins de budget matériel perdu</h3>
+              <p>Parc pensé “club-use” : durabilité + tolérance. Tu réduis les remplacements imprévus et les achats en urgence.</p>
+              <ul class="vlist">
+                <li><span class="bullet">✓</span>Configs adaptées (FV/3K/12K, 38/40, EVA)</li>
+                <li><span class="bullet">✓</span>Moins de casse/rotation → meilleure durée de vie</li>
+                <li><span class="bullet">✓</span>Décisions simples : 2–3 configs max, pas 40 références</li>
+              </ul>
+              <div class="vmetric">
+                <span class="tag">Impact</span>
+                <span class="metric">↓ Remplacements • ↑ Durée de vie</span>
+              </div>
+            </article>
+
+            <article class="vcard">
+              <div class="eyebrow">MARGE</div>
+              <h3>Boutique + location plus rentables</h3>
+              <p>Tu gardes le contrôle : entrée, mid ou premium. Sourcing direct = marge optimisée sans exploser ton prix de vente.</p>
+              <ul class="vlist">
+                <li><span class="bullet">✓</span>Pro-shop plus rentable (upsell premium)</li>
+                <li><span class="bullet">✓</span>Location/cours fluides (dispo sécurisée)</li>
+                <li><span class="bullet">✓</span>Option logo club (si tu veux ta marque)</li>
+              </ul>
+              <div class="vmetric">
+                <span class="tag">Impact</span>
+                <span class="metric">↑ Marge • ↑ Panier moyen</span>
+              </div>
+            </article>
+
+            <article class="vcard">
+              <div class="eyebrow">SÉRÉNITÉ</div>
+              <h3>Réassort “zéro stress”</h3>
+              <p>Tu ne gères plus le chaos des ruptures. Tu déclenches un réassort quand tu veux — on suit et on sécurise.</p>
+              <ul class="vlist">
+                <li><span class="bullet">✓</span>Réassort rapide (raquettes + accessoires)</li>
+                <li><span class="bullet">✓</span>Process simple : demande → validation → livraison</li>
+                <li><span class="bullet">✓</span>Partenariat long terme = continuité sur la saison</li>
+              </ul>
+              <div class="vmetric">
+                <span class="tag">Impact</span>
+                <span class="metric">↓ Ruptures • ↓ Charge mentale</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="beforeAfter" aria-label="Avant / Avec nous">
+            <div class="ba">
+              <div class="badge"><i aria-hidden="true"></i> Avant</div>
+              <h4>Réalité club classique</h4>
+              <ul>
+                <li>Matériel qui s’use vite → budget qui saute</li>
+                <li>Boutique peu rentable → stock qui dort</li>
+                <li>Ruptures en saison → stress + pertes</li>
+                <li>Trop de fournisseurs / trop de choix</li>
+              </ul>
+            </div>
+
+            <div class="ba good">
+              <div class="badge"><i aria-hidden="true"></i> Avec notre système</div>
+              <h4>Exécution propre</h4>
+              <ul>
+                <li>Configs adaptées → parc durable</li>
+                <li>Gamme flexible → marge pro-shop</li>
+                <li>Réassort piloté → zéro friction</li>
+                <li>WhatsApp structuré → décision rapide</li>
+              </ul>
             </div>
           </div>
 
-          <div class="card">
-            <div class="eyebrow">PILIER 3</div>
-            <h3 style="margin:0 0 8px;">Réassort + partenariat long terme</h3>
-            <p style="margin:0 0 10px; color:var(--muted); font-size:14px;">
-              Demande → validation → livraison. Le club reste focus sur ses adhérents.
-            </p>
-            <div>
-              <span class="pill"><span class="check">✓</span> Réactivité</span>
-              <span class="pill"><span class="check">✓</span> Simplicité</span>
-              <span class="pill"><span class="check">✓</span> Récurrence</span>
+          <div class="divider"></div>
+
+          <div class="grid-3" aria-label="Next steps">
+            <div class="card" style="border-radius:22px; padding:18px;">
+              <div class="eyebrow">STEP 1</div>
+              <h3 style="margin:0 0 8px;">Simulation express</h3>
+              <p style="margin:0; color:var(--muted); font-size:14px;">
+                Terrains, objectif, budget : le système propose la config la plus logique.
+              </p>
             </div>
+            <div class="card" style="border-radius:22px; padding:18px;">
+              <div class="eyebrow">STEP 2</div>
+              <h3 style="margin:0 0 8px;">Pack test (si besoin)</h3>
+              <p style="margin:0; color:var(--muted); font-size:14px;">
+                Validation qualité → sensations → décision sans doute.
+              </p>
+            </div>
+            <div class="card" style="border-radius:22px; padding:18px;">
+              <div class="eyebrow">STEP 3</div>
+              <h3 style="margin:0 0 8px;">Déploiement + réassort</h3>
+              <p style="margin:0; color:var(--muted); font-size:14px;">
+                Déploiement sur parc/boutique + réassort récurrent selon ta saison.
+              </p>
+            </div>
+          </div>
+
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Démarrer (simulation WhatsApp)</button>
+            <a class="btn btn-ghost" href="#packs">Voir les packs</a>
+            <span class="pill"><span class="check">✓</span> Tu gardes le contrôle : on structure l’exécution</span>
           </div>
         </div>
       </div>
