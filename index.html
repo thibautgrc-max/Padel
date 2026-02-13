@@ -465,7 +465,7 @@
     }
     .hero-placeholder b{display:block; color:rgba(255,255,255,.92); margin-bottom:6px}
 
-    /* ====== NEW: VALUE SECTION (MAX CONVERSION) ====== */
+    /* ====== VALUE SECTION ====== */
     .valueHero{
       border-radius:var(--radius2);
       border:1px solid rgba(255,255,255,.12);
@@ -726,7 +726,7 @@
     .sticky-inner .left span{font-size:12px; color:var(--muted2)}
     .sticky-inner .right{display:flex; gap:8px; align-items:center; flex-wrap:wrap}
 
-    /* Modal */
+    /* Modal (shared) */
     .modal{
       position:fixed; inset:0;
       display:none;
@@ -903,6 +903,158 @@
       line-height:1.35;
     }
 
+    /* ====== PROFIT SIMULATOR (NEW) ====== */
+    .ctaStack{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .btnWide{
+      width:100%;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      gap:4px;
+      padding:12px 14px;
+    }
+    .btnSub{
+      display:block;
+      font-size:12px;
+      font-weight:700;
+      color:rgba(7,10,18,.88);
+      opacity:.9;
+      mix-blend-mode:normal;
+    }
+    .btnWide.btn-ghost .btnSub{color:rgba(255,255,255,.70)}
+    .ctaMicroProof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:2px;
+    }
+    .ctaMicroProof span{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      padding:7px 10px;
+      border-radius:999px;
+      color:var(--muted2);
+      font-size:12.5px;
+      white-space:nowrap;
+    }
+
+    .psGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:12px;
+      align-items:stretch;
+    }
+    .psPanel{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding:14px;
+    }
+    .psTitle{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+      margin-bottom:10px;
+    }
+    .psTitle b{font-size:15px}
+    .psTitle span{
+      font-family:var(--mono);
+      font-size:12px;
+      color: rgba(255,255,255,.70);
+    }
+    .psKpis{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin-bottom:12px;
+    }
+    .kpi{
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding:12px;
+      overflow:hidden;
+      position:relative;
+    }
+    .kpi::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 140px at 18% 0%, rgba(46,229,157,.12), transparent 55%),
+        radial-gradient(520px 160px at 82% 0%, rgba(0,224,255,.10), transparent 60%);
+      pointer-events:none;
+      opacity:.95;
+    }
+    .kpi > *{position:relative}
+    .kpi .l{color:rgba(255,255,255,.70); font-size:12px}
+    .kpi .v{font-size:20px; font-weight:900; letter-spacing:-.2px; margin-top:6px}
+    .kpi .h{color:rgba(255,255,255,.55); font-size:12px; margin-top:4px}
+
+    .psTable{
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      padding:12px;
+      margin-top:10px;
+    }
+    .psRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:8px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:13.5px;
+    }
+    .psRow:last-child{border-bottom:none}
+    .psRow span{color:rgba(255,255,255,.72)}
+    .psRow b{color:rgba(255,255,255,.92)}
+
+    .psActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:12px;
+    }
+    .psNote{
+      color:var(--muted2);
+      font-size:12px;
+      margin-top:10px;
+    }
+
+    .psPriceGrid{
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+    .priceBox{
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding:12px;
+    }
+    .priceBox b{display:block; font-size:14px}
+    .priceBox span{display:block; color:var(--muted2); font-size:12px; margin-top:4px}
+
+    .psSummaryBox{
+      margin-top:12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      padding:12px;
+      font-family: var(--mono);
+      font-size:12px;
+      color:rgba(255,255,255,.78);
+      white-space:pre-wrap;
+      line-height:1.35;
+      max-height:260px;
+      overflow:auto;
+    }
+
     /* Responsive */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns:1fr;}
@@ -919,6 +1071,9 @@
       .valueHead{grid-template-columns:1fr}
       .valueGrid{grid-template-columns:1fr}
       .beforeAfter{grid-template-columns:1fr}
+      .psGrid{grid-template-columns:1fr}
+      .psKpis{grid-template-columns:1fr}
+      .psPriceGrid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -960,9 +1115,10 @@
 
             <h1>système intelligent pour clubs de padel</h1>
             <p class="lead">
-            Configurez vos raquettes selon votre usage club : matériaux, mm, EVA et finition.
-            Parc location, enseignement, boutique ou réapprovisionement.
-            Envoyez votre brief en un clic sur WhatsApp et recevez votre devis rapidement.
+              Configurez vos raquettes selon votre usage club : matériaux, mm, EVA et finition.
+              Parc location, enseignement, boutique ou réapprovisionement.
+              Envoyez votre brief en un clic sur WhatsApp et recevez votre devis rapidement.
+            </p>
 
             <div class="hero-cta">
               <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Lancer une simulation</button>
@@ -999,7 +1155,7 @@
               <div class="media-caption">
                 <div>
                   <strong></strong>
-                  <small>Simulation → brief → WhatsApp → devis</small>
+                  <small>Diagnostic → brief → WhatsApp → devis</small>
                 </div>
                 <span class="pill"><span class="check">✓</span> sécurisé</span>
               </div>
@@ -1024,37 +1180,63 @@
       </div>
     </section>
 
-    <!-- SOLUTION (REPLACED BY MAX CONVERSION VALUE SECTION) -->
+    <!-- SOLUTION -->
     <section id="solution">
       <div class="container">
         <div class="section-head">
           <div>
             <h2>Levier rentable pour le club (résultat + cash + zéro stress)</h2>
             <p class="sub">
-              Un système pensé pour la <b>performance économique<b> et <b>opérationnelle<b> de votre club 
+              Un système pensé pour la <b>performance économique</b> et <b>opérationnelle</b> de votre club.
             </p>
           </div>
-          <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Simuler maintenant</button>
+          <button class="btn btn-primary" type="button" onclick="openProfitSimulator('QUICK')">
+            Calculer la rentabilité
+          </button>
         </div>
 
         <div class="valueHero" aria-label="Value system club">
           <div class="valueHead">
             <div class="valueCopy">
               <div class="kicker"><span class="spark" aria-hidden="true"></span>Piloté pour la performance annuelle du club</div>
-              <h2 style="margin:0 0 8px;">Structuré votre matériel comme un centre de profit.</h2>
+              <h2 style="margin:0 0 8px;">Structurez votre matériel comme un centre de profit.</h2>
               <p class="sub" style="margin:0">
-                Nous configurons, testons, déployons et réapprovisionnons votre équipement club pour une gestion simple et rentable.
+                Vous entrez vos chiffres réels (stock, rotation, ventes). Le système calcule le <b>gap fournisseur</b>, la <b>projection</b>, et génère un <b>plan WhatsApp</b> prêt à envoyer.
               </p>
             </div>
 
+            <!-- ✅ REPLACED CTA AREA (OLD: "Lancer la simulation WhatsApp" + "Voir modèles & configs") -->
             <div class="valueCTAs" aria-label="Actions rapides">
-              <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Lancer la simulation (WhatsApp)</button>
-              <a class="btn btn-primary" href="#catalogue">Voir modèles & configs</a>
+              <div class="ctaStack">
+                <button class="btn btn-ws btnWide" type="button" onclick="openProfitSimulator('QUICK')">
+                  Calculer la rentabilité de mon club
+                  <span class="btnSub">Gain annuel • projection 3 ans • plan d’action</span>
+                </button>
+
+                <button class="btn btn-ghost btnWide" type="button" onclick="openProfitSimulator('COMPARE')">
+                  Comparer avec mon fournisseur actuel
+                  <span class="btnSub">Écart chiffré • remplacements • marge boutique</span>
+                </button>
+
+                <div class="ctaMicroProof" aria-label="Micro preuves">
+                  <span>✅ Diagnostic en 60s</span>
+                  <span>✅ Chiffres lisibles</span>
+                  <span>✅ Brief WhatsApp auto</span>
+                  <span>✅ MOQ logo 300 (après test)</span>
+                </div>
+              </div>
+
               <div class="trustRow" aria-label="Garanties">
                 <span>✅ Pack test possible</span>
                 <span>✅ Réassort à la demande</span>
                 <span>✅ Gamme flexible</span>
-                <span>✅ Brief WhatsApp structuré</span>
+                <span>✅ Traitement 24h (après validation)</span>
+              </div>
+
+              <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                <a class="btn" href="#catalogue">Catalogue</a>
+                <a class="btn btn-primary" href="#packs">Packs</a>
+                <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Simulation WhatsApp</button>
               </div>
             </div>
           </div>
@@ -1063,11 +1245,10 @@
             <article class="vcard">
               <div class="eyebrow">BUDGET</div>
               <h3>Moins de budget matériel perdu</h3>
-          
-             <ul class="vlist">
-                <li><span class="bullet">✓</span>Configs adaptées (FV/3K/12K, 38/40, EVA)</li>
-                <li><span class="bullet">✓</span>Moins de casse/rotation → meilleure durée de vie</li>
-                <li><span class="bullet">✓</span>Décisions simples : 2–3 configs max, pas 40 références</li>
+              <ul class="vlist">
+                <li><span class="bullet">✓</span>Configs adaptées (FV/3K/12K/18K, 38/40, EVA)</li>
+                <li><span class="bullet">✓</span>Rotation pilotée → remplacements sous contrôle</li>
+                <li><span class="bullet">✓</span>Décision simple : 2–3 configs max, pas 40 références</li>
               </ul>
               <div class="vmetric">
                 <span class="tag">Impact</span>
@@ -1078,11 +1259,10 @@
             <article class="vcard">
               <div class="eyebrow">MARGE</div>
               <h3>Boutique + location plus rentables</h3>
-             
               <ul class="vlist">
                 <li><span class="bullet">✓</span>Pro-shop plus rentable (upsell premium)</li>
                 <li><span class="bullet">✓</span>Location/cours fluides (dispo sécurisée)</li>
-                <li><span class="bullet">✓</span>Option logo club (si tu veux ta marque)</li>
+                <li><span class="bullet">✓</span>Option logo club (après pack test)</li>
               </ul>
               <div class="vmetric">
                 <span class="tag">Impact</span>
@@ -1093,7 +1273,6 @@
             <article class="vcard">
               <div class="eyebrow">SÉRÉNITÉ</div>
               <h3>Réassort zéro stress</h3>
-              
               <ul class="vlist">
                 <li><span class="bullet">✓</span>Réassort rapide (raquettes + accessoires)</li>
                 <li><span class="bullet">✓</span>Process simple : demande → validation → livraison</li>
@@ -1125,7 +1304,7 @@
                 <li>Configs adaptées → parc durable</li>
                 <li>Gamme flexible → marge pro-shop</li>
                 <li>Réassort piloté → zéro friction</li>
-                <li>WhatsApp structuré → décision rapide</li>
+                <li>Plan WhatsApp structuré → décision rapide</li>
               </ul>
             </div>
           </div>
@@ -1135,9 +1314,9 @@
           <div class="grid-3" aria-label="Next steps">
             <div class="card" style="border-radius:22px; padding:18px;">
               <div class="eyebrow">STEP 1</div>
-              <h3 style="margin:0 0 8px;">Simulation express</h3>
+              <h3 style="margin:0 0 8px;">Diagnostic rentabilité</h3>
               <p style="margin:0; color:var(--muted); font-size:14px;">
-                Terrains, objectif, budget : le système propose la config la plus logique.
+                Stock + rotation + boutique → chiffres clés + projection.
               </p>
             </div>
             <div class="card" style="border-radius:22px; padding:18px;">
@@ -1151,15 +1330,15 @@
               <div class="eyebrow">STEP 3</div>
               <h3 style="margin:0 0 8px;">Déploiement + réassort</h3>
               <p style="margin:0; color:var(--muted); font-size:14px;">
-                Déploiement sur parc/boutique + réassort récurrent selon ta saison.
+                Déploiement sur parc/boutique + réassort récurrent selon saison.
               </p>
             </div>
           </div>
 
           <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-            <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Démarrer (simulation WhatsApp)</button>
-            <a class="btn btn-ghost" href="#packs">Voir les packs</a>
-            <span class="pill"><span class="check">✓</span> Tu gardes le contrôle : on structure l’exécution</span>
+            <button class="btn btn-primary" type="button" onclick="openProfitSimulator('QUICK')">Ouvrir le calculateur</button>
+            <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Simulation WhatsApp</button>
+            <span class="pill"><span class="check">✓</span> Vous gardez le contrôle : on structure l’exécution</span>
           </div>
         </div>
       </div>
@@ -1173,7 +1352,7 @@
             <h2>Catalogue clubs (modèles + configurations)</h2>
             <p class="sub">
               Chaque modèle est un <b>châssis</b> + un <b>usage</b>. Ensuite tu configures :
-              <b>Face (FV/3K/12K)</b>, <b>38/40mm</b>, EVA, finitions.
+              <b>Face (FV/3K/12K/18K)</b>, <b>38/40mm</b>, EVA, finitions.
             </p>
           </div>
           <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Configurer & envoyer</button>
@@ -1198,7 +1377,7 @@
               <h3>JV12 — “Club Ready” (durabilité & tolérance)</h3>
               <p>Confort + contrôle pour l’apprentissage et la location. Optimisée pour l’usage intensif.</p>
               <ul class="bullets">
-                <li><b>Face :</b> Fibre de verre <span style="color:var(--muted2)">(best value)</span> / Carbone 3K / Carbone 12K</li>
+                <li><b>Face :</b> Fibre de verre <span style="color:var(--muted2)">(best value)</span> / Carbone 3K / Carbone 12K / Carbone 18K</li>
                 <li><b>Épaisseur :</b> 38mm ou 40mm (au choix)</li>
                 <li><b>Mousse :</b> EVA Soft / EVA Medium (au choix)</li>
                 <li><b>Option :</b> personnalisation logo (sur demande)</li>
@@ -1235,7 +1414,7 @@
               <h3>JV21 — “Stable” (polyvalence & résistance)</h3>
               <p>Stabilité, contrôle et résistance pour clubs avec fréquence élevée et profils mixtes.</p>
               <ul class="bullets">
-                <li><b>Face :</b> Fibre de verre / Carbone 3K <span style="color:var(--muted2)">(équilibre)</span> / Carbone 12K</li>
+                <li><b>Face :</b> Fibre de verre / Carbone 3K <span style="color:var(--muted2)">(équilibre)</span> / Carbone 12K / Carbone 18K</li>
                 <li><b>Épaisseur :</b> 38mm ou 40mm (au choix)</li>
                 <li><b>Mousse :</b> EVA Soft / EVA Medium (au choix)</li>
                 <li><b>Option :</b> personnalisation logo (sur demande)</li>
@@ -1272,7 +1451,7 @@
               <h3>JV13 — “Pro Feel” (premium & performance)</h3>
               <p>Plus de répondant, sensation premium. Idéale pour la vente en pro-shop et joueurs réguliers.</p>
               <ul class="bullets">
-                <li><b>Face :</b> Carbone 3K / Carbone 12K <span style="color:var(--muted2)">(premium)</span> / Fibre de verre (accessible)</li>
+                <li><b>Face :</b> Carbone 3K / Carbone 12K <span style="color:var(--muted2)">(premium)</span> / Carbone 18K / Fibre de verre (accessible)</li>
                 <li><b>Épaisseur :</b> 38mm ou 40mm (au choix)</li>
                 <li><b>Mousse :</b> EVA Medium <span style="color:var(--muted2)">(reco)</span> / EVA Soft</li>
                 <li><b>Option :</b> personnalisation logo (sur demande)</li>
@@ -1286,7 +1465,7 @@
                 <button class="btn btn-primary" type="button" onclick="openConfigurator('JV13')">Configurer JV13</button>
               </div>
               <p class="fine" style="margin-top:10px;">
-                Astuce : JV13 en <b>12K 40mm</b> = “wow effect” boutique. JV13 en <b>FV 38mm</b> = entrée de gamme boutique.
+                Astuce : JV13 en <b>12K/18K 40mm</b> = “wow effect” boutique. JV13 en <b>FV 38mm</b> = entrée de gamme boutique.
               </p>
             </div>
           </article>
@@ -1412,7 +1591,7 @@
             <h3 style="margin:0 0 8px;">Location optimisée + boutique rentable</h3>
             <ul class="bullets">
               <li>Parc dimensionné (mix JV12/JV21)</li>
-              <li>Stock boutique structuré (JV13 3K/12K)</li>
+              <li>Stock boutique structuré (JV13 3K/12K/18K)</li>
               <li>Accessoires récurrents</li>
               <li>Priorité réassort</li>
               <li>Suivi partenariat</li>
@@ -1455,7 +1634,7 @@
           <div class="card">
             <h3 style="margin:0 0 8px;">Les matières sont au choix ?</h3>
             <p style="margin:0; color:var(--muted); font-size:14px;">
-              Oui. Chaque modèle peut être configuré en <b>fibre de verre</b> ou <b>carbone (3K/12K)</b> selon budget et objectif.
+              Oui. Chaque modèle peut être configuré en <b>fibre de verre</b> ou <b>carbone (3K/12K/18K)</b> selon budget et objectif.
             </p>
           </div>
           <div class="card">
@@ -1473,7 +1652,7 @@
           <div class="card">
             <h3 style="margin:0 0 8px;">Comment ça se passe ensuite ?</h3>
             <p style="margin:0; color:var(--muted); font-size:14px;">
-              Simulation → WhatsApp → réponse → pack test / devis → déploiement → réassort.
+              Diagnostic → WhatsApp → réponse → pack test / devis → déploiement → réassort.
             </p>
           </div>
         </div>
@@ -1485,7 +1664,7 @@
         <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
           <div>
             <b style="color:rgba(255,255,255,.82)">Club Partner Padel</b><br/>
-            <span>Catalogue • Configurateur • Simulation • WhatsApp</span>
+            <span>Catalogue • Configurateur • Diagnostic • WhatsApp</span>
           </div>
           <div>
             <span>© <span id="year"></span> — Tous droits réservés</span>
@@ -1498,12 +1677,161 @@
     <div class="sticky" aria-hidden="false">
       <div class="sticky-inner">
         <div class="left">
-          <b>Simulation configurateur → WhatsApp</b>
-          <span>Choix matières + mm + quantités • message prêt à envoyer</span>
+          <b>Diagnostic rentabilité → Plan WhatsApp</b>
+          <span>Stock + rotation + boutique • chiffres • brief prêt à envoyer</span>
         </div>
         <div class="right">
-          <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Lancer</button>
-          <a class="btn" href="#catalogue">Catalogue</a>
+          <button class="btn btn-primary" type="button" onclick="openProfitSimulator('QUICK')">Calculer</button>
+          <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">WhatsApp</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ MODAL PROFIT SIMULATOR -->
+    <div class="modal" id="modalProfit" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Club Profit Simulator">
+        <div class="modal-top">
+          <div>
+            <h3>Club Profit Simulator — Diagnostic rentabilité matériel</h3>
+            <p>Entrez vos chiffres réels. On calcule la marge agence, l’écart vs fournisseur (si renseigné), et on génère un plan WhatsApp.</p>
+          </div>
+          <button class="xbtn" type="button" onclick="closeProfit()">Fermer</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="psGrid">
+            <!-- LEFT -->
+            <div class="psPanel">
+              <div class="psTitle">
+                <b>Vos chiffres club (60 secondes)</b>
+                <span>MODE: <span id="psMode">QUICK</span></span>
+              </div>
+
+              <div class="cfgForm">
+                <div class="field">
+                  <label for="f_rentStock">Raquettes location (stock)</label>
+                  <input id="f_rentStock" type="number" min="0" step="1" value="40">
+                </div>
+                <div class="field">
+                  <label for="f_replaceRate">Rotation / remplacements (% / an)</label>
+                  <input id="f_replaceRate" type="number" min="0" step="1" value="60">
+                </div>
+
+                <div class="field">
+                  <label for="f_rentPrice">Prix location (€)</label>
+                  <input id="f_rentPrice" type="number" min="0" step="0.5" value="3">
+                </div>
+                <div class="field">
+                  <label for="f_rentSessionsWeek">Locations / semaine (estimation)</label>
+                  <input id="f_rentSessionsWeek" type="number" min="0" step="1" value="120">
+                </div>
+
+                <div class="field">
+                  <label for="f_shopSalesMonth">Ventes boutique / mois</label>
+                  <input id="f_shopSalesMonth" type="number" min="0" step="1" value="10">
+                </div>
+                <div class="field">
+                  <label for="f_shopAov">Prix moyen boutique (€) (optionnel)</label>
+                  <input id="f_shopAov" type="number" min="0" step="1" value="160">
+                </div>
+
+                <div class="field fieldFull">
+                  <div class="divider" style="margin:6px 0 10px;"></div>
+                  <div class="psTitle" style="margin:0 0 8px;">
+                    <b>Votre fournisseur actuel (optionnel)</b>
+                    <span>COMPARE</span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="b_buyPrice">Achat moyen actuel (€/raquette)</label>
+                  <input id="b_buyPrice" type="number" min="0" step="1" value="100">
+                </div>
+                <div class="field">
+                  <label for="b_replaceCostYear">Coût remplacements actuel / an (€)</label>
+                  <input id="b_replaceCostYear" type="number" min="0" step="50" value="3500">
+                </div>
+
+                <div class="field fieldFull">
+                  <label for="psClubName">Nom du club (pour le plan WhatsApp)</label>
+                  <input id="psClubName" placeholder="Ex : Padel Center Montpellier">
+                </div>
+                <div class="field fieldFull">
+                  <label for="psCity">Ville (optionnel)</label>
+                  <input id="psCity" placeholder="Ex : Montpellier">
+                </div>
+              </div>
+
+              <div class="psActions">
+                <button class="btn btn-primary" type="button" onclick="runProfitSim()">Lancer le diagnostic</button>
+                <button class="btn btn-ghost" type="button" onclick="resetProfitSim()">Réinitialiser</button>
+              </div>
+
+              <p class="psNote">
+                Paramètres fixes : MOQ logo <b>300</b> (après test). Traitement <b>24h</b> après validation. Livraison usine → France <b>10–14 jours</b>.
+              </p>
+
+              <div class="psTable" aria-label="Prix club calculés (marges moyennes)">
+                <div class="psRow"><span>FV (location)</span><b id="p_priceFV">—</b></div>
+                <div class="psRow"><span>Carbone (location / mix)</span><b id="p_priceC">—</b></div>
+                <div class="psRow"><span>Carbone 3K (boutique)</span><b id="p_price3K">—</b></div>
+                <div class="psRow"><span>Carbone 12K (boutique premium)</span><b id="p_price12K">—</b></div>
+                <div class="psRow"><span>Carbone 18K (premium)</span><b id="p_price18K">—</b></div>
+              </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="psPanel">
+              <div class="psTitle">
+                <b>Résultats (chiffres qui parlent)</b>
+                <span>LIVE</span>
+              </div>
+
+              <div class="psKpis">
+                <div class="kpi">
+                  <div class="l">Marge agence estimée / an</div>
+                  <div class="v" id="k_gainYear">—</div>
+                  <div class="h">Parc + boutique (marges moyennes)</div>
+                </div>
+                <div class="kpi">
+                  <div class="l">Projection 3 ans</div>
+                  <div class="v" id="k_gain3y">—</div>
+                  <div class="h">Vision long terme</div>
+                </div>
+                <div class="kpi">
+                  <div class="l">Marge agence moyenne / raquette</div>
+                  <div class="v" id="k_marginUp">—</div>
+                  <div class="h">Cible B2B saine</div>
+                </div>
+              </div>
+
+              <div class="psTable" aria-label="Comparatif fournisseur">
+                <div class="psRow"><span>Économie remplacements (vs actuel)</span><b id="c_replace">—</b></div>
+                <div class="psRow"><span>Gain boutique (effet gamme / rotation)</span><b id="c_upsell">—</b></div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="psTitle" style="margin:0 0 10px;">
+                <b>Plan prêt à envoyer</b>
+                <span>WhatsApp</span>
+              </div>
+
+              <div class="psSummaryBox" id="psSummary">Lance le diagnostic pour générer le plan.</div>
+
+              <div class="psActions">
+                <button class="btn btn-ws" type="button" onclick="sendProfitWhatsApp()">Recevoir mon plan sur WhatsApp</button>
+                <button class="btn" type="button" onclick="copyProfitSummary()">Copier le plan</button>
+              </div>
+
+              <p class="psNote">
+                Pack test recommandé : <b>12 raquettes</b> (6 FV • 4 en 3K • 2 en 12K) → validation → déploiement → réassort.
+              </p>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <p class="fine">Confidentialité : le plan est généré localement (aucune donnée stockée). Le message part uniquement via WhatsApp.</p>
         </div>
       </div>
     </div>
@@ -1586,6 +1914,7 @@
                     <option value="Fibre de verre">Fibre de verre</option>
                     <option value="Carbone 3K">Carbone 3K</option>
                     <option value="Carbone 12K">Carbone 12K</option>
+                    <option value="Carbone 18K">Carbone 18K</option>
                   </select>
                 </div>
 
@@ -1746,6 +2075,229 @@
     }
     window.heroFail = heroFail;
 
+    // ====== PROFIT SIMULATOR ENGINE (MARGES MOYENNES) ======
+    // Coûts livrés (hypothèse actuelle validée)
+    const COST = { FV:32, C:35, K3:37, K12:40, K18:42 };
+
+    // Marges moyennes (milieu de fourchette) — demandé
+    const MARGIN = { FV:17.5, C:22.5, K3:35, K12:45, K18:55 };
+
+    // Prix club calculés automatiquement
+    const SELL = {
+      FV: COST.FV + MARGIN.FV,   // 49.5
+      C:  COST.C  + MARGIN.C,    // 57.5
+      K3: COST.K3 + MARGIN.K3,   // 72
+      K12:COST.K12+ MARGIN.K12,  // 85
+      K18:COST.K18+ MARGIN.K18   // 97
+    };
+
+    const fmtEUR = (n) => (isFinite(n) ? `${Math.round(n).toLocaleString('fr-FR')} €` : "—");
+    const clamp = (v,min,max)=>Math.min(max,Math.max(min,v));
+
+    let profitMode = "QUICK";
+
+    function openProfitSimulator(mode){
+      profitMode = mode || "QUICK";
+      const m = $("modalProfit");
+      m.setAttribute("open","");
+      m.setAttribute("aria-hidden","false");
+      const tag = $("psMode");
+      if(tag) tag.textContent = profitMode;
+
+      // inject prices
+      $("p_priceFV").textContent  = fmtEUR(SELL.FV);
+      $("p_priceC").textContent   = fmtEUR(SELL.C);
+      $("p_price3K").textContent  = fmtEUR(SELL.K3);
+      $("p_price12K").textContent = fmtEUR(SELL.K12);
+      $("p_price18K").textContent = fmtEUR(SELL.K18);
+
+      // focus first input
+      setTimeout(()=>{ $("f_rentStock")?.focus(); }, 50);
+    }
+    window.openProfitSimulator = openProfitSimulator;
+
+    function closeProfit(){
+      const m = $("modalProfit");
+      m.removeAttribute("open");
+      m.setAttribute("aria-hidden","true");
+    }
+    window.closeProfit = closeProfit;
+
+    // Close on backdrop click + ESC
+    $("modalProfit")?.addEventListener("click", (e) => {
+      if(e.target?.id === "modalProfit") closeProfit();
+    });
+
+    // Robust: do not override your existing ESC handler, just add
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape"){
+        closeProfit();
+      }
+    });
+
+    function resetProfitSim(){
+      $("f_rentStock").value = 40;
+      $("f_replaceRate").value = 60;
+      $("f_rentPrice").value = 3;
+      $("f_rentSessionsWeek").value = 120;
+      $("f_shopSalesMonth").value = 10;
+      $("f_shopAov").value = 160;
+      $("b_buyPrice").value = 100;
+      $("b_replaceCostYear").value = 3500;
+      $("psClubName").value = "";
+      $("psCity").value = "";
+
+      $("k_gainYear").textContent = "—";
+      $("k_gain3y").textContent = "—";
+      $("k_marginUp").textContent = "—";
+      $("c_replace").textContent = "—";
+      $("c_upsell").textContent = "—";
+      $("psSummary").textContent = "Lance le diagnostic pour générer le plan.";
+    }
+    window.resetProfitSim = resetProfitSim;
+
+    function runProfitSim(){
+      const rentStock = Math.max(0, Number($("f_rentStock").value || 0));
+      const replaceRate = clamp(Number($("f_replaceRate").value || 0), 0, 200) / 100; // %/an
+      const rentPrice = Math.max(0, Number($("f_rentPrice").value || 0));
+      const rentSessionsW = Math.max(0, Number($("f_rentSessionsWeek").value || 0));
+      const shopSalesMonth = Math.max(0, Number($("f_shopSalesMonth").value || 0));
+      const shopAov = Math.max(0, Number($("f_shopAov").value || 0));
+
+      const baselineBuy = Math.max(0, Number($("b_buyPrice").value || 0));
+      const baselineReplace = Math.max(0, Number($("b_replaceCostYear").value || 0));
+
+      // Remplacements/an (moteur principal)
+      const replacedYear = rentStock * replaceRate;
+
+      // Location mix hypothèse: 80% FV + 20% Carbone (rend premium sans exploser le budget)
+      const locMarginPerUnit = (MARGIN.FV*0.8 + MARGIN.C*0.2);
+      const locMarginYear = replacedYear * locMarginPerUnit;
+
+      // Boutique: mix par défaut (convertit mieux + logique club)
+      const shopUnitsYear = shopSalesMonth * 12;
+      const mix = { K3:0.60, K12:0.30, K18:0.10 };
+      const shopK3 = shopUnitsYear * mix.K3;
+      const shopK12 = shopUnitsYear * mix.K12;
+      const shopK18 = shopUnitsYear * mix.K18;
+
+      const shopMarginYear =
+        shopK3  * MARGIN.K3 +
+        shopK12 * MARGIN.K12 +
+        shopK18 * MARGIN.K18;
+
+      const totalMarginYear = locMarginYear + shopMarginYear;
+      const totalMargin3y = totalMarginYear * 3;
+
+      const totalUnits = replacedYear + shopUnitsYear;
+      const avgMarginPerUnit = totalUnits > 0 ? (totalMarginYear / totalUnits) : 0;
+
+      $("k_gainYear").textContent = fmtEUR(totalMarginYear);
+      $("k_gain3y").textContent = fmtEUR(totalMargin3y);
+      $("k_marginUp").textContent = (avgMarginPerUnit ? fmtEUR(avgMarginPerUnit) : "—");
+
+      // Comparatif fournisseur (si renseigné)
+      // Économie remplacements = (coût remplacements actuel) - (coût remplacements chez nous)
+      // coût remplacements chez nous: remplacés * prix FV club (hypothèse conservatrice)
+      const ourReplaceCost = replacedYear * SELL.FV;
+      const econReplace = (baselineReplace > 0) ? (baselineReplace - ourReplaceCost) : null;
+      $("c_replace").textContent = (econReplace === null) ? "Renseignez votre coût actuel" : fmtEUR(econReplace);
+
+      // Gain boutique (effet gamme / rotation): proxy volontairement conservateur
+      // -> soit +10€ de marge club par vente, soit +6% de conversion: on garde 10€ (simple)
+      const clubUpsell = shopUnitsYear * 10;
+      $("c_upsell").textContent = fmtEUR(clubUpsell);
+
+      // Génération plan (WhatsApp-ready)
+      const clubName = ($("psClubName").value || "").trim() || "(à préciser)";
+      const city = ($("psCity").value || "").trim() || "(à préciser)";
+
+      // Indicateurs utiles pour le club
+      const clubRentRevenueYear = rentSessionsW * 52 * rentPrice;
+      const ourBudgetIndic = (replacedYear * SELL.FV) + (shopK3*SELL.K3 + shopK12*SELL.K12 + shopK18*SELL.K18);
+
+      const plan =
+`Bonjour, je souhaite un plan matériel club + devis.
+
+[CLUB]
+- Nom : ${clubName}
+- Ville : ${city}
+
+[DONNÉES]
+- Stock location : ${rentStock} raquettes
+- Rotation/remplacements : ${Math.round(replaceRate*100)}% / an (≈ ${Math.round(replacedYear)} remplacements/an)
+- Locations/semaine (est.) : ${rentSessionsW}
+- Prix location : ${rentPrice}€
+- Ventes boutique : ${shopSalesMonth}/mois (≈ ${Math.round(shopUnitsYear)}/an)
+
+[DIAGNOSTIC (CHIFFRES)]
+- Marge agence estimée : ${fmtEUR(totalMarginYear)} / an
+- Projection : ${fmtEUR(totalMargin3y)} / 3 ans
+- Marge moyenne / raquette : ${avgMarginPerUnit ? fmtEUR(avgMarginPerUnit) : "—"}
+
+[COMPARATIF (SI RENSEIGNÉ)]
+- Économie remplacements : ${econReplace === null ? "(à compléter)" : fmtEUR(econReplace)} / an
+- Gain boutique (effet gamme/rotation) : ${fmtEUR(clubUpsell)} / an
+
+[PRIX CLUB INDICATIFS]
+- FV : ${fmtEUR(SELL.FV)} | Carbone : ${fmtEUR(SELL.C)}
+- 3K : ${fmtEUR(SELL.K3)} | 12K : ${fmtEUR(SELL.K12)} | 18K : ${fmtEUR(SELL.K18)}
+
+[RECOMMANDATION (PACK TEST)]
+- 12 raquettes : 6 FV • 4 en 3K • 2 en 12K
+Objectif : validation qualité → déploiement parc + boutique → réassort.
+
+Merci de me proposer:
+1) un pack test adapté à mon club,
+2) une proposition de déploiement (parc + boutique),
+3) un plan de réassort (délais, fréquence, accessoires).
+
+Infos: MOQ logo 300 (après test) • traitement 24h après validation • livraison 10–14 jours.`;
+
+      $("psSummary").textContent = plan;
+
+      // auto-switch compare hint if mode compare
+      if(profitMode === "COMPARE"){
+        // Nothing required; UI already shows baseline
+      }
+    }
+    window.runProfitSim = runProfitSim;
+
+    function sendProfitWhatsApp(){
+      const text = ($("psSummary")?.textContent || "").trim();
+      if(!WHATSAPP_NUMBER){
+        alert("WHATSAPP_NUMBER est vide.");
+        return;
+      }
+      if(!text || text.includes("Lance le diagnostic")){
+        alert("Lance le diagnostic d’abord.");
+        return;
+      }
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+    window.sendProfitWhatsApp = sendProfitWhatsApp;
+
+    async function copyProfitSummary(){
+      const text = ($("psSummary")?.textContent || "").trim();
+      if(!text) return;
+      try{
+        await navigator.clipboard.writeText(text);
+        alert("Plan copié.");
+      }catch(e){
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+        alert("Plan copié.");
+      }
+    }
+    window.copyProfitSummary = copyProfitSummary;
+
+    // ====== CONFIGURATEUR (TON CODE, CONSERVÉ) ======
+
     // Modal
     function openCfg(){
       const m = $("modalCfg");
@@ -1758,7 +2310,6 @@
       m.setAttribute("aria-hidden","true");
     }
     document.addEventListener("keydown", (e) => {
-      if(e.key === "Escape") closeCfg();
       if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
         openConfigurator("SIM");
       }
@@ -1925,7 +2476,7 @@
       if(goal.includes("Boutique") && chosen === "JV13") score += 18;
 
       if(goal.includes("Parc") && reco.face === "Fibre de verre") score += 10;
-      if(goal.includes("Boutique") && reco.face.includes("Carbone")) score += 10;
+      if(goal.includes("Boutique") && String(reco.face).includes("Carbone")) score += 10;
 
       Object.keys(opts).forEach(k=>{ if(opts[k]) score += 3; });
 
@@ -1999,7 +2550,7 @@ Objectif : pack test si pertinent → validation qualité → déploiement → r
       if(sum){
         sum.innerHTML = `
           <li>Modèle : <b>${MODEL_META[reco.chosen]?.label || reco.chosen}</b></li>
-          <li>Face : <b>${reco.face}</b> <span style="color:rgba(255,255,255,.60)">(FV / 3K / 12K)</span></li>
+          <li>Face : <b>${reco.face}</b> <span style="color:rgba(255,255,255,.60)">(FV / 3K / 12K / 18K)</span></li>
           <li>Épaisseur : <b>${reco.thickness}</b></li>
           <li>EVA : <b>${reco.eva}</b></li>
           <li>Finition : <b>${reco.finish}</b></li>
@@ -2045,6 +2596,7 @@ Objectif : pack test si pertinent → validation qualité → déploiement → r
     window.copyMsg = copyMsg;
 
     window.closeCfg = closeCfg;
+    window.openCfg = openCfg;
 
     // Init
     refreshAll();
