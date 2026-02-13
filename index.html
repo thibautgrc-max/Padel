@@ -3,20 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#070A12" />
-  <meta name="color-scheme" content="dark light" />
   <meta name="description" content="Catalogue Clubs de Padel — Parc location & enseignement, gamme boutique premium, accessoires, réassort et configurateur (simulation) avec envoi WhatsApp instantané." />
-  <meta name="robots" content="index,follow" />
-  <meta name="format-detection" content="telephone=no" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Catalogue Clubs Padel — Configurateur + Diagnostic (WhatsApp)" />
-  <meta property="og:description" content="Configs FV/3K/12K/18K, 38/40mm, EVA, finitions. Diagnostic rentabilité + plan WhatsApp prêt à envoyer." />
-  <meta property="og:image" content="/images/hero-rackets.png" />
-  <meta property="og:locale" content="fr_FR" />
-
-  <title>Catalogue Clubs Padel — Configurateur + Diagnostic (WhatsApp)</title>
+  <title>Catalogue Clubs Padel — Configurateur + Simulation (WhatsApp)</title>
 
   <!--
     ✅ STRUCTURE REPO (Vercel / GitHub)
@@ -35,19 +23,7 @@
     - Respect strict des minuscules/majuscules: jv12.png ≠ JV12.png
   -->
 
-  <!-- ✅ PERF: preload hero (high priority) -->
-  <link rel="preload" as="image" href="/images/hero-rackets.png" fetchpriority="high">
-
-  <!-- ✅ JSON-LD (lightweight) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"Catalogue Clubs Padel — Configurateur + Diagnostic (WhatsApp)",
-    "description":"Catalogue et configurateur premium pour clubs de padel : parc location, boutique, réassort, diagnostic rentabilité et brief WhatsApp.",
-    "inLanguage":"fr-FR"
-  }
-  </script>
+  <link rel="preload" as="image" href="/images/hero-rackets.png">
 
   <style>
     :root{
@@ -87,27 +63,11 @@
         linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
       line-height:1.45;
       overflow-x:hidden;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
     }
 
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
     .container{max-width:var(--max); margin:0 auto; padding:0 18px}
-
-    /* Accessibility helpers */
-    .sr-only{
-      position:absolute !important;
-      width:1px; height:1px;
-      padding:0; margin:-1px;
-      overflow:hidden; clip:rect(0,0,0,0);
-      white-space:nowrap; border:0;
-    }
-    :focus-visible{
-      outline: 2px solid rgba(0,224,255,.55);
-      outline-offset: 3px;
-      border-radius: 10px;
-    }
 
     /* Top nav */
     .nav{
@@ -164,7 +124,6 @@
       white-space:nowrap;
     }
     .btn:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.22)}
-    .btn:disabled{opacity:.55; cursor:not-allowed; transform:none}
     .btn-primary{
       background: linear-gradient(135deg, rgba(124,92,255,1), rgba(0,224,255,1));
       border-color: rgba(255,255,255,.22);
@@ -238,7 +197,7 @@
       font-size: clamp(30px, 3.2vw, 46px);
       line-height:1.05;
       letter-spacing:-.4px;
-      text-transform:lowercase;
+      text-transform:none;
     }
     .lead{
       margin:0 0 18px;
@@ -322,7 +281,7 @@
       background:rgba(255,255,255,.04);
       padding:12px;
     }
-    .stat b{display:block; font-size:15px; text-transform:lowercase}
+    .stat b{display:block; font-size:15px}
     .stat span{display:block; color:var(--muted2); font-size:12px; margin-top:4px}
 
     /* Generic pill */
@@ -365,7 +324,6 @@
       margin:0;
       font-size: clamp(22px, 2.2vw, 30px);
       letter-spacing:-.2px;
-      text-transform:lowercase;
     }
     .sub{
       margin:6px 0 0;
@@ -489,7 +447,7 @@
     }
     .img-placeholder b{display:block; color:rgba(255,255,255,.90); margin-bottom:6px}
 
-    /* HERO placeholder */
+    /* Hero placeholder */
     .hero-placeholder{
       position:absolute; inset:0;
       display:none;
@@ -537,7 +495,6 @@
       border:1px solid rgba(255,255,255,.14);
       background:rgba(255,255,255,.04);
       color:rgba(255,255,255,.86);
-;
       font-size:13px;
       margin-bottom:10px;
       width:fit-content;
@@ -601,7 +558,7 @@
       opacity:.95;
     }
     .vcard > *{position:relative}
-    .vcard h3{margin:0 0 8px; font-size:16px; text-transform:lowercase}
+    .vcard h3{margin:0 0 8px; font-size:16px}
     .vcard p{margin:0 0 10px; color:var(--muted); font-size:14px}
     .vlist{margin:0; padding:0; list-style:none; display:grid; gap:8px}
     .vlist li{
@@ -690,36 +647,6 @@
       box-shadow: 0 0 0 6px rgba(46,229,157,.10);
     }
 
-    /* Social proof (new) */
-    .proofGrid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-      margin-top:12px;
-    }
-    .quote{
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      padding:16px;
-      position:relative;
-      overflow:hidden;
-      box-shadow: 0 12px 46px rgba(0,0,0,.22);
-    }
-    .quote::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(520px 140px at 20% 0%, rgba(124,92,255,.10), transparent 55%),
-        radial-gradient(520px 160px at 80% 0%, rgba(0,224,255,.10), transparent 60%);
-      pointer-events:none;
-      opacity:.9;
-    }
-    .quote > *{position:relative}
-    .quote p{margin:0 0 10px; color:rgba(255,255,255,.84); font-size:14px}
-    .quote b{display:block; font-size:13px}
-    .quote span{display:block; color:var(--muted2); font-size:12px; margin-top:3px}
-
     /* Sim Card */
     .simGrid{
       display:grid;
@@ -737,7 +664,7 @@
         rgba(255,255,255,.04);
       box-shadow: var(--shadow);
     }
-    .simCard h3{margin:0 0 8px; font-size:18px; text-transform:lowercase}
+    .simCard h3{margin:0 0 8px; font-size:18px}
     .simCard p{margin:0 0 12px; color:var(--muted); font-size:14px}
     .simFacts{
       display:grid;
@@ -751,7 +678,7 @@
       background: rgba(255,255,255,.04);
       padding:12px;
     }
-    .fact b{display:block; font-size:14px; text-transform:lowercase}
+    .fact b{display:block; font-size:14px}
     .fact span{display:block; color:var(--muted2); font-size:12px; margin-top:3px}
 
     .fine{
@@ -794,7 +721,7 @@
       display:flex; flex-direction:column; gap:2px;
       min-width: 0;
     }
-    .sticky-inner .left b{font-size:13px; text-transform:lowercase}
+    .sticky-inner .left b{font-size:13px}
     .sticky-inner .left span{font-size:12px; color:var(--muted2)}
     .sticky-inner .right{display:flex; gap:8px; align-items:center; flex-wrap:wrap}
 
@@ -810,7 +737,7 @@
     }
     .modal[open]{display:flex;}
     .modal-card{
-      width:min(980px, 100%);
+      width:min(1080px, 100%);
       border-radius:24px;
       border:1px solid rgba(255,255,255,.14);
       background: rgba(7,10,18,.94);
@@ -822,7 +749,7 @@
       display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
       border-bottom:1px solid rgba(255,255,255,.10);
     }
-    .modal-top h3{margin:0; font-size:16px; text-transform:lowercase}
+    .modal-top h3{margin:0; font-size:16px}
     .modal-top p{margin:6px 0 0; color:var(--muted); font-size:13.5px}
     .modal-body{padding:14px 16px 16px;}
     .xbtn{
@@ -851,7 +778,7 @@
       display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
       margin-bottom:10px;
     }
-    .cfgTitle b{font-size:15px; text-transform:lowercase}
+    .cfgTitle b{font-size:15px}
     .cfgTitle span{
       font-family:var(--mono);
       font-size:12px;
@@ -919,7 +846,7 @@
       top:88px;
       box-shadow: var(--shadow2);
     }
-    .summary h4{margin:0 0 8px; font-size:14px; text-transform:lowercase}
+    .summary h4{margin:0 0 8px; font-size:14px}
     .sumList{margin:0; padding-left:18px; color: rgba(255,255,255,.78); font-size:13.5px}
     .sumList li{margin:6px 0}
     .scoreRow{
@@ -974,56 +901,50 @@
       white-space: pre-wrap;
       line-height:1.35;
     }
-    .hintRow{
-      display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;
-    }
-    .hint{
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      padding:7px 10px;
-      border-radius:999px;
-      color:var(--muted2);
-      font-size:12.5px;
-      white-space:nowrap;
+
+    /* =========================================
+       PROFIT SIMULATOR — THEME DÉDIÉ (DIFF)
+       ========================================= */
+    .profit-theme{
+      --pBg1:#070610;
+      --pBg2:#0E0B1E;
+      --pCard:rgba(255,255,255,.06);
+      --pStroke:rgba(255,255,255,.14);
+      --pText:rgba(255,255,255,.92);
+      --pMuted:rgba(255,255,255,.72);
+      --pMuted2:rgba(255,255,255,.55);
+
+      /* Palette premium distincte */
+      --pA:#FFB703;    /* gold */
+      --pB:#FB7185;    /* rose */
+      --pC:#22D3EE;    /* cyan */
+      --pG:#34D399;    /* green */
+      --pD:#A78BFA;    /* violet soft */
+
+      --pShadow: 0 30px 120px rgba(0,0,0,.72);
     }
 
-    /* ====== PROFIT SIMULATOR ====== */
-    .ctaStack{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
+    .profit-theme .modal-card{
+      border-color: rgba(255,255,255,.16);
+      background:
+        radial-gradient(1000px 420px at 12% 0%, rgba(255,183,3,.14), transparent 60%),
+        radial-gradient(900px 420px at 88% 10%, rgba(34,211,238,.10), transparent 60%),
+        radial-gradient(900px 420px at 50% 120%, rgba(167,139,250,.10), transparent 60%),
+        linear-gradient(180deg, rgba(7,6,16,.94), rgba(14,11,30,.94));
+      box-shadow: var(--pShadow);
     }
-    .btnWide{
-      width:100%;
-      flex-direction:column;
-      align-items:center;
-      text-align:center;
-      gap:4px;
-      padding:12px 14px;
+    .profit-theme .modal-top{
+      border-bottom:1px solid rgba(255,255,255,.10);
     }
-    .btnSub{
-      display:block;
-      font-size:12px;
-      font-weight:700;
-      color:rgba(7,10,18,.88);
-      opacity:.9;
-      mix-blend-mode:normal;
+    .profit-theme .modal-top h3{
+      letter-spacing:-.2px;
     }
-    .btnWide.btn-ghost .btnSub{color:rgba(255,255,255,.70)}
-    .ctaMicroProof{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:2px;
+    .profit-theme .modal-top p{
+      color: rgba(255,255,255,.72);
     }
-    .ctaMicroProof span{
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      padding:7px 10px;
-      border-radius:999px;
-      color:var(--muted2);
-      font-size:12.5px;
-      white-space:nowrap;
+    .profit-theme .xbtn{
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
     }
 
     .psGrid{
@@ -1034,20 +955,30 @@
     }
     .psPanel{
       border-radius:18px;
-      border:1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.04);
       padding:14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .profit-theme .psPanel{
+      border-color: rgba(255,255,255,.14);
+      background:
+        radial-gradient(820px 260px at 12% 0%, rgba(255,183,3,.10), transparent 60%),
+        radial-gradient(820px 260px at 88% 10%, rgba(34,211,238,.08), transparent 60%),
+        rgba(255,255,255,.04);
     }
     .psTitle{
       display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
       margin-bottom:10px;
     }
-    .psTitle b{font-size:15px; text-transform:lowercase}
+    .psTitle b{font-size:15px}
     .psTitle span{
       font-family:var(--mono);
       font-size:12px;
       color: rgba(255,255,255,.70);
     }
+
     .psKpis{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1061,27 +992,42 @@
       padding:12px;
       overflow:hidden;
       position:relative;
+      min-height: 92px;
+    }
+    .profit-theme .kpi{
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
     }
     .kpi::before{
       content:"";
       position:absolute; inset:-2px;
       background:
-        radial-gradient(520px 140px at 18% 0%, rgba(46,229,157,.12), transparent 55%),
-        radial-gradient(520px 160px at 82% 0%, rgba(0,224,255,.10), transparent 60%);
+        radial-gradient(520px 140px at 18% 0%, rgba(46,229,157,.10), transparent 55%),
+        radial-gradient(520px 160px at 82% 0%, rgba(0,224,255,.08), transparent 60%);
       pointer-events:none;
+      opacity:.90;
+    }
+    .profit-theme .kpi::before{
+      background:
+        radial-gradient(520px 160px at 18% 0%, rgba(255,183,3,.14), transparent 58%),
+        radial-gradient(520px 160px at 88% 0%, rgba(34,211,238,.10), transparent 62%);
       opacity:.95;
     }
     .kpi > *{position:relative}
-    .kpi .l{color:rgba(255,255,255,.70); font-size:12px}
+    .kpi .l{color:rgba(255,255,255,.72); font-size:12px}
     .kpi .v{font-size:20px; font-weight:900; letter-spacing:-.2px; margin-top:6px}
     .kpi .h{color:rgba(255,255,255,.55); font-size:12px; margin-top:4px}
 
     .psTable{
       border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.03);
       padding:12px;
       margin-top:10px;
+    }
+    .profit-theme .psTable{
+      border-color: rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
     }
     .psRow{
       display:flex;
@@ -1104,7 +1050,7 @@
       margin-top:12px;
     }
     .psNote{
-      color:var(--muted2);
+      color:rgba(255,255,255,.58);
       font-size:12px;
       margin-top:10px;
     }
@@ -1112,8 +1058,8 @@
     .psSummaryBox{
       margin-top:12px;
       border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
       padding:12px;
       font-family: var(--mono);
       font-size:12px;
@@ -1124,41 +1070,101 @@
       overflow:auto;
     }
 
-    /* Micro-lead capture (optional but conversion-native) */
-    .leadBox{
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.03);
-      padding:16px;
-      margin-top:12px;
-      overflow:hidden;
-      position:relative;
-    }
-    .leadBox::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(560px 140px at 18% 0%, rgba(46,229,157,.10), transparent 55%),
-        radial-gradient(560px 160px at 82% 0%, rgba(0,224,255,.10), transparent 60%);
-      pointer-events:none;
-      opacity:.95;
-    }
-    .leadBox > *{position:relative}
-    .leadRow{
+    /* Profit charts */
+    .psViz{
       display:grid;
-      grid-template-columns: 1fr 1fr auto;
-      gap:10px;
+      grid-template-columns: 140px 1fr;
+      gap:12px;
+      align-items:center;
       margin-top:10px;
     }
-    .leadRow input{
-      border-radius:14px;
+    .donut{
+      width:140px; height:140px;
+      border-radius:24px;
       border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      padding:12px 12px;
-      font-size:14px;
+      background: rgba(0,0,0,.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
     }
-    .leadBox small{display:block; color:var(--muted2); margin-top:10px; font-size:12px}
+    .profit-theme .donut{
+      border-color: rgba(255,255,255,.14);
+      background:
+        radial-gradient(280px 180px at 30% 10%, rgba(255,183,3,.14), transparent 60%),
+        rgba(0,0,0,.18);
+    }
+    .donut svg{display:block}
+    .donutCenter{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      gap:4px;
+      pointer-events:none;
+    }
+    .donutCenter b{font-size:18px; letter-spacing:-.2px}
+    .donutCenter span{font-size:12px; color:rgba(255,255,255,.70)}
+    .barCard{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      padding:12px;
+    }
+    .profit-theme .barCard{
+      border-color: rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+    }
+    .barRow{
+      display:grid;
+      grid-template-columns: 1.2fr 3fr 1fr;
+      gap:10px;
+      align-items:center;
+      padding:8px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:13px;
+    }
+    .barRow:last-child{border-bottom:none}
+    .barRow .name{color:rgba(255,255,255,.80)}
+    .bar{
+      height:10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      overflow:hidden;
+    }
+    .bar > i{
+      display:block;
+      height:100%;
+      width:10%;
+      border-radius:999px;
+      background: linear-gradient(135deg, rgba(255,183,3,1), rgba(34,211,238,1));
+    }
+    .barRow .val{color:rgba(255,255,255,.88); text-align:right; white-space:nowrap; font-family:var(--mono); font-size:12px}
+
+    .badgeLine{
+      display:flex; gap:8px; flex-wrap:wrap; align-items:center;
+      margin-top:10px;
+    }
+    .pBadge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      color: rgba(255,255,255,.86);
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .pDot{
+      width:9px; height:9px; border-radius:50%;
+      background: linear-gradient(135deg, var(--pA), var(--pC));
+      box-shadow: 0 0 0 6px rgba(255,183,3,.10);
+    }
 
     /* Responsive */
     @media (max-width: 980px){
@@ -1176,25 +1182,15 @@
       .valueHead{grid-template-columns:1fr}
       .valueGrid{grid-template-columns:1fr}
       .beforeAfter{grid-template-columns:1fr}
-      .proofGrid{grid-template-columns:1fr}
       .psGrid{grid-template-columns:1fr}
       .psKpis{grid-template-columns:1fr}
-      .leadRow{grid-template-columns:1fr}
-      .sticky-inner{flex-direction:column; align-items:stretch}
-      .sticky-inner .right{justify-content:space-between}
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto}
-      *{transition:none !important}
-      .chip:hover,.btn:hover,.opt:hover{transform:none !important}
+      .psViz{grid-template-columns:1fr}
+      .donut{width:100%; height:160px}
     }
   </style>
 </head>
 
 <body>
-  <a class="sr-only" href="#top">Aller au contenu</a>
-
   <header class="nav" aria-label="Navigation">
     <div class="container">
       <div class="nav-inner">
@@ -1211,7 +1207,7 @@
           <a class="chip" href="#faq">FAQ</a>
         </nav>
 
-        <button class="btn btn-ws" type="button" data-open="cfg" data-mode="SIM" aria-haspopup="dialog">
+        <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">
           Lancer la simulation <span class="kbd">↵</span>
         </button>
       </div>
@@ -1219,48 +1215,34 @@
   </header>
 
   <main id="top">
-    <!-- HERO -->
-    <section class="hero" aria-label="Introduction">
+    <!-- HERO (FAST TRACK SUPPRIMÉ) -->
+    <section class="hero">
       <div class="container">
         <div class="hero-grid">
           <div class="panel hero-copy">
             <div class="tagline">
               <span class="pulse" aria-hidden="true"></span>
-              Catalogue club + configurateur premium → WhatsApp instantané
+              Catalogue club + Configurateur premium → WhatsApp instantané
             </div>
 
             <h1>système intelligent pour clubs de padel</h1>
             <p class="lead">
-              Tu ne choisis pas une raquette figée : tu choisis une <b>configuration</b> (matière, mm, EVA, finition) alignée sur ton usage :
-              <b>parc location</b>, <b>enseignement</b>, <b>boutique</b> et <b>réassort</b>.
-              Ensuite : brief ultra structuré → WhatsApp → devis rapide.
+              Configurez vos raquettes selon votre usage club : matériaux, mm, EVA et finition.
+              Parc location, enseignement, boutique ou réapprovisionement.
+              Envoyez votre brief en un clic sur WhatsApp et recevez votre devis rapidement.
             </p>
 
             <div class="hero-cta">
-              <button class="btn btn-ws" type="button" data-open="cfg" data-mode="SIM" aria-haspopup="dialog">Lancer une simulation</button>
+              <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Lancer une simulation</button>
               <a class="btn btn-ghost" href="#catalogue">Voir le catalogue</a>
               <a class="btn btn-primary" href="#packs">Voir les packs</a>
             </div>
 
             <div class="mini" aria-label="Points clés">
-              <span>✅ FV / 3K / 12K / 18K</span>
+              <span>✅ FV / 3K / 12K / 18k</span>
               <span>✅ 38mm / 40mm</span>
-              <span>✅ Parc + boutique + réassort</span>
+              <span>✅ Parc + Boutique + Réapprovisionement</span>
               <span>✅ WhatsApp instant</span>
-            </div>
-
-            <div class="leadBox" aria-label="Accélérateur de décision">
-              <div class="eyebrow">FAST TRACK</div>
-              <b style="display:block; font-size:15px; text-transform:lowercase;">Tu veux une reco en 30 secondes ?</b>
-              <div class="sub" style="margin-top:6px">
-                Laisse un contact (optionnel) → on t’envoie le plan + pack test recommandé. Sinon : WhatsApp direct.
-              </div>
-              <div class="leadRow">
-                <input id="leadClub" placeholder="Nom du club (optionnel)" autocomplete="organization" />
-                <input id="leadEmail" placeholder="Email (optionnel)" inputmode="email" autocomplete="email" />
-                <button class="btn btn-primary" type="button" id="leadCopyBtn">Copier le mini-brief</button>
-              </div>
-              <small>Note : aucune donnée n’est envoyée automatiquement. Le mini-brief est juste copié (local).</small>
             </div>
           </div>
 
@@ -1272,11 +1254,10 @@
                 alt="Terrain de padel premium (hero)"
                 loading="eager"
                 decoding="async"
-                fetchpriority="high"
                 onerror="heroFail(this,'/images/hero-rackets.png')"
               />
 
-              <div class="hero-placeholder" id="heroPH" role="status" aria-live="polite">
+              <div class="hero-placeholder" id="heroPH">
                 <div>
                   <b>Image hero introuvable</b>
                   <div>Vérifie <span style="font-family:var(--mono)">/images/hero-rackets.png</span> sur Vercel</div>
@@ -1288,21 +1269,21 @@
                   <strong>exécution en 4 étapes</strong>
                   <small>diagnostic → brief → WhatsApp → devis</small>
                 </div>
-                <span class="pill"><span class="check">✓</span> clean & rapide</span>
+                <span class="pill"><span class="check">✓</span> sécurisé</span>
               </div>
             </div>
 
             <div class="stats" aria-label="Promesses">
               <div class="stat">
-                <b>parc location</b>
+                <b>club location</b>
                 <span>Durable, usage intensif</span>
               </div>
               <div class="stat">
-                <b>boutique</b>
+                <b>Boutique</b>
                 <span>Premium, marge</span>
               </div>
               <div class="stat">
-                <b>réassort</b>
+                <b>service réapprovisionement</b>
                 <span>Zéro rupture, zéro stress</span>
               </div>
             </div>
@@ -1316,12 +1297,12 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>levier rentable pour le club (résultat + cash + zéro friction)</h2>
+            <h2>Levier rentable pour le club (résultat + cash + zéro friction)</h2>
             <p class="sub">
-              Une approche pensée pour la <b>performance business</b> (marge, rotation, réassort) et la <b>simplicité opérationnelle</b>.
+              Un système pensé pour la <b>performance économique</b> et <b>opérationnelle</b> de votre club.
             </p>
           </div>
-          <button class="btn btn-primary" type="button" data-open="profit" data-mode="QUICK" aria-haspopup="dialog">
+          <button class="btn btn-primary" type="button" onclick="openProfitSimulator('EXTREME')">
             Calculer la rentabilité
           </button>
         </div>
@@ -1329,44 +1310,45 @@
         <div class="valueHero" aria-label="Value system club">
           <div class="valueHead">
             <div class="valueCopy">
-              <div class="kicker"><span class="spark" aria-hidden="true"></span>Piloté pour la perf annuelle du club</div>
-              <h2 style="margin:0 0 8px;">Structure ton matériel comme un centre de profit.</h2>
+              <div class="kicker"><span class="spark" aria-hidden="true"></span>Piloté pour la performance annuelle du club</div>
+              <h2 style="margin:0 0 8px;">Structurez votre matériel comme un centre de profit.</h2>
               <p class="sub" style="margin:0">
-                Tu entres tes chiffres. Le système calcule le <b>gap</b>, la <b>projection</b>, et génère un <b>plan WhatsApp</b> prêt à envoyer.
+                Vous entrez vos chiffres réels (stock, rotation, boutique, fournisseur actuel). Le système calcule le
+                <b>gain net</b>, la <b>projection</b>, et génère un <b>plan WhatsApp</b> prêt à envoyer.
               </p>
             </div>
 
             <div class="valueCTAs" aria-label="Actions rapides">
               <div class="ctaStack">
-                <button class="btn btn-ws btnWide" type="button" data-open="profit" data-mode="QUICK">
-                  Calculer la rentabilité de mon club
-                  <span class="btnSub">gain annuel • projection 3 ans • plan d’action</span>
+                <button class="btn btn-ws" style="width:100%; flex-direction:column; gap:4px; padding:12px 14px;" type="button" onclick="openProfitSimulator('EXTREME')">
+                  Calculer le gain annuel de mon club
+                  <span style="font-size:12px; font-weight:800; opacity:.9; color:#04110d">net + projection 3 ans + plan d’action</span>
                 </button>
 
-                <button class="btn btn-ghost btnWide" type="button" data-open="profit" data-mode="COMPARE">
+                <button class="btn btn-ghost" style="width:100%; flex-direction:column; gap:4px; padding:12px 14px;" type="button" onclick="openProfitSimulator('COMPARE')">
                   Comparer avec mon fournisseur actuel
-                  <span class="btnSub">écart chiffré • remplacements • marge pro-shop</span>
+                  <span style="font-size:12px; font-weight:800; opacity:.85">écart chiffré + remplacements + boutique</span>
                 </button>
 
-                <div class="ctaMicroProof" aria-label="Micro preuves">
-                  <span>✅ diagnostic en 60s</span>
-                  <span>✅ chiffres lisibles</span>
-                  <span>✅ brief WhatsApp auto</span>
-                  <span>✅ MOQ logo 300 (après test)</span>
+                <div class="ctaMicroProof" aria-label="Micro preuves" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:2px;">
+                  <span style="border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); padding:7px 10px; border-radius:999px; color:var(--muted2); font-size:12.5px;">✅ chiffres lisibles</span>
+                  <span style="border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); padding:7px 10px; border-radius:999px; color:var(--muted2); font-size:12.5px;">✅ plan WhatsApp auto</span>
+                  <span style="border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); padding:7px 10px; border-radius:999px; color:var(--muted2); font-size:12.5px;">✅ projection 3 ans</span>
+                  <span style="border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); padding:7px 10px; border-radius:999px; color:var(--muted2); font-size:12.5px;">✅ pack test recommandé</span>
                 </div>
               </div>
 
               <div class="trustRow" aria-label="Garanties">
-                <span>✅ pack test possible</span>
-                <span>✅ réassort à la demande</span>
-                <span>✅ gamme flexible</span>
-                <span>✅ traitement 24h (après validation)</span>
+                <span>✅ Pack test possible</span>
+                <span>✅ Réassort à la demande</span>
+                <span>✅ Gamme flexible</span>
+                <span>✅ Traitement 24h (après validation)</span>
               </div>
 
               <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
                 <a class="btn" href="#catalogue">Catalogue</a>
                 <a class="btn btn-primary" href="#packs">Packs</a>
-                <button class="btn btn-ws" type="button" data-open="cfg" data-mode="SIM">Simulation WhatsApp</button>
+                <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Simulation WhatsApp</button>
               </div>
             </div>
           </div>
@@ -1374,7 +1356,7 @@
           <div class="valueGrid" aria-label="Gains clés">
             <article class="vcard">
               <div class="eyebrow">BUDGET</div>
-              <h3>moins de budget matériel cramé</h3>
+              <h3>Moins de budget matériel perdu</h3>
               <ul class="vlist">
                 <li><span class="bullet">✓</span>Configs adaptées (FV/3K/12K/18K, 38/40, EVA)</li>
                 <li><span class="bullet">✓</span>Rotation pilotée → remplacements sous contrôle</li>
@@ -1382,13 +1364,13 @@
               </ul>
               <div class="vmetric">
                 <span class="tag">Impact</span>
-                <span class="metric">↓ remplacements • ↑ durée de vie</span>
+                <span class="metric">↓ Remplacements • ↑ Durée de vie</span>
               </div>
             </article>
 
             <article class="vcard">
               <div class="eyebrow">MARGE</div>
-              <h3>boutique + location plus rentables</h3>
+              <h3>Boutique + location plus rentables</h3>
               <ul class="vlist">
                 <li><span class="bullet">✓</span>Pro-shop plus rentable (upsell premium)</li>
                 <li><span class="bullet">✓</span>Location/cours fluides (dispo sécurisée)</li>
@@ -1396,13 +1378,13 @@
               </ul>
               <div class="vmetric">
                 <span class="tag">Impact</span>
-                <span class="metric">↑ marge • ↑ panier moyen</span>
+                <span class="metric">↑ Marge • ↑ Panier moyen</span>
               </div>
             </article>
 
             <article class="vcard">
               <div class="eyebrow">SÉRÉNITÉ</div>
-              <h3>réassort zéro stress</h3>
+              <h3>Réassort zéro stress</h3>
               <ul class="vlist">
                 <li><span class="bullet">✓</span>Réassort rapide (raquettes + accessoires)</li>
                 <li><span class="bullet">✓</span>Process simple : demande → validation → livraison</li>
@@ -1410,7 +1392,7 @@
               </ul>
               <div class="vmetric">
                 <span class="tag">Impact</span>
-                <span class="metric">↓ ruptures • ↓ charge mentale</span>
+                <span class="metric">↓ Ruptures • ↓ Charge mentale</span>
               </div>
             </article>
           </div>
@@ -1423,18 +1405,18 @@
                 <li>Matériel qui s’use vite → budget qui saute</li>
                 <li>Boutique peu rentable → stock qui dort</li>
                 <li>Ruptures en saison → stress + pertes</li>
-                <li>Trop de choix → aucune décision</li>
+                <li>Trop de fournisseurs / trop de choix</li>
               </ul>
             </div>
 
             <div class="ba good">
               <div class="badge"><i aria-hidden="true"></i> Avec notre système</div>
-              <h4>Exécution clean</h4>
+              <h4>Exécution propre</h4>
               <ul>
                 <li>Configs adaptées → parc durable</li>
-                <li>Gamme structurée → marge pro-shop</li>
+                <li>Gamme flexible → marge pro-shop</li>
                 <li>Réassort piloté → zéro friction</li>
-                <li>Plan WhatsApp → décision rapide</li>
+                <li>Plan WhatsApp structuré → décision rapide</li>
               </ul>
             </div>
           </div>
@@ -1444,46 +1426,31 @@
           <div class="grid-3" aria-label="Next steps">
             <div class="card" style="border-radius:22px; padding:18px;">
               <div class="eyebrow">STEP 1</div>
-              <h3 style="margin:0 0 8px; text-transform:lowercase;">diagnostic rentabilité</h3>
+              <h3 style="margin:0 0 8px;">Diagnostic rentabilité</h3>
               <p style="margin:0; color:var(--muted); font-size:14px;">
-                Stock + rotation + boutique → chiffres clés + projection.
+                Stock + rotation + boutique + fournisseur actuel → chiffres + delta net.
               </p>
             </div>
             <div class="card" style="border-radius:22px; padding:18px;">
               <div class="eyebrow">STEP 2</div>
-              <h3 style="margin:0 0 8px; text-transform:lowercase;">pack test (si besoin)</h3>
+              <h3 style="margin:0 0 8px;">Pack test (si besoin)</h3>
               <p style="margin:0; color:var(--muted); font-size:14px;">
                 Validation qualité → sensations → décision sans doute.
               </p>
             </div>
             <div class="card" style="border-radius:22px; padding:18px;">
               <div class="eyebrow">STEP 3</div>
-              <h3 style="margin:0 0 8px; text-transform:lowercase;">déploiement + réassort</h3>
+              <h3 style="margin:0 0 8px;">Déploiement + réassort</h3>
               <p style="margin:0; color:var(--muted); font-size:14px;">
-                Parc/boutique + réassort récurrent selon saison.
+                Déploiement parc/boutique + réassort récurrent selon saison.
               </p>
             </div>
           </div>
 
           <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-            <button class="btn btn-primary" type="button" data-open="profit" data-mode="QUICK">Ouvrir le calculateur</button>
-            <button class="btn btn-ws" type="button" data-open="cfg" data-mode="SIM">Simulation WhatsApp</button>
-            <span class="pill"><span class="check">✓</span> Tu gardes le contrôle : on structure l’exécution</span>
-          </div>
-
-          <div class="proofGrid" aria-label="Preuves sociales">
-            <div class="quote">
-              <p>“On a réduit les ruptures et on a enfin une gamme claire pour la boutique.”</p>
-              <b>Manager club</b><span>Opérations</span>
-            </div>
-            <div class="quote">
-              <p>“Le pack test nous a évité de commander à l’aveugle. Décision rapide.”</p>
-              <b>Coach</b><span>Enseignement</span>
-            </div>
-            <div class="quote">
-              <p>“Le brief WhatsApp est propre : on gagne du temps côté devis.”</p>
-              <b>Responsable achats</b><span>Multi-sites</span>
-            </div>
+            <button class="btn btn-primary" type="button" onclick="openProfitSimulator('EXTREME')">Ouvrir le calculateur</button>
+            <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Simulation WhatsApp</button>
+            <span class="pill"><span class="check">✓</span> Vous gardez le contrôle : on structure l’exécution</span>
           </div>
         </div>
       </div>
@@ -1494,13 +1461,13 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>catalogue clubs (modèles + configurations)</h2>
+            <h2>Catalogue clubs (modèles + configurations)</h2>
             <p class="sub">
-              Chaque modèle = un <b>châssis</b> + un <b>usage</b>. Ensuite tu configures :
+              Chaque modèle est un <b>châssis</b> + un <b>usage</b>. Ensuite tu configures :
               <b>Face (FV/3K/12K/18K)</b>, <b>38/40mm</b>, EVA, finitions.
             </p>
           </div>
-          <button class="btn btn-ws" type="button" data-open="cfg" data-mode="SIM">Configurer & envoyer</button>
+          <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Configurer & envoyer</button>
         </div>
 
         <div class="grid-2">
@@ -1510,7 +1477,7 @@
               <span class="img-badge"><span class="check">✓</span> Parc club</span>
               <img src="/images/jv12.png" alt="Raquette JV12" loading="lazy" decoding="async"
                    onerror="imgFail(this,'/images/jv12.png')">
-              <div class="img-placeholder" role="status" aria-live="polite">
+              <div class="img-placeholder">
                 <div>
                   <b>Image JV12 introuvable</b>
                   <div>Vérifie <span style="font-family:var(--mono)">/images/jv12.png</span> sur Vercel</div>
@@ -1523,18 +1490,17 @@
               <p>Confort + contrôle pour l’apprentissage et la location. Optimisée pour l’usage intensif.</p>
               <ul class="bullets">
                 <li><b>Face :</b> Fibre de verre <span style="color:var(--muted2)">(best value)</span> / Carbone 3K / Carbone 12K / Carbone 18K</li>
-                <li><b>Épaisseur :</b> 38mm ou 40mm</li>
-                <li><b>Mousse :</b> EVA Soft / EVA Medium</li>
-                <li><b>Option :</b> personnalisation logo (après test)</li>
+                <li><b>Épaisseur :</b> 38mm ou 40mm (au choix)</li>
+                <li><b>Mousse :</b> EVA Soft / EVA Medium (au choix)</li>
+                <li><b>Option :</b> personnalisation logo (sur demande)</li>
               </ul>
               <div style="margin-top:10px">
-                <span class="pill"><span class="check">✓</span> tolérance</span>
-                <span class="pill"><span class="check">✓</span> durable</span>
-                <span class="pill"><span class="check">✓</span> club-use</span>
+                <span class="pill"><span class="check">✓</span> Tolérance</span>
+                <span class="pill"><span class="check">✓</span> Durabilité</span>
+                <span class="pill"><span class="check">✓</span> Club-use</span>
               </div>
               <div class="product-actions">
-                <button class="btn btn-primary" type="button" data-open="cfg" data-mode="JV12">Configurer JV12</button>
-                <button class="btn btn-ghost" type="button" data-open="profit" data-mode="QUICK">Voir l’impact rentabilité</button>
+                <button class="btn btn-primary" type="button" onclick="openConfigurator('JV12')">Configurer JV12</button>
               </div>
               <p class="fine" style="margin-top:10px;">
                 Astuce : JV12 en <b>FV 38mm</b> = parc rentable. JV12 en <b>3K 40mm</b> = cours avancé / boutique accessible.
@@ -1548,7 +1514,7 @@
               <span class="img-badge"><span class="check">✓</span> Club intensif</span>
               <img src="/images/jv21.png" alt="Raquette JV21" loading="lazy" decoding="async"
                    onerror="imgFail(this,'/images/jv21.png')">
-              <div class="img-placeholder" role="status" aria-live="polite">
+              <div class="img-placeholder">
                 <div>
                   <b>Image JV21 introuvable</b>
                   <div>Vérifie <span style="font-family:var(--mono)">/images/jv21.png</span> sur Vercel</div>
@@ -1558,21 +1524,20 @@
             <div>
               <div class="eyebrow">LOCATION / POLYVALENCE / INTENSIF</div>
               <h3>JV21 — “Stable” (polyvalence & résistance)</h3>
-              <p>Stabilité, contrôle et résistance pour clubs à forte fréquentation et profils mixtes.</p>
+              <p>Stabilité, contrôle et résistance pour clubs avec fréquence élevée et profils mixtes.</p>
               <ul class="bullets">
                 <li><b>Face :</b> Fibre de verre / Carbone 3K <span style="color:var(--muted2)">(équilibre)</span> / Carbone 12K / Carbone 18K</li>
-                <li><b>Épaisseur :</b> 38mm ou 40mm</li>
-                <li><b>Mousse :</b> EVA Soft / EVA Medium</li>
-                <li><b>Option :</b> personnalisation logo (après test)</li>
+                <li><b>Épaisseur :</b> 38mm ou 40mm (au choix)</li>
+                <li><b>Mousse :</b> EVA Soft / EVA Medium (au choix)</li>
+                <li><b>Option :</b> personnalisation logo (sur demande)</li>
               </ul>
               <div style="margin-top:10px">
-                <span class="pill"><span class="check">✓</span> stabilité</span>
-                <span class="pill"><span class="check">✓</span> résistance</span>
-                <span class="pill"><span class="check">✓</span> polyvalence</span>
+                <span class="pill"><span class="check">✓</span> Stabilité</span>
+                <span class="pill"><span class="check">✓</span> Résistance</span>
+                <span class="pill"><span class="check">✓</span> Polyvalence</span>
               </div>
               <div class="product-actions">
-                <button class="btn btn-primary" type="button" data-open="cfg" data-mode="JV21">Configurer JV21</button>
-                <button class="btn btn-ghost" type="button" data-open="profit" data-mode="COMPARE">Comparer fournisseur</button>
+                <button class="btn btn-primary" type="button" onclick="openConfigurator('JV21')">Configurer JV21</button>
               </div>
               <p class="fine" style="margin-top:10px;">
                 Astuce : JV21 en <b>3K 38mm</b> = club “mix” parfait. JV21 en <b>12K 40mm</b> = boutique + performance.
@@ -1586,7 +1551,7 @@
               <span class="img-badge"><span class="warn">★</span> Boutique</span>
               <img src="/images/jv13.png" alt="Raquette JV13" loading="lazy" decoding="async"
                    onerror="imgFail(this,'/images/jv13.png')">
-              <div class="img-placeholder" role="status" aria-live="polite">
+              <div class="img-placeholder">
                 <div>
                   <b>Image JV13 introuvable</b>
                   <div>Vérifie <span style="font-family:var(--mono)">/images/jv13.png</span> sur Vercel</div>
@@ -1596,21 +1561,20 @@
             <div>
               <div class="eyebrow">BOUTIQUE CLUB / PREMIUM</div>
               <h3>JV13 — “Pro Feel” (premium & performance)</h3>
-              <p>Sensation premium et répondant. Idéale pour la vente en pro-shop et joueurs réguliers.</p>
+              <p>Plus de répondant, sensation premium. Idéale pour la vente en pro-shop et joueurs réguliers.</p>
               <ul class="bullets">
                 <li><b>Face :</b> Carbone 3K / Carbone 12K <span style="color:var(--muted2)">(premium)</span> / Carbone 18K / Fibre de verre (accessible)</li>
-                <li><b>Épaisseur :</b> 38mm ou 40mm</li>
+                <li><b>Épaisseur :</b> 38mm ou 40mm (au choix)</li>
                 <li><b>Mousse :</b> EVA Medium <span style="color:var(--muted2)">(reco)</span> / EVA Soft</li>
-                <li><b>Option :</b> personnalisation logo (après test)</li>
+                <li><b>Option :</b> personnalisation logo (sur demande)</li>
               </ul>
               <div style="margin-top:10px">
-                <span class="pill"><span class="check">✓</span> premium</span>
-                <span class="pill"><span class="check">✓</span> upsell</span>
-                <span class="pill"><span class="check">✓</span> performance</span>
+                <span class="pill"><span class="check">✓</span> Premium</span>
+                <span class="pill"><span class="check">✓</span> Upsell</span>
+                <span class="pill"><span class="check">✓</span> Performance</span>
               </div>
               <div class="product-actions">
-                <button class="btn btn-primary" type="button" data-open="cfg" data-mode="JV13">Configurer JV13</button>
-                <button class="btn btn-ghost" type="button" data-open="profit" data-mode="QUICK">Voir projection 3 ans</button>
+                <button class="btn btn-primary" type="button" onclick="openConfigurator('JV13')">Configurer JV13</button>
               </div>
               <p class="fine" style="margin-top:10px;">
                 Astuce : JV13 en <b>12K/18K 40mm</b> = “wow effect” boutique. JV13 en <b>FV 38mm</b> = entrée de gamme boutique.
@@ -1624,9 +1588,9 @@
               <span class="img-badge"><span class="check">✓</span> Réassort</span>
               <img src="/images/accessoires.png" alt="Accessoires padel" loading="lazy" decoding="async"
                    onerror="imgFail(this,'/images/accessoires.png')">
-              <div class="img-placeholder" role="status" aria-live="polite">
+              <div class="img-placeholder">
                 <div>
-                  <b>Image accessoires introuvable</b>
+                  <b>Image Accessoires introuvable</b>
                   <div>Vérifie <span style="font-family:var(--mono)">/images/accessoires.png</span> sur Vercel</div>
                 </div>
               </div>
@@ -1642,13 +1606,12 @@
                 <li>Sacs & consommables</li>
               </ul>
               <div style="margin-top:10px">
-                <span class="pill"><span class="check">✓</span> récurrence</span>
-                <span class="pill"><span class="check">✓</span> simple</span>
-                <span class="pill"><span class="check">✓</span> club-first</span>
+                <span class="pill"><span class="check">✓</span> Récurrence</span>
+                <span class="pill"><span class="check">✓</span> Facile</span>
+                <span class="pill"><span class="check">✓</span> Club-first</span>
               </div>
               <div class="product-actions">
-                <button class="btn btn-primary" type="button" data-open="cfg" data-mode="ACC">Simuler un réassort</button>
-                <button class="btn btn-ghost" type="button" data-open="cfg" data-mode="PACK_PRO">Voir pack pro</button>
+                <button class="btn btn-primary" type="button" onclick="openConfigurator('ACC')">Simuler un réassort</button>
               </div>
             </div>
           </article>
@@ -1661,27 +1624,27 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>simulation (configurateur club) → WhatsApp instantané</h2>
+            <h2>Simulation (configurateur club) → WhatsApp instantané</h2>
             <p class="sub">
-              Tu choisis modèle, matières, mm, quantités et objectifs.
-              Le système génère un <b>brief clair</b> + une <b>reco</b> + un <b>message WhatsApp prêt à envoyer</b>.
+              Tu choisis ton modèle, matières, mm, quantités et objectifs.
+              Le système génère un <b>brief clair</b> + une <b>recommandation</b> + un <b>message WhatsApp prêt à envoyer</b>.
             </p>
           </div>
-          <button class="btn btn-ws" type="button" data-open="cfg" data-mode="SIM">Lancer la simulation</button>
+          <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Lancer la simulation</button>
         </div>
 
         <div class="simGrid">
           <div class="simCard">
-            <h3>décision rapide (zéro friction)</h3>
+            <h3>Décision rapide (zéro friction)</h3>
             <p>
               Les clubs n’ont pas le temps de comparer 40 références.
               Tu prends 2–3 configs max et tu avances : <b>parc</b> + <b>boutique</b> + <b>réassort</b>.
             </p>
             <div class="divider"></div>
             <div class="simFacts">
-              <div class="fact"><b>parc club</b><span>Durable & tolérant</span></div>
-              <div class="fact"><b>boutique</b><span>Marge + premium</span></div>
-              <div class="fact"><b>réassort</b><span>Récurrence</span></div>
+              <div class="fact"><b>Parc club</b><span>Durable & tolérant</span></div>
+              <div class="fact"><b>Boutique</b><span>Marge + premium</span></div>
+              <div class="fact"><b>Réassort</b><span>Récurrence</span></div>
             </div>
             <div class="divider"></div>
             <p class="fine">
@@ -1690,19 +1653,18 @@
           </div>
 
           <div class="simCard" style="border-color: rgba(46,229,157,.26);">
-            <h3>1 clic = WhatsApp prêt</h3>
+            <h3>1 clic = WhatsApp envoyé</h3>
             <p>
               Message structuré : infos club, objectif, config, quantités, délai, notes.
               Tu reçois une réponse rapide → pack test / devis.
             </p>
             <div class="divider"></div>
-            <button class="btn btn-ws" type="button" style="width:100%" data-open="cfg" data-mode="SIM">
+            <button class="btn btn-ws" type="button" style="width:100%" onclick="openConfigurator('SIM')">
               Ouvrir le configurateur
             </button>
-            <div class="hintRow" aria-label="Raccourcis">
-              <span class="hint">Raccourci : <span class="kbd">Ctrl</span> + <span class="kbd">Enter</span></span>
-              <span class="hint">Esc : fermer un modal</span>
-            </div>
+            <p class="fine" style="margin-top:10px;">
+              Raccourci : <span class="kbd">Ctrl</span> + <span class="kbd">Enter</span>
+            </p>
           </div>
         </div>
       </div>
@@ -1713,7 +1675,7 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>packs clubs (parc + boutique + réassort)</h2>
+            <h2>Packs clubs (parc + boutique + réassort)</h2>
             <p class="sub">
               Packs structurés pour démarrer vite. Les quantités exactes se définissent selon terrains, fréquentation et stratégie boutique.
             </p>
@@ -1723,7 +1685,7 @@
         <div class="grid-3">
           <div class="card" style="padding:18px; border-radius:22px;">
             <div class="eyebrow">PACK STARTER</div>
-            <h3 style="margin:0 0 8px; text-transform:lowercase;">lancement club</h3>
+            <h3 style="margin:0 0 8px;">Lancement club</h3>
             <ul class="bullets">
               <li>Parc location (JV12/JV21) config “best value”</li>
               <li>Mini stock boutique (JV13) config premium</li>
@@ -1732,13 +1694,13 @@
             </ul>
             <p class="fine">Recommandé pour clubs qui veulent tester vite.</p>
             <div class="product-actions">
-              <button class="btn btn-primary" type="button" data-open="cfg" data-mode="PACK_STARTER">Configurer pack</button>
+              <button class="btn btn-primary" type="button" onclick="openConfigurator('PACK_STARTER')">Configurer pack</button>
             </div>
           </div>
 
           <div class="card" style="padding:18px; border-radius:22px; border-color: rgba(124,92,255,.30);">
             <div class="eyebrow">PACK PRO (RECOMMANDÉ)</div>
-            <h3 style="margin:0 0 8px; text-transform:lowercase;">location optimisée + boutique rentable</h3>
+            <h3 style="margin:0 0 8px;">Location optimisée + boutique rentable</h3>
             <ul class="bullets">
               <li>Parc dimensionné (mix JV12/JV21)</li>
               <li>Stock boutique structuré (JV13 3K/12K/18K)</li>
@@ -1748,13 +1710,13 @@
             </ul>
             <p class="fine">Le meilleur ratio : simplicité / marge / récurrence.</p>
             <div class="product-actions">
-              <button class="btn btn-primary" type="button" data-open="cfg" data-mode="PACK_PRO">Configurer pack</button>
+              <button class="btn btn-primary" type="button" onclick="openConfigurator('PACK_PRO')">Configurer pack</button>
             </div>
           </div>
 
           <div class="card" style="padding:18px; border-radius:22px;">
             <div class="eyebrow">PACK ELITE</div>
-            <h3 style="margin:0 0 8px; text-transform:lowercase;">partenariat long terme</h3>
+            <h3 style="margin:0 0 8px;">Partenariat long terme</h3>
             <ul class="bullets">
               <li>Stock club + boutique renforcé</li>
               <li>Réassort prioritaire</li>
@@ -1763,7 +1725,7 @@
             </ul>
             <p class="fine">Pour clubs en croissance / multi-sites.</p>
             <div class="product-actions">
-              <button class="btn btn-primary" type="button" data-open="cfg" data-mode="PACK_ELITE">Configurer pack</button>
+              <button class="btn btn-primary" type="button" onclick="openConfigurator('PACK_ELITE')">Configurer pack</button>
             </div>
           </div>
         </div>
@@ -1775,32 +1737,32 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>faq (clubs)</h2>
+            <h2>FAQ (clubs)</h2>
             <p class="sub">Réponses rapides — pour avancer vite.</p>
           </div>
         </div>
 
         <div class="grid-2">
           <div class="card">
-            <h3 style="margin:0 0 8px; text-transform:lowercase;">les matières sont au choix ?</h3>
+            <h3 style="margin:0 0 8px;">Les matières sont au choix ?</h3>
             <p style="margin:0; color:var(--muted); font-size:14px;">
               Oui. Chaque modèle peut être configuré en <b>fibre de verre</b> ou <b>carbone (3K/12K/18K)</b> selon budget et objectif.
             </p>
           </div>
           <div class="card">
-            <h3 style="margin:0 0 8px; text-transform:lowercase;">38mm ou 40mm ?</h3>
+            <h3 style="margin:0 0 8px;">38mm ou 40mm ?</h3>
             <p style="margin:0; color:var(--muted); font-size:14px;">
               Les deux sont possibles. En général : <b>38mm</b> = tolérance/contrôle, <b>40mm</b> = stabilité/répondant.
             </p>
           </div>
           <div class="card">
-            <h3 style="margin:0 0 8px; text-transform:lowercase;">personnalisation logo ?</h3>
+            <h3 style="margin:0 0 8px;">Personnalisation logo ?</h3>
             <p style="margin:0; color:var(--muted); font-size:14px;">
-              Possible. Reco : d’abord <b>pack test</b> (validation qualité), ensuite personnalisation (MOQ/délais).
+              Possible. Recommandation : d’abord <b>pack test</b> (validation qualité), ensuite personnalisation (MOQ/délais).
             </p>
           </div>
           <div class="card">
-            <h3 style="margin:0 0 8px; text-transform:lowercase;">comment ça se passe ensuite ?</h3>
+            <h3 style="margin:0 0 8px;">Comment ça se passe ensuite ?</h3>
             <p style="margin:0; color:var(--muted); font-size:14px;">
               Diagnostic → WhatsApp → réponse → pack test / devis → déploiement → réassort.
             </p>
@@ -1827,25 +1789,28 @@
     <div class="sticky" aria-hidden="false">
       <div class="sticky-inner">
         <div class="left">
-          <b>diagnostic rentabilité → plan WhatsApp</b>
-          <span>stock + rotation + boutique • chiffres • brief prêt à envoyer</span>
+          <b>Diagnostic rentabilité → Plan WhatsApp</b>
+          <span>stock + rotation + boutique + fournisseur actuel • delta net</span>
         </div>
         <div class="right">
-          <button class="btn btn-primary" type="button" data-open="profit" data-mode="QUICK">Calculer</button>
-          <button class="btn btn-ws" type="button" data-open="cfg" data-mode="SIM">WhatsApp</button>
+          <button class="btn btn-primary" type="button" onclick="openProfitSimulator('EXTREME')">Calculer</button>
+          <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">WhatsApp</button>
         </div>
       </div>
     </div>
 
-    <!-- ✅ MODAL PROFIT SIMULATOR -->
-    <div class="modal" id="modalProfit" aria-hidden="true">
-      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Club Profit Simulator" tabindex="-1">
+    <!-- ✅ MODAL PROFIT SIMULATOR (VERSION EXTREME + THEME DIFF + GRAPHIQUES) -->
+    <div class="modal profit-theme" id="modalProfit" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Club Profit Simulator">
         <div class="modal-top">
           <div>
-            <h3>club profit simulator — diagnostic rentabilité matériel</h3>
-            <p>Entrez vos chiffres réels. On calcule la marge agence, l’écart vs fournisseur (si renseigné), et on génère un plan WhatsApp.</p>
+            <h3>Club Profit Simulator — Diagnostic rentabilité (mode conversion)</h3>
+            <p>
+              Vous entrez vos chiffres. On calcule <b>le gain net</b> (économies + profit boutique + impact location),
+              et on génère un <b>plan WhatsApp</b> prêt à envoyer.
+            </p>
           </div>
-          <button class="xbtn" type="button" data-close="profit" aria-label="Fermer">Fermer</button>
+          <button class="xbtn" type="button" onclick="closeProfit()">Fermer</button>
         </div>
 
         <div class="modal-body">
@@ -1853,125 +1818,177 @@
             <!-- LEFT -->
             <div class="psPanel">
               <div class="psTitle">
-                <b>vos chiffres club (60 secondes)</b>
-                <span>MODE: <span id="psMode">QUICK</span></span>
+                <b>Vos données (réel club)</b>
+                <span>MODE: <span id="psMode">EXTREME</span></span>
               </div>
 
-              <div class="cfgForm" aria-label="Formulaire rentabilité">
+              <div class="cfgForm">
                 <div class="field">
                   <label for="f_rentStock">Raquettes location (stock)</label>
-                  <input id="f_rentStock" type="number" min="0" step="1" value="40" inputmode="numeric">
+                  <input id="f_rentStock" type="number" min="0" step="1" value="40">
                 </div>
                 <div class="field">
                   <label for="f_replaceRate">Rotation / remplacements (% / an)</label>
-                  <input id="f_replaceRate" type="number" min="0" step="1" value="60" inputmode="numeric">
+                  <input id="f_replaceRate" type="number" min="0" step="1" value="60">
                 </div>
 
                 <div class="field">
                   <label for="f_rentPrice">Prix location (€)</label>
-                  <input id="f_rentPrice" type="number" min="0" step="0.5" value="3" inputmode="decimal">
+                  <input id="f_rentPrice" type="number" min="0" step="0.5" value="3">
                 </div>
                 <div class="field">
-                  <label for="f_rentSessionsWeek">Locations / semaine (estimation)</label>
-                  <input id="f_rentSessionsWeek" type="number" min="0" step="1" value="120" inputmode="numeric">
+                  <label for="f_rentSessionsWeek">Locations / semaine (est.)</label>
+                  <input id="f_rentSessionsWeek" type="number" min="0" step="1" value="120">
                 </div>
 
                 <div class="field">
                   <label for="f_shopSalesMonth">Ventes boutique / mois</label>
-                  <input id="f_shopSalesMonth" type="number" min="0" step="1" value="10" inputmode="numeric">
+                  <input id="f_shopSalesMonth" type="number" min="0" step="1" value="10">
                 </div>
                 <div class="field">
-                  <label for="f_shopAov">Prix moyen boutique (€) (optionnel)</label>
-                  <input id="f_shopAov" type="number" min="0" step="1" value="160" inputmode="numeric">
-                </div>
-
-                <div class="field fieldFull">
-                  <div class="divider" style="margin:6px 0 10px;"></div>
-                  <div class="psTitle" style="margin:0 0 8px;">
-                    <b>votre fournisseur actuel (optionnel)</b>
-                    <span>COMPARE</span>
-                  </div>
+                  <label for="f_shopSellAvg">Prix moyen boutique (vente) (€)</label>
+                  <input id="f_shopSellAvg" type="number" min="0" step="1" value="160">
                 </div>
 
                 <div class="field">
                   <label for="b_buyPrice">Achat moyen actuel (€/raquette)</label>
-                  <input id="b_buyPrice" type="number" min="0" step="1" value="100" inputmode="numeric">
+                  <input id="b_buyPrice" type="number" min="0" step="1" value="100">
                 </div>
                 <div class="field">
                   <label for="b_replaceCostYear">Coût remplacements actuel / an (€)</label>
-                  <input id="b_replaceCostYear" type="number" min="0" step="50" value="3500" inputmode="numeric">
+                  <input id="b_replaceCostYear" type="number" min="0" step="50" value="3500">
+                </div>
+
+                <div class="field">
+                  <label for="b_shopMarginPct">Marge boutique actuelle (%)</label>
+                  <input id="b_shopMarginPct" type="number" min="0" max="95" step="1" value="35">
+                </div>
+                <div class="field">
+                  <label for="b_stockRupturePct">Ruptures (pertes estimées %) (optionnel)</label>
+                  <input id="b_stockRupturePct" type="number" min="0" max="40" step="1" value="6">
                 </div>
 
                 <div class="field fieldFull">
                   <label for="psClubName">Nom du club (pour le plan WhatsApp)</label>
-                  <input id="psClubName" placeholder="Ex : Padel Center Montpellier" autocomplete="organization">
+                  <input id="psClubName" placeholder="Ex : Padel Center Montpellier">
                 </div>
                 <div class="field fieldFull">
                   <label for="psCity">Ville (optionnel)</label>
-                  <input id="psCity" placeholder="Ex : Montpellier" autocomplete="address-level2">
+                  <input id="psCity" placeholder="Ex : Montpellier">
                 </div>
               </div>
 
               <div class="psActions">
-                <button class="btn btn-primary" type="button" id="runProfitBtn">Lancer le diagnostic</button>
-                <button class="btn btn-ghost" type="button" id="resetProfitBtn">Réinitialiser</button>
+                <button class="btn btn-primary" type="button" onclick="runProfitSim()">Lancer le diagnostic</button>
+                <button class="btn btn-ghost" type="button" onclick="resetProfitSim()">Réinitialiser</button>
+              </div>
+
+              <div class="badgeLine" aria-label="Promesses calcul">
+                <span class="pBadge"><span class="pDot" aria-hidden="true"></span> gain net = économies + boutique + impact</span>
+                <span class="pBadge"><span class="pDot" aria-hidden="true"></span> projection 3 ans</span>
+                <span class="pBadge"><span class="pDot" aria-hidden="true"></span> plan WhatsApp auto</span>
               </div>
 
               <p class="psNote">
-                Paramètres fixes : MOQ logo <b>300</b> (après test). Traitement <b>24h</b> après validation. Livraison usine → France <b>10–14 jours</b>.
+                Hypothèses (éditables si besoin) : MOQ logo <b>300</b> (après test) • traitement <b>24h</b> après validation • livraison <b>10–14 jours</b>.
               </p>
 
-              <div class="psTable" aria-label="Prix club indicatifs">
-                <div class="psRow"><span>FV (location)</span><b id="p_priceFV">—</b></div>
-                <div class="psRow"><span>Carbone (location / mix)</span><b id="p_priceC">—</b></div>
+              <div class="psTable" aria-label="Prix club indicatifs (approvisionnement)">
+                <div class="psRow"><span>FV (parc/location)</span><b id="p_priceFV">—</b></div>
+                <div class="psRow"><span>Carbone (mix club)</span><b id="p_priceC">—</b></div>
                 <div class="psRow"><span>Carbone 3K (boutique)</span><b id="p_price3K">—</b></div>
-                <div class="psRow"><span>Carbone 12K (boutique premium)</span><b id="p_price12K">—</b></div>
-                <div class="psRow"><span>Carbone 18K (premium)</span><b id="p_price18K">—</b></div>
+                <div class="psRow"><span>Carbone 12K (premium)</span><b id="p_price12K">—</b></div>
+                <div class="psRow"><span>Carbone 18K (premium+)</span><b id="p_price18K">—</b></div>
               </div>
             </div>
 
             <!-- RIGHT -->
             <div class="psPanel">
               <div class="psTitle">
-                <b>résultats (chiffres qui parlent)</b>
+                <b>Résultats (gain net + preuve visuelle)</b>
                 <span>LIVE</span>
               </div>
 
               <div class="psKpis">
                 <div class="kpi">
-                  <div class="l">Marge agence estimée / an</div>
-                  <div class="v" id="k_gainYear">—</div>
-                  <div class="h">Parc + boutique (marges moyennes)</div>
+                  <div class="l">Gain net estimé / an</div>
+                  <div class="v" id="k_gainNetYear">—</div>
+                  <div class="h">économies + profit + impact</div>
                 </div>
                 <div class="kpi">
                   <div class="l">Projection 3 ans</div>
-                  <div class="v" id="k_gain3y">—</div>
-                  <div class="h">Vision long terme</div>
+                  <div class="v" id="k_gainNet3y">—</div>
+                  <div class="h">effet cumulé</div>
                 </div>
                 <div class="kpi">
-                  <div class="l">Marge moyenne / raquette</div>
-                  <div class="v" id="k_marginUp">—</div>
-                  <div class="h">Cible B2B saine</div>
+                  <div class="l">ROI estimé</div>
+                  <div class="v" id="k_roi">—</div>
+                  <div class="h">vs budget matériel annuel</div>
                 </div>
               </div>
 
-              <div class="psTable" aria-label="Comparatif fournisseur">
-                <div class="psRow"><span>Économie remplacements (vs actuel)</span><b id="c_replace">—</b></div>
-                <div class="psRow"><span>Gain boutique (effet gamme / rotation)</span><b id="c_upsell">—</b></div>
+              <div class="psViz" aria-label="Graphiques gain">
+                <div class="donut" aria-label="Donut ROI">
+                  <svg width="120" height="120" viewBox="0 0 120 120" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="gradDonut" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#FFB703"/>
+                        <stop offset="1" stop-color="#22D3EE"/>
+                      </linearGradient>
+                    </defs>
+                    <circle cx="60" cy="60" r="44" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="12"/>
+                    <circle id="roiArc" cx="60" cy="60" r="44" fill="none" stroke="url(#gradDonut)" stroke-linecap="round" stroke-width="12"
+                            stroke-dasharray="276.46" stroke-dashoffset="276.46"
+                            transform="rotate(-90 60 60)"/>
+                  </svg>
+                  <div class="donutCenter">
+                    <b id="roiPct">—</b>
+                    <span>ROI</span>
+                  </div>
+                </div>
+
+                <div class="barCard" aria-label="Breakdown gains">
+                  <div class="barRow">
+                    <div class="name">Économies remplacements</div>
+                    <div class="bar"><i id="barSave"></i></div>
+                    <div class="val" id="vSave">—</div>
+                  </div>
+                  <div class="barRow">
+                    <div class="name">Profit boutique (delta)</div>
+                    <div class="bar"><i id="barShop"></i></div>
+                    <div class="val" id="vShop">—</div>
+                  </div>
+                  <div class="barRow">
+                    <div class="name">Impact ruptures évitées</div>
+                    <div class="bar"><i id="barRupt"></i></div>
+                    <div class="val" id="vRupt">—</div>
+                  </div>
+                  <div class="barRow">
+                    <div class="name">Total gain net</div>
+                    <div class="bar"><i id="barNet"></i></div>
+                    <div class="val" id="vNet">—</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="psTable" aria-label="Comparatif clair">
+                <div class="psRow"><span>Budget matériel annuel (estimé)</span><b id="c_budget">—</b></div>
+                <div class="psRow"><span>Écart vs fournisseur actuel</span><b id="c_vsSupplier">—</b></div>
+                <div class="psRow"><span>Plan recommandé</span><b id="c_planReco">Pack test → déploiement → réassort</b></div>
               </div>
 
               <div class="divider"></div>
 
               <div class="psTitle" style="margin:0 0 10px;">
-                <b>plan prêt à envoyer</b>
+                <b>Plan prêt à envoyer</b>
                 <span>WhatsApp</span>
               </div>
 
               <div class="psSummaryBox" id="psSummary">Lance le diagnostic pour générer le plan.</div>
 
               <div class="psActions">
-                <button class="btn btn-ws" type="button" id="profitWhatsAppBtn">Recevoir mon plan sur WhatsApp</button>
-                <button class="btn" type="button" id="profitCopyBtn">Copier le plan</button>
+                <button class="btn btn-ws" type="button" onclick="sendProfitWhatsApp()">Recevoir mon plan sur WhatsApp</button>
+                <button class="btn" type="button" onclick="copyProfitSummary()">Copier le plan</button>
               </div>
 
               <p class="psNote">
@@ -1981,20 +1998,20 @@
           </div>
 
           <div class="divider"></div>
-          <p class="fine">Confidentialité : le plan est généré localement (aucune donnée stockée). Le message part uniquement via WhatsApp.</p>
+          <p class="fine">Confidentialité : le calcul est local (aucune donnée stockée). Le message part uniquement via WhatsApp.</p>
         </div>
       </div>
     </div>
 
     <!-- MODAL CONFIGURATEUR -->
     <div class="modal" id="modalCfg" aria-hidden="true">
-      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Configurateur club" tabindex="-1">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Configurateur club">
         <div class="modal-top">
           <div>
-            <h3>simulation / configurateur club</h3>
+            <h3>Simulation / Configurateur club</h3>
             <p>Choisis ta configuration. Le système génère un message WhatsApp ultra structuré (prêt à envoyer).</p>
           </div>
-          <button class="xbtn" type="button" data-close="cfg" aria-label="Fermer">Fermer</button>
+          <button class="xbtn" type="button" onclick="closeCfg()">Fermer</button>
         </div>
 
         <div class="modal-body">
@@ -2006,14 +2023,14 @@
                 <span id="cfgModelTag">MODE: SIM</span>
               </div>
 
-              <div class="cfgForm" aria-label="Formulaire configurateur">
+              <div class="cfgForm">
                 <div class="field">
                   <label for="clubName">Nom du club</label>
-                  <input id="clubName" placeholder="Ex : Padel Center Montpellier" autocomplete="organization" />
+                  <input id="clubName" placeholder="Ex : Padel Center Montpellier" />
                 </div>
                 <div class="field">
                   <label for="clubCity">Ville</label>
-                  <input id="clubCity" placeholder="Ex : Montpellier" autocomplete="address-level2" />
+                  <input id="clubCity" placeholder="Ex : Montpellier" />
                 </div>
 
                 <div class="field">
@@ -2054,7 +2071,7 @@
 
                 <div class="field">
                   <label for="qty">Quantité (raquettes)</label>
-                  <input id="qty" type="number" min="0" placeholder="Ex : 10" inputmode="numeric" />
+                  <input id="qty" type="number" min="0" placeholder="Ex : 10" />
                 </div>
 
                 <div class="field">
@@ -2128,11 +2145,11 @@
                 <div class="field fieldFull">
                   <label>Options rapides (1 clic)</label>
                   <div class="toggleRow">
-                    <div class="opt" data-key="packtest">Pack test</div>
-                    <div class="opt" data-key="accessoires">Accessoires</div>
-                    <div class="opt" data-key="reassort">Réassort récurrent</div>
-                    <div class="opt" data-key="proshop">Pro-shop</div>
-                    <div class="opt" data-key="multi">Multi-sites</div>
+                    <div class="opt" data-key="packtest" onclick="toggleOpt(this)">Pack test</div>
+                    <div class="opt" data-key="accessoires" onclick="toggleOpt(this)">Accessoires</div>
+                    <div class="opt" data-key="reassort" onclick="toggleOpt(this)">Réassort récurrent</div>
+                    <div class="opt" data-key="proshop" onclick="toggleOpt(this)">Pro-shop</div>
+                    <div class="opt" data-key="multi" onclick="toggleOpt(this)">Multi-sites</div>
                   </div>
                 </div>
 
@@ -2145,7 +2162,7 @@
 
             <!-- RIGHT: SUMMARY -->
             <div class="summary">
-              <h4>résumé + reco (auto)</h4>
+              <h4>Résumé + recommandation (auto)</h4>
               <ul class="sumList" id="sumList">
                 <li>Modèle : <b>Auto</b></li>
                 <li>Face : <b>Auto</b></li>
@@ -2160,14 +2177,14 @@
               </div>
 
               <div class="divider"></div>
-              <h4 style="margin-top:0">message WhatsApp (preview)</h4>
+              <h4 style="margin-top:0">Message WhatsApp (preview)</h4>
               <div class="wsPreview" id="wsPreview"></div>
 
               <div class="wsBox">
-                <button class="btn btn-ws" type="button" style="flex:1" id="wsSendBtn">
+                <button class="btn btn-ws" type="button" style="flex:1" onclick="sendWhatsApp()">
                   Envoyer sur WhatsApp
                 </button>
-                <button class="btn" type="button" id="wsCopyBtn">Copier</button>
+                <button class="btn" type="button" onclick="copyMsg()">Copier</button>
               </div>
 
               <p class="fine" style="margin-top:10px;">
@@ -2186,30 +2203,18 @@
   </main>
 
   <script>
-    /********************
-     * CONFIG
-     ********************/
-    const WHATSAPP_NUMBER = "33647705367"; // +33...
+    // ====== CONFIG ======
+    const WHATSAPP_NUMBER = "33647705367";
 
-    /********************
-     * HELPERS
-     ********************/
+    // ====== Helpers ======
     const $ = (id) => document.getElementById(id);
-    const clamp = (v,min,max)=>Math.min(max,Math.max(min,v));
-    const fmtEUR = (n) => (isFinite(n) ? `${Math.round(n).toLocaleString('fr-FR')} €` : "—");
 
     (function setYear(){
       const y = $("year");
       if(y) y.textContent = new Date().getFullYear();
     })();
 
-    function safeOpen(url){
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
-
-    /********************
-     * IMAGE FALLBACKS
-     ********************/
+    // Image fail => placeholder visible (products)
     function imgFail(img, expected){
       try{
         console.warn("[IMG MISSING]", expected, "=>", img.currentSrc || img.src);
@@ -2226,6 +2231,7 @@
     }
     window.imgFail = imgFail;
 
+    // Hero fail => placeholder visible
     function heroFail(img, expected){
       try{
         console.warn("[HERO MISSING]", expected, "=>", img.currentSrc || img.src);
@@ -2236,120 +2242,14 @@
     }
     window.heroFail = heroFail;
 
-    /********************
-     * MODAL ENGINE (focus trap + esc + backdrop)
-     ********************/
-    const modalState = {
-      lastFocus: null,
-      openId: null
-    };
-
-    function getFocusable(container){
-      return [...container.querySelectorAll(
-        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
-      )].filter(el => !el.hasAttribute("disabled") && !el.getAttribute("aria-hidden"));
-    }
-
-    function openModal(id){
-      const m = $(id);
-      if(!m) return;
-
-      modalState.lastFocus = document.activeElement;
-      modalState.openId = id;
-
-      m.setAttribute("open","");
-      m.setAttribute("aria-hidden","false");
-
-      // focus first focusable
-      const card = m.querySelector(".modal-card");
-      const focusables = card ? getFocusable(card) : [];
-      setTimeout(()=> (focusables[0] ? focusables[0].focus() : card?.focus()), 20);
-
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeModal(id){
-      const m = $(id);
-      if(!m) return;
-
-      m.removeAttribute("open");
-      m.setAttribute("aria-hidden","true");
-
-      modalState.openId = null;
-      document.body.style.overflow = "";
-
-      // restore focus
-      if(modalState.lastFocus && typeof modalState.lastFocus.focus === "function"){
-        setTimeout(()=> modalState.lastFocus.focus(), 10);
-      }
-    }
-
-    // global key handling
-    document.addEventListener("keydown", (e) => {
-      // ESC closes whichever is open
-      if(e.key === "Escape" && modalState.openId){
-        closeModal(modalState.openId);
-      }
-
-      // CTRL/CMD + Enter opens configurator SIM
-      if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
-        openConfigurator("SIM");
-      }
-
-      // focus trap
-      if(e.key === "Tab" && modalState.openId){
-        const m = $(modalState.openId);
-        const card = m?.querySelector(".modal-card");
-        if(!card) return;
-        const focusables = getFocusable(card);
-        if(!focusables.length) return;
-
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
-
-        if(e.shiftKey && document.activeElement === first){
-          e.preventDefault();
-          last.focus();
-        } else if(!e.shiftKey && document.activeElement === last){
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    });
-
-    // backdrop click closes
-    ["modalProfit","modalCfg"].forEach(id=>{
-      $(id)?.addEventListener("click", (e) => {
-        if(e.target?.id === id) closeModal(id);
-      });
-    });
-
-    // delegated open/close buttons
-    document.addEventListener("click", (e) => {
-      const t = e.target.closest("[data-open],[data-close]");
-      if(!t) return;
-
-      const open = t.getAttribute("data-open");
-      const close = t.getAttribute("data-close");
-      const mode = t.getAttribute("data-mode") || "SIM";
-
-      if(open === "profit"){
-        openProfitSimulator(mode);
-      }else if(open === "cfg"){
-        openConfigurator(mode);
-      }else if(close === "profit"){
-        closeProfit();
-      }else if(close === "cfg"){
-        closeCfg();
-      }
-    });
-
-    /********************
-     * PROFIT SIMULATOR
-     ********************/
+    // ====== PROFIT SIMULATOR ENGINE (CONVERSION / EXTREME) ======
+    // Coûts livrés (hypothèse actuelle)
     const COST = { FV:32, C:35, K3:37, K12:40, K18:42 };
+
+    // Marges (pour notre modèle d'offre, côté agence / partenaire)
     const MARGIN = { FV:17.5, C:22.5, K3:35, K12:45, K18:55 };
 
+    // Prix club indicatifs (approvisionnement via notre réseau)
     const SELL = {
       FV: COST.FV + MARGIN.FV,
       C:  COST.C  + MARGIN.C,
@@ -2358,25 +2258,48 @@
       K18:COST.K18+ MARGIN.K18
     };
 
-    let profitMode = "QUICK";
+    const fmtEUR = (n) => (isFinite(n) ? `${Math.round(n).toLocaleString('fr-FR')} €` : "—");
+    const fmtPct = (n) => (isFinite(n) ? `${Math.round(n)}%` : "—");
+    const clamp = (v,min,max)=>Math.min(max,Math.max(min,v));
+
+    let profitMode = "EXTREME";
 
     function openProfitSimulator(mode){
-      profitMode = mode || "QUICK";
-      $("psMode").textContent = profitMode;
+      profitMode = mode || "EXTREME";
+      const m = $("modalProfit");
+      m.setAttribute("open","");
+      m.setAttribute("aria-hidden","false");
+      const tag = $("psMode");
+      if(tag) tag.textContent = profitMode;
 
+      // inject prices
       $("p_priceFV").textContent  = fmtEUR(SELL.FV);
       $("p_priceC").textContent   = fmtEUR(SELL.C);
       $("p_price3K").textContent  = fmtEUR(SELL.K3);
       $("p_price12K").textContent = fmtEUR(SELL.K12);
       $("p_price18K").textContent = fmtEUR(SELL.K18);
 
-      openModal("modalProfit");
-      setTimeout(()=> $("f_rentStock")?.focus(), 30);
+      setTimeout(()=>{ $("f_rentStock")?.focus(); }, 50);
     }
     window.openProfitSimulator = openProfitSimulator;
 
-    function closeProfit(){ closeModal("modalProfit"); }
+    function closeProfit(){
+      const m = $("modalProfit");
+      m.removeAttribute("open");
+      m.setAttribute("aria-hidden","true");
+    }
     window.closeProfit = closeProfit;
+
+    $("modalProfit")?.addEventListener("click", (e) => {
+      if(e.target?.id === "modalProfit") closeProfit();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape"){
+        closeProfit();
+        closeCfg();
+      }
+    });
 
     function resetProfitSim(){
       $("f_rentStock").value = 40;
@@ -2384,69 +2307,140 @@
       $("f_rentPrice").value = 3;
       $("f_rentSessionsWeek").value = 120;
       $("f_shopSalesMonth").value = 10;
-      $("f_shopAov").value = 160;
+      $("f_shopSellAvg").value = 160;
       $("b_buyPrice").value = 100;
       $("b_replaceCostYear").value = 3500;
+      $("b_shopMarginPct").value = 35;
+      $("b_stockRupturePct").value = 6;
       $("psClubName").value = "";
       $("psCity").value = "";
 
-      $("k_gainYear").textContent = "—";
-      $("k_gain3y").textContent = "—";
-      $("k_marginUp").textContent = "—";
-      $("c_replace").textContent = "—";
-      $("c_upsell").textContent = "—";
+      ["k_gainNetYear","k_gainNet3y","k_roi","roiPct","vSave","vShop","vRupt","vNet","c_budget","c_vsSupplier"].forEach(id=>{
+        const el = $(id);
+        if(el) el.textContent = "—";
+      });
+      ["barSave","barShop","barRupt","barNet"].forEach(id=>{
+        const el = $(id);
+        if(el) el.style.width = "10%";
+      });
+      const arc = $("roiArc");
+      if(arc) arc.setAttribute("stroke-dashoffset", "276.46");
+
       $("psSummary").textContent = "Lance le diagnostic pour générer le plan.";
     }
     window.resetProfitSim = resetProfitSim;
 
+    function setDonut(percent){
+      const p = clamp(percent, 0, 100);
+      const arc = $("roiArc");
+      const total = 276.46; // 2πr where r=44
+      const offset = total - (total * (p/100));
+      if(arc) arc.setAttribute("stroke-dashoffset", String(offset));
+      const t = $("roiPct");
+      if(t) t.textContent = `${Math.round(p)}%`;
+    }
+
+    function setBar(id, ratio){
+      const el = $(id);
+      if(!el) return;
+      const w = clamp(Math.round(ratio * 100), 8, 98);
+      el.style.width = w + "%";
+    }
+
     function runProfitSim(){
+      // Inputs
       const rentStock = Math.max(0, Number($("f_rentStock").value || 0));
       const replaceRate = clamp(Number($("f_replaceRate").value || 0), 0, 200) / 100;
       const rentPrice = Math.max(0, Number($("f_rentPrice").value || 0));
       const rentSessionsW = Math.max(0, Number($("f_rentSessionsWeek").value || 0));
+
       const shopSalesMonth = Math.max(0, Number($("f_shopSalesMonth").value || 0));
-      const shopAov = Math.max(0, Number($("f_shopAov").value || 0)); // not required but kept for future
+      const shopSellAvg = Math.max(0, Number($("f_shopSellAvg").value || 0));
 
       const baselineBuy = Math.max(0, Number($("b_buyPrice").value || 0));
       const baselineReplace = Math.max(0, Number($("b_replaceCostYear").value || 0));
+      const baselineShopMarginPct = clamp(Number($("b_shopMarginPct").value || 0), 0, 95) / 100;
+      const rupturePct = clamp(Number($("b_stockRupturePct").value || 0), 0, 40) / 100;
 
+      // Derived
       const replacedYear = rentStock * replaceRate;
-
-      // Location mix: 80% FV + 20% Carbone
-      const locMarginPerUnit = (MARGIN.FV*0.8 + MARGIN.C*0.2);
-      const locMarginYear = replacedYear * locMarginPerUnit;
-
-      // Boutique mix: 60% 3K / 30% 12K / 10% 18K
       const shopUnitsYear = shopSalesMonth * 12;
-      const mix = { K3:0.60, K12:0.30, K18:0.10 };
-      const shopK3 = shopUnitsYear * mix.K3;
-      const shopK12 = shopUnitsYear * mix.K12;
-      const shopK18 = shopUnitsYear * mix.K18;
 
-      const shopMarginYear =
-        shopK3  * MARGIN.K3 +
-        shopK12 * MARGIN.K12 +
-        shopK18 * MARGIN.K18;
+      // Baseline (club aujourd'hui)
+      const baselineRentRevenueYear = rentSessionsW * 52 * rentPrice;
 
-      const totalMarginYear = locMarginYear + shopMarginYear;
-      const totalMargin3y = totalMarginYear * 3;
+      // Baseline boutique profit = CA * marge%
+      const baselineShopRevenueYear = shopUnitsYear * shopSellAvg;
+      const baselineShopProfitYear = baselineShopRevenueYear * baselineShopMarginPct;
 
-      const totalUnits = replacedYear + shopUnitsYear;
-      const avgMarginPerUnit = totalUnits > 0 ? (totalMarginYear / totalUnits) : 0;
+      // Ruptures = pertes estimées sur CA boutique + location (simple & lisible)
+      const baselineRuptureLoss = (baselineShopRevenueYear + baselineRentRevenueYear) * rupturePct;
 
-      $("k_gainYear").textContent = fmtEUR(totalMarginYear);
-      $("k_gain3y").textContent = fmtEUR(totalMargin3y);
-      $("k_marginUp").textContent = (avgMarginPerUnit ? fmtEUR(avgMarginPerUnit) : "—");
-
-      // Economie remplacements vs actuel
+      // Notre scénario (approvisionnement + structuration)
+      // 1) Remplacements: coût chez nous (conservateur) basé sur FV pour parc
       const ourReplaceCost = replacedYear * SELL.FV;
-      const econReplace = (baselineReplace > 0) ? (baselineReplace - ourReplaceCost) : null;
-      $("c_replace").textContent = (econReplace === null) ? "Renseignez votre coût actuel" : fmtEUR(econReplace);
+      const saveReplace = (baselineReplace > 0) ? (baselineReplace - ourReplaceCost) : (baselineBuy > 0 ? (replacedYear * (baselineBuy - SELL.FV)) : 0);
 
-      // Gain boutique proxy conservateur
-      const clubUpsell = shopUnitsYear * 10;
-      $("c_upsell").textContent = fmtEUR(clubUpsell);
+      // 2) Boutique: on crée un delta de profit via (a) gamme/upsell + (b) marge structurelle
+      // - Upsell: +8% sur prix moyen (si gamme premium bien packagée)
+      // - Conversion: +6% sur ventes (si pro-shop structuré + best-sellers)
+      const upsellPct = 0.08;
+      const convPct = 0.06;
 
+      const ourShopUnits = shopUnitsYear * (1 + convPct);
+      const ourShopSell = shopSellAvg * (1 + upsellPct);
+
+      // Coût moyen d'appro (mix 3K/12K/18K) — logique boutique
+      const mix = { K3:0.60, K12:0.30, K18:0.10 };
+      const ourCogsAvg =
+        (SELL.K3 * mix.K3) + (SELL.K12 * mix.K12) + (SELL.K18 * mix.K18);
+
+      const ourShopRevenueYear = ourShopUnits * ourShopSell;
+      const ourShopProfitYear = (ourShopSell - ourCogsAvg) * ourShopUnits;
+
+      const deltaShopProfit = ourShopProfitYear - baselineShopProfitYear;
+
+      // 3) Ruptures évitées: on réduit les pertes de 60% via réassort piloté (simple)
+      const ruptureReduction = 0.60;
+      const savedRuptures = baselineRuptureLoss * ruptureReduction;
+
+      // Budget matériel annuel (pour ROI)
+      const materialBudgetYear = (baselineReplace > 0 ? baselineReplace : (replacedYear * baselineBuy)) + (shopUnitsYear * (shopSellAvg * (1 - baselineShopMarginPct)));
+
+      // Gain net
+      const netYear = (saveReplace || 0) + (deltaShopProfit || 0) + (savedRuptures || 0);
+      const net3y = netYear * 3;
+
+      // ROI = gain net / budget matériel annuel
+      const roi = materialBudgetYear > 0 ? (netYear / materialBudgetYear) : 0;
+      const roiPct = clamp(roi * 100, 0, 300); // on plafonne visuellement
+
+      // UI: KPIs
+      $("k_gainNetYear").textContent = fmtEUR(netYear);
+      $("k_gainNet3y").textContent = fmtEUR(net3y);
+      $("k_roi").textContent = materialBudgetYear > 0 ? `${fmtPct(roi*100)} / an` : "—";
+
+      // UI: tables
+      $("c_budget").textContent = fmtEUR(materialBudgetYear);
+      $("c_vsSupplier").textContent = fmtEUR(netYear);
+
+      // UI: breakdown values
+      $("vSave").textContent = fmtEUR(saveReplace);
+      $("vShop").textContent = fmtEUR(deltaShopProfit);
+      $("vRupt").textContent = fmtEUR(savedRuptures);
+      $("vNet").textContent  = fmtEUR(netYear);
+
+      // Bars (ratio based on max of components)
+      const maxComp = Math.max(1, Math.abs(saveReplace), Math.abs(deltaShopProfit), Math.abs(savedRuptures), Math.abs(netYear));
+      setBar("barSave", Math.abs(saveReplace) / maxComp);
+      setBar("barShop", Math.abs(deltaShopProfit) / maxComp);
+      setBar("barRupt", Math.abs(savedRuptures) / maxComp);
+      setBar("barNet",  Math.abs(netYear) / maxComp);
+
+      // Donut
+      setDonut(roiPct);
+
+      // Plan WhatsApp (conversion-ready)
       const clubName = ($("psClubName").value || "").trim() || "(à préciser)";
       const city = ($("psCity").value || "").trim() || "(à préciser)";
 
@@ -2457,36 +2451,34 @@
 - Nom : ${clubName}
 - Ville : ${city}
 
-[DONNÉES]
+[DONNÉES ACTUELLES]
 - Stock location : ${rentStock} raquettes
 - Rotation/remplacements : ${Math.round(replaceRate*100)}% / an (≈ ${Math.round(replacedYear)} remplacements/an)
-- Locations/semaine (est.) : ${rentSessionsW}
-- Prix location : ${rentPrice}€
-- Ventes boutique : ${shopSalesMonth}/mois (≈ ${Math.round(shopUnitsYear)}/an)
+- Locations/semaine (est.) : ${rentSessionsW} | Prix location : ${rentPrice}€
+- Boutique : ${shopSalesMonth}/mois (≈ ${Math.round(shopUnitsYear)}/an) | Prix moyen : ${Math.round(shopSellAvg)}€
+- Coût remplacements actuel/an : ${fmtEUR(baselineReplace)}
+- Marge boutique actuelle : ${Math.round(baselineShopMarginPct*100)}% | Ruptures (pertes est.) : ${Math.round(rupturePct*100)}%
 
-[DIAGNOSTIC (CHIFFRES)]
-- Marge agence estimée : ${fmtEUR(totalMarginYear)} / an
-- Projection : ${fmtEUR(totalMargin3y)} / 3 ans
-- Marge moyenne / raquette : ${avgMarginPerUnit ? fmtEUR(avgMarginPerUnit) : "—"}
+[DIAGNOSTIC — GAIN NET]
+- Économies remplacements : ${fmtEUR(saveReplace)} / an
+- Delta profit boutique : ${fmtEUR(deltaShopProfit)} / an
+- Ruptures évitées (estim.) : ${fmtEUR(savedRuptures)} / an
+=> Gain net total : ${fmtEUR(netYear)} / an (≈ ${fmtEUR(net3y)} sur 3 ans)
 
-[COMPARATIF (SI RENSEIGNÉ)]
-- Économie remplacements : ${econReplace === null ? "(à compléter)" : fmtEUR(econReplace)} / an
-- Gain boutique (effet gamme/rotation) : ${fmtEUR(clubUpsell)} / an
-
-[PRIX CLUB INDICATIFS]
+[PRIX APPRO (INDICATIFS)]
 - FV : ${fmtEUR(SELL.FV)} | Carbone : ${fmtEUR(SELL.C)}
 - 3K : ${fmtEUR(SELL.K3)} | 12K : ${fmtEUR(SELL.K12)} | 18K : ${fmtEUR(SELL.K18)}
 
-[RECOMMANDATION (PACK TEST)]
-- 12 raquettes : 6 FV • 4 en 3K • 2 en 12K
-Objectif : validation qualité → déploiement parc + boutique → réassort.
+[RECO DÉPLOIEMENT]
+- Pack test : 12 raquettes (6 FV • 4 en 3K • 2 en 12K)
+- Objectif : valider qualité → déployer parc + boutique → réassort récurrent
 
 Merci de me proposer :
 1) un pack test adapté à mon club,
 2) une proposition de déploiement (parc + boutique),
 3) un plan de réassort (délais, fréquence, accessoires).
 
-Infos : MOQ logo 300 (après test) • traitement 24h après validation • livraison 10–14 jours.`;
+Infos: MOQ logo 300 (après test) • traitement 24h après validation • livraison 10–14 jours.`;
 
       $("psSummary").textContent = plan;
     }
@@ -2503,7 +2495,7 @@ Infos : MOQ logo 300 (après test) • traitement 24h après validation • livr
         return;
       }
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-      safeOpen(url);
+      window.open(url, "_blank", "noopener,noreferrer");
     }
     window.sendProfitWhatsApp = sendProfitWhatsApp;
 
@@ -2525,10 +2517,38 @@ Infos : MOQ logo 300 (après test) • traitement 24h après validation • livr
     }
     window.copyProfitSummary = copyProfitSummary;
 
-    /********************
-     * CONFIGURATEUR
-     ********************/
+    // ====== CONFIGURATEUR (CONSERVÉ) ======
+    function openCfg(){
+      const m = $("modalCfg");
+      m.setAttribute("open","");
+      m.setAttribute("aria-hidden","false");
+    }
+    function closeCfg(){
+      const m = $("modalCfg");
+      m.removeAttribute("open");
+      m.setAttribute("aria-hidden","true");
+    }
+    window.closeCfg = closeCfg;
+    window.openCfg = openCfg;
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
+        openConfigurator("SIM");
+      }
+    });
+    $("modalCfg")?.addEventListener("click", (e) => {
+      if(e.target?.id === "modalCfg") closeCfg();
+    });
+
     const opts = { packtest:false, accessoires:false, reassort:false, proshop:false, multi:false };
+    function toggleOpt(el){
+      const k = el.getAttribute("data-key");
+      if(!k) return;
+      opts[k] = !opts[k];
+      el.setAttribute("data-on", opts[k] ? "1" : "0");
+      refreshAll();
+    }
+    window.toggleOpt = toggleOpt;
 
     const MODEL_META = {
       JV12: { label:"JV12 (Club Ready)", pillar:"Parc club", baseReco:{ face:"Fibre de verre", thickness:"38mm", eva:"EVA Soft", finish:"Smooth" } },
@@ -2541,22 +2561,12 @@ Infos : MOQ logo 300 (après test) • traitement 24h après validation • livr
       SIM:  { label:"Auto (recommandation)", pillar:"Auto", baseReco:{ face:"Auto", thickness:"Auto", eva:"Auto", finish:"Auto" } },
     };
 
-    function openCfg(){ openModal("modalCfg"); }
-    function closeCfg(){ closeModal("modalCfg"); }
-    window.openCfg = openCfg;
-    window.closeCfg = closeCfg;
-
-    let contextMode = "SIM";
-
     function openConfigurator(mode){
-      contextMode = mode || "SIM";
       openCfg();
-
       const modelSel = $("model");
       if(modelSel){
         modelSel.value = (mode && MODEL_META[mode]) ? mode : "SIM";
       }
-
       const t = $("cfgModelTitle");
       const tag = $("cfgModelTag");
       if(t) t.textContent = "Simulation / Configuration";
@@ -2564,7 +2574,7 @@ Infos : MOQ logo 300 (après test) • traitement 24h après validation • livr
 
       applyPresetForMode(mode);
       refreshAll();
-      setTimeout(()=> $("clubName")?.focus(), 30);
+      $("clubName")?.focus();
     }
     window.openConfigurator = openConfigurator;
 
@@ -2574,12 +2584,24 @@ Infos : MOQ logo 300 (après test) • traitement 24h après validation • livr
 
       if(mode === "JV12"){
         if(goal && !goal.value) goal.value = "Parc location / enseignement";
+        if(face) face.value = "Auto";
+        if(thick) thick.value = "Auto";
+        if(eva) eva.value = "Auto";
+        if(fin) fin.value = "Auto";
         if(qty && !qty.value) qty.value = 10;
       }else if(mode === "JV21"){
         if(goal && !goal.value) goal.value = "Mix (parc + boutique)";
+        if(face) face.value = "Auto";
+        if(thick) thick.value = "Auto";
+        if(eva) eva.value = "Auto";
+        if(fin) fin.value = "Auto";
         if(qty && !qty.value) qty.value = 10;
       }else if(mode === "JV13"){
         if(goal && !goal.value) goal.value = "Boutique club (pro-shop)";
+        if(face) face.value = "Auto";
+        if(thick) thick.value = "Auto";
+        if(eva) eva.value = "Auto";
+        if(fin) fin.value = "Auto";
         if(qty && !qty.value) qty.value = 6;
       }else if(mode === "ACC"){
         if(goal && !goal.value) goal.value = "Réassort accessoires";
@@ -2587,30 +2609,14 @@ Infos : MOQ logo 300 (après test) • traitement 24h après validation • livr
       }else if(mode && mode.startsWith("PACK_")){
         if(goal && !goal.value) goal.value = "Mix (parc + boutique)";
         if(qty && !qty.value) qty.value = 16;
+      }else{
+        if(face) face.value = "Auto";
+        if(thick) thick.value = "Auto";
+        if(eva) eva.value = "Auto";
+        if(fin) fin.value = "Auto";
       }
-
-      // Keep user choices if already selected; only set Auto if empty
-      if(face && !face.value) face.value = "Auto";
-      if(thick && !thick.value) thick.value = "Auto";
-      if(eva && !eva.value) eva.value = "Auto";
-      if(fin && !fin.value) fin.value = "Auto";
     }
 
-    // Toggle options
-    function toggleOpt(el){
-      const k = el.getAttribute("data-key");
-      if(!k) return;
-      opts[k] = !opts[k];
-      el.setAttribute("data-on", opts[k] ? "1" : "0");
-      refreshAll();
-    }
-
-    // Wire option buttons
-    document.querySelectorAll(".opt").forEach(el=>{
-      el.addEventListener("click", ()=> toggleOpt(el));
-    });
-
-    // Listen to inputs
     const idsToWatch = ["clubName","clubCity","courts","goal","model","qty","face","thickness","eva","finish","deadline","logoOpt","budget","notes"];
     idsToWatch.forEach(id=>{
       const el = $(id);
@@ -2626,7 +2632,7 @@ Infos : MOQ logo 300 (après test) • traitement 24h après validation • livr
       const budget = $("budget")?.value || "";
 
       let chosen = model;
-      if(chosen === "SIM"){
+      if(chosen === "SIM" || chosen === "Auto (recommandation)"){
         if(goal.includes("Réassort")) chosen = "ACC";
         else if(goal.includes("Boutique")) chosen = "JV13";
         else if(goal.includes("Parc")) chosen = "JV12";
@@ -2688,7 +2694,9 @@ Infos : MOQ logo 300 (après test) • traitement 24h après validation • livr
 
       Object.keys(opts).forEach(k=>{ if(opts[k]) score += 3; });
 
-      return clamp(score, 10, 98);
+      if(score > 98) score = 98;
+      if(score < 10) score = 10;
+      return score;
     }
 
     function buildWhatsAppMessage(reco, score){
@@ -2710,7 +2718,7 @@ Infos : MOQ logo 300 (après test) • traitement 24h après validation • livr
       });
 
       const header =
-`Bonjour, je souhaite une simulation + devis club (padel).
+`Bonjour, je veux une simulation + devis club (padel).
 
 [CLUB]
 - Club : ${club || "(à préciser)"}
@@ -2735,7 +2743,7 @@ Infos : MOQ logo 300 (après test) • traitement 24h après validation • livr
 - ${optList.length ? optList.join(" • ") : "Aucune option ajoutée"}
 
 [SCORE FIT]
-- Fit : ${score}/100 (reco auto)
+- Fit : ${score}/100 (recommandation auto)
 
 [NOTES]
 ${notes ? notes : "(aucune)"}`;
@@ -2765,7 +2773,7 @@ Objectif : pack test si pertinent → validation qualité → déploiement → r
 
       const bar = $("meterBar");
       const fs = $("fitScore");
-      if(bar) bar.style.width = score + "%";
+      if(bar) bar.style.width = Math.max(12, Math.min(98, score)) + "%";
       if(fs) fs.textContent = score;
 
       const msg = buildWhatsAppMessage(reco, score);
@@ -2780,7 +2788,7 @@ Objectif : pack test si pertinent → validation qualité → déploiement → r
         return;
       }
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-      safeOpen(url);
+      window.open(url, "_blank", "noopener,noreferrer");
     }
     window.sendWhatsApp = sendWhatsApp;
 
@@ -2801,54 +2809,7 @@ Objectif : pack test si pertinent → validation qualité → déploiement → r
     }
     window.copyMsg = copyMsg;
 
-    /********************
-     * CTA: MINI-BRIEF COPY (conversion-friendly)
-     ********************/
-    function buildMiniBrief(){
-      const club = ($("leadClub")?.value || "").trim() || "(club)";
-      const email = ($("leadEmail")?.value || "").trim() || "(email)";
-      return `Bonjour, je veux une reco express + pack test recommandé.
-
-- Club : ${club}
-- Email : ${email}
-
-Objectif : parc location + boutique + réassort (process : diagnostic → pack test → déploiement → réassort).
-Je veux : 1) votre reco configs (FV/3K/12K/18K, 38/40, EVA, finition), 2) un pack test, 3) un devis indicatif + délais.`;
-    }
-
-    async function copyText(text, okMsg){
-      try{
-        await navigator.clipboard.writeText(text);
-        alert(okMsg || "Copié.");
-      }catch(e){
-        const ta = document.createElement("textarea");
-        ta.value = text;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand("copy");
-        ta.remove();
-        alert(okMsg || "Copié.");
-      }
-    }
-
-    $("leadCopyBtn")?.addEventListener("click", async () => {
-      await copyText(buildMiniBrief(), "Mini-brief copié.");
-    });
-
-    /********************
-     * BUTTON WIRES
-     ********************/
-    $("runProfitBtn")?.addEventListener("click", runProfitSim);
-    $("resetProfitBtn")?.addEventListener("click", resetProfitSim);
-    $("profitWhatsAppBtn")?.addEventListener("click", sendProfitWhatsApp);
-    $("profitCopyBtn")?.addEventListener("click", copyProfitSummary);
-
-    $("wsSendBtn")?.addEventListener("click", sendWhatsApp);
-    $("wsCopyBtn")?.addEventListener("click", copyMsg);
-
-    /********************
-     * INIT
-     ********************/
+    // Init
     refreshAll();
   </script>
 </body>
