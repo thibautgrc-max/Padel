@@ -226,23 +226,34 @@
       flex-direction:column;
       gap:12px;
     }
+
+    /* ✅ DIMENSIONS FIX: ratio stable + pas de upscale agressif (réduit le flou) */
     .media-box{
       border-radius:22px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.03);
-      min-height: 270px;
       position:relative;
       box-shadow: 0 18px 70px rgba(0,0,0,.35);
       isolation:isolate;
+
+      /* Ratio stable desktop (évite les étirements) */
+      aspect-ratio: 16 / 10;
+      min-height: 320px;
+      max-height: 420px;
     }
     .media-box .hero-img{
       position:absolute; inset:0;
       width:100%; height:100%;
       object-fit:cover;
-      transform: scale(1.03);
+
+      /* ✅ retire le scale qui provoque souvent un resampling flou */
+      transform:none;
+
       filter: saturate(1.05) contrast(1.05);
+      image-rendering:auto;
     }
+
     .media-box::before{
       content:"";
       position:absolute; inset:0;
@@ -369,17 +380,22 @@
       gap:14px;
       align-items:stretch;
     }
+
+    /* ✅ DIMENSIONS FIX: image box stable + hauteur cohérente */
     .product .img{
       border-radius:16px;
       border:1px solid rgba(255,255,255,.10);
       overflow:hidden;
       background: rgba(255,255,255,.03);
-      min-height: 250px;
       display:flex;
       align-items:center;
       justify-content:center;
       position:relative;
       isolation:isolate;
+
+      aspect-ratio: 4 / 3;
+      min-height: 240px;
+      max-height: 360px;
     }
     .product .img::before{
       content:"";
@@ -396,8 +412,11 @@
       z-index:1;
       width:100%;
       height:100%;
-      max-height:360px;
       object-fit:contain;
+
+      /* ✅ limite la hauteur pour éviter le “zoom flou” */
+      max-height: 320px;
+
       padding:10px;
       filter: drop-shadow(0 16px 44px rgba(0,0,0,.35));
     }
@@ -1178,7 +1197,6 @@
       .cfgGrid{grid-template-columns:1fr}
       .summary{position:relative; top:auto;}
       .cfgForm{grid-template-columns:1fr}
-      .media-box .hero-img{transform:none;}
       .valueHead{grid-template-columns:1fr}
       .valueGrid{grid-template-columns:1fr}
       .beforeAfter{grid-template-columns:1fr}
@@ -1186,6 +1204,19 @@
       .psKpis{grid-template-columns:1fr}
       .psViz{grid-template-columns:1fr}
       .donut{width:100%; height:160px}
+
+      /* ✅ DIMENSIONS mobile */
+      .media-box{
+        aspect-ratio: 16 / 11;
+        min-height: 260px;
+        max-height: 360px;
+      }
+      .product .img{
+        aspect-ratio: 16 / 11;
+        min-height: 220px;
+        max-height: 340px;
+      }
+      .product .img img{max-height: 300px;}
     }
   </style>
 </head>
@@ -2381,16 +2412,13 @@
       const ourReplaceCost = replacedYear * SELL.FV;
       const saveReplace = (baselineReplace > 0) ? (baselineReplace - ourReplaceCost) : (baselineBuy > 0 ? (replacedYear * (baselineBuy - SELL.FV)) : 0);
 
-      // 2) Boutique: on crée un delta de profit via (a) gamme/upsell + (b) marge structurelle
-      // - Upsell: +8% sur prix moyen (si gamme premium bien packagée)
-      // - Conversion: +6% sur ventes (si pro-shop structuré + best-sellers)
+      // 2) Boutique: delta profit via (a) gamme/upsell + (b) marge structurelle
       const upsellPct = 0.08;
       const convPct = 0.06;
 
       const ourShopUnits = shopUnitsYear * (1 + convPct);
       const ourShopSell = shopSellAvg * (1 + upsellPct);
 
-      // Coût moyen d'appro (mix 3K/12K/18K) — logique boutique
       const mix = { K3:0.60, K12:0.30, K18:0.10 };
       const ourCogsAvg =
         (SELL.K3 * mix.K3) + (SELL.K12 * mix.K12) + (SELL.K18 * mix.K18);
@@ -2400,7 +2428,7 @@
 
       const deltaShopProfit = ourShopProfitYear - baselineShopProfitYear;
 
-      // 3) Ruptures évitées: on réduit les pertes de 60% via réassort piloté (simple)
+      // 3) Ruptures évitées
       const ruptureReduction = 0.60;
       const savedRuptures = baselineRuptureLoss * ruptureReduction;
 
@@ -2411,9 +2439,9 @@
       const netYear = (saveReplace || 0) + (deltaShopProfit || 0) + (savedRuptures || 0);
       const net3y = netYear * 3;
 
-      // ROI = gain net / budget matériel annuel
+      // ROI
       const roi = materialBudgetYear > 0 ? (netYear / materialBudgetYear) : 0;
-      const roiPct = clamp(roi * 100, 0, 300); // on plafonne visuellement
+      const roiPct = clamp(roi * 100, 0, 300);
 
       // UI: KPIs
       $("k_gainNetYear").textContent = fmtEUR(netYear);
@@ -2430,7 +2458,7 @@
       $("vRupt").textContent = fmtEUR(savedRuptures);
       $("vNet").textContent  = fmtEUR(netYear);
 
-      // Bars (ratio based on max of components)
+      // Bars
       const maxComp = Math.max(1, Math.abs(saveReplace), Math.abs(deltaShopProfit), Math.abs(savedRuptures), Math.abs(netYear));
       setBar("barSave", Math.abs(saveReplace) / maxComp);
       setBar("barShop", Math.abs(deltaShopProfit) / maxComp);
@@ -2440,7 +2468,7 @@
       // Donut
       setDonut(roiPct);
 
-      // Plan WhatsApp (conversion-ready)
+      // Plan WhatsApp
       const clubName = ($("psClubName").value || "").trim() || "(à préciser)";
       const city = ($("psCity").value || "").trim() || "(à préciser)";
 
@@ -2517,7 +2545,7 @@ Infos: MOQ logo 300 (après test) • traitement 24h après validation • livra
     }
     window.copyProfitSummary = copyProfitSummary;
 
-    // ====== CONFIGURATEUR (CONSERVÉ) ======
+    // ====== CONFIGURATEUR ======
     function openCfg(){
       const m = $("modalCfg");
       m.setAttribute("open","");
