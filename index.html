@@ -1166,7 +1166,7 @@
       box-shadow: 0 0 0 6px rgba(255,183,3,.10);
     }
 
-    /* Responsive */
+    /* ✅ RESPONSIVE */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns:1fr;}
       .stats{grid-template-columns:1fr}
@@ -1187,6 +1187,57 @@
       .psViz{grid-template-columns:1fr}
       .donut{width:100%; height:160px}
     }
+
+    /* =========================================================
+       ✅ FIX MAC / CTA MODALS — SCROLLABLE + HEADER STICKY
+       Objectif : ne plus “bouffer” l’écran, garder les CTA visibles
+       Sans changer tes dimensions globales du site.
+       ========================================================= */
+
+    /* Le overlay doit permettre le scroll interne sans bloquer la page */
+    .modal{
+      padding:14px;
+      overscroll-behavior: contain;
+    }
+
+    /* La carte du modal ne doit jamais dépasser la hauteur de l’écran */
+    .modal-card{
+      max-height: calc(100vh - 28px);
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* Header sticky (titre + bouton fermer toujours visibles) */
+    .modal-top{
+      position: sticky;
+      top: 0;
+      z-index: 6;
+      background: rgba(7,10,18,.94);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Même chose mais avec le fond premium du Profit Simulator */
+    .profit-theme .modal-top{
+      background:
+        radial-gradient(1000px 420px at 12% 0%, rgba(255,183,3,.14), transparent 60%),
+        radial-gradient(900px 420px at 88% 10%, rgba(34,211,238,.10), transparent 60%),
+        linear-gradient(180deg, rgba(7,6,16,.94), rgba(14,11,30,.94));
+    }
+
+    /* Le contenu du modal devient la zone scrollable */
+    .modal-body{
+      overflow-y:auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 96px; /* laisse respirer sous les CTA du contenu */
+    }
+
+    /* Empêche Safari de “sauter” quand un input focus (modals) */
+    @supports (-webkit-touch-callout: none){
+      .modal-card{ transform: translateZ(0); }
+    }
+
+    /* Bonus: scroll-margin pour que les ancres ne se cachent pas sous la nav sticky */
+    :target{ scroll-margin-top: 86px; }
   </style>
 </head>
 
@@ -2381,16 +2432,13 @@
       const ourReplaceCost = replacedYear * SELL.FV;
       const saveReplace = (baselineReplace > 0) ? (baselineReplace - ourReplaceCost) : (baselineBuy > 0 ? (replacedYear * (baselineBuy - SELL.FV)) : 0);
 
-      // 2) Boutique: on crée un delta de profit via (a) gamme/upsell + (b) marge structurelle
-      // - Upsell: +8% sur prix moyen (si gamme premium bien packagée)
-      // - Conversion: +6% sur ventes (si pro-shop structuré + best-sellers)
+      // 2) Boutique: delta profit via upsell + conversion + mix
       const upsellPct = 0.08;
       const convPct = 0.06;
 
       const ourShopUnits = shopUnitsYear * (1 + convPct);
       const ourShopSell = shopSellAvg * (1 + upsellPct);
 
-      // Coût moyen d'appro (mix 3K/12K/18K) — logique boutique
       const mix = { K3:0.60, K12:0.30, K18:0.10 };
       const ourCogsAvg =
         (SELL.K3 * mix.K3) + (SELL.K12 * mix.K12) + (SELL.K18 * mix.K18);
@@ -2400,7 +2448,7 @@
 
       const deltaShopProfit = ourShopProfitYear - baselineShopProfitYear;
 
-      // 3) Ruptures évitées: on réduit les pertes de 60% via réassort piloté (simple)
+      // 3) Ruptures évitées: -60% via réassort piloté
       const ruptureReduction = 0.60;
       const savedRuptures = baselineRuptureLoss * ruptureReduction;
 
@@ -2413,7 +2461,7 @@
 
       // ROI = gain net / budget matériel annuel
       const roi = materialBudgetYear > 0 ? (netYear / materialBudgetYear) : 0;
-      const roiPct = clamp(roi * 100, 0, 300); // on plafonne visuellement
+      const roiPct = clamp(roi * 100, 0, 300);
 
       // UI: KPIs
       $("k_gainNetYear").textContent = fmtEUR(netYear);
@@ -2430,7 +2478,7 @@
       $("vRupt").textContent = fmtEUR(savedRuptures);
       $("vNet").textContent  = fmtEUR(netYear);
 
-      // Bars (ratio based on max of components)
+      // Bars
       const maxComp = Math.max(1, Math.abs(saveReplace), Math.abs(deltaShopProfit), Math.abs(savedRuptures), Math.abs(netYear));
       setBar("barSave", Math.abs(saveReplace) / maxComp);
       setBar("barShop", Math.abs(deltaShopProfit) / maxComp);
@@ -2440,7 +2488,7 @@
       // Donut
       setDonut(roiPct);
 
-      // Plan WhatsApp (conversion-ready)
+      // Plan WhatsApp
       const clubName = ($("psClubName").value || "").trim() || "(à préciser)";
       const city = ($("psCity").value || "").trim() || "(à préciser)";
 
