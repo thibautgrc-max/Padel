@@ -18,7 +18,7 @@
         accessoires.png
 
     ✅ IMPORTANT POUR VERCEL (STATIC)
-    - Utilise des chemins ABSOLUS: /images/jv12.png (pas ./images/jv12.png)
+    - Utilise des chemins ABSOLUS: /images/hero-rackets.png (pas ./images/hero-rackets.png)
     - Test direct: https://TON-DOMAINE.vercel.app/images/jv12.png doit afficher l'image.
     - Respect strict des minuscules/majuscules: jv12.png ≠ JV12.png
   -->
@@ -1166,6 +1166,184 @@
       box-shadow: 0 0 0 6px rgba(255,183,3,.10);
     }
 
+    /* =========================================================
+       ✅ NOUVEAU THEME CATALOGUE (DIFF GLOBAL)
+       Objectif : démarquer le catalogue de l’interface principale
+       Palette: "ICE COPPER" (cuivre + ice-blue + graphite)
+       ========================================================= */
+    #catalogue{
+      position:relative;
+      padding-top:44px;
+      padding-bottom:44px;
+      overflow:hidden;
+      background:
+        radial-gradient(900px 520px at 14% 10%, rgba(255,149,60,.16), transparent 60%),
+        radial-gradient(900px 520px at 86% 20%, rgba(56,189,248,.14), transparent 60%),
+        radial-gradient(900px 520px at 50% 120%, rgba(167,139,250,.12), transparent 60%),
+        linear-gradient(180deg, rgba(10,12,20,.88) 0%, rgba(6,8,14,.88) 100%);
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    #catalogue::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(700px 240px at 50% 0%, rgba(255,255,255,.06), transparent 62%),
+        linear-gradient(90deg, rgba(255,149,60,.06), transparent 38%, rgba(56,189,248,.06));
+      pointer-events:none;
+      opacity:.95;
+      mix-blend-mode:screen;
+    }
+    #catalogue .container{position:relative}
+    #catalogue .section-head{
+      align-items:center;
+      gap:14px;
+    }
+    #catalogue h2{
+      letter-spacing:-.3px;
+    }
+    #catalogue .sub{
+      color: rgba(255,255,255,.76);
+    }
+
+    /* Badge "Catalogue Theme" */
+    .catRibbon{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(260px 120px at 18% 0%, rgba(255,149,60,.16), transparent 60%),
+        radial-gradient(260px 120px at 88% 0%, rgba(56,189,248,.14), transparent 60%),
+        rgba(0,0,0,.20);
+      color: rgba(255,255,255,.86);
+      font-size:12.5px;
+      width:fit-content;
+      margin-bottom:10px;
+    }
+    .catDot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, rgba(255,149,60,1), rgba(56,189,248,1));
+      box-shadow: 0 0 0 6px rgba(255,149,60,.10);
+    }
+
+    /* Cards du catalogue: nouvelle matière + bord cuivre/ice */
+    #catalogue .card{
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(720px 260px at 12% 0%, rgba(255,149,60,.10), transparent 60%),
+        radial-gradient(720px 260px at 88% 10%, rgba(56,189,248,.08), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: 0 18px 70px rgba(0,0,0,.42);
+      padding:18px;
+    }
+    #catalogue .card::before{
+      background:
+        radial-gradient(520px 160px at 12% 0%, rgba(255,149,60,.12), transparent 58%),
+        radial-gradient(520px 160px at 88% 0%, rgba(56,189,248,.10), transparent 62%);
+      opacity:.95;
+    }
+
+    /* Images: cadre plus premium */
+    #catalogue .product .img{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(520px 240px at 15% 0%, rgba(255,149,60,.10), transparent 62%),
+        radial-gradient(520px 240px at 85% 15%, rgba(56,189,248,.10), transparent 62%),
+        rgba(0,0,0,.18);
+      box-shadow: 0 18px 70px rgba(0,0,0,.40);
+    }
+    #catalogue .product .img::before{
+      background:
+        radial-gradient(520px 260px at 30% 10%, rgba(255,149,60,.12), transparent 62%),
+        radial-gradient(520px 260px at 80% 25%, rgba(56,189,248,.10), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,0));
+    }
+    #catalogue .img-badge{
+      background:
+        radial-gradient(240px 120px at 12% 0%, rgba(255,149,60,.18), transparent 60%),
+        radial-gradient(240px 120px at 88% 0%, rgba(56,189,248,.14), transparent 60%),
+        rgba(0,0,0,.30);
+      border-color: rgba(255,255,255,.14);
+    }
+
+    /* Pills: cuivre/ice */
+    #catalogue .pill{
+      border-color: rgba(255,255,255,.14);
+      background:
+        radial-gradient(200px 100px at 10% 0%, rgba(255,149,60,.12), transparent 60%),
+        radial-gradient(200px 100px at 90% 0%, rgba(56,189,248,.10), transparent 60%),
+        rgba(0,0,0,.18);
+      color: rgba(255,255,255,.88);
+    }
+
+    /* CTA catalogue: nouveau style "Copper Ice" */
+    .btn-cat{
+      border:1px solid rgba(255,255,255,.18);
+      background:
+        radial-gradient(260px 120px at 18% 0%, rgba(255,149,60,.22), transparent 60%),
+        radial-gradient(260px 120px at 88% 0%, rgba(56,189,248,.16), transparent 60%),
+        linear-gradient(135deg, rgba(20,22,32,.60), rgba(8,10,16,.40));
+      color: rgba(255,255,255,.92);
+      box-shadow: 0 18px 70px rgba(0,0,0,.40);
+    }
+    .btn-cat:hover{
+      border-color: rgba(255,255,255,.26);
+      box-shadow: 0 22px 90px rgba(0,0,0,.48);
+    }
+    .btn-catPrimary{
+      border:1px solid rgba(255,255,255,.22);
+      background: linear-gradient(135deg, rgba(255,149,60,1), rgba(56,189,248,1));
+      color:#061018;
+      box-shadow: 0 18px 66px rgba(255,149,60,.16);
+    }
+    .btn-catPrimary:hover{
+      box-shadow: 0 24px 90px rgba(56,189,248,.14);
+    }
+
+    /* Typo / accents dans le catalogue */
+    #catalogue .eyebrow{color: rgba(255,255,255,.68)}
+    #catalogue .product p{color: rgba(255,255,255,.74)}
+    #catalogue .bullets{color: rgba(255,255,255,.82)}
+    #catalogue .fine{color: rgba(255,255,255,.62)}
+
+    /* =========================================
+       ✅ FIX MAC / CTA MODALS — SCROLLABLE + HEADER STICKY
+       ========================================= */
+    .modal{
+      padding:14px;
+      overscroll-behavior: contain;
+    }
+    .modal-card{
+      max-height: calc(100vh - 28px);
+      display:flex;
+      flex-direction:column;
+    }
+    .modal-top{
+      position: sticky;
+      top: 0;
+      z-index: 6;
+      background: rgba(7,10,18,.94);
+      backdrop-filter: blur(10px);
+    }
+    .profit-theme .modal-top{
+      background:
+        radial-gradient(1000px 420px at 12% 0%, rgba(255,183,3,.14), transparent 60%),
+        radial-gradient(900px 420px at 88% 10%, rgba(34,211,238,.10), transparent 60%),
+        linear-gradient(180deg, rgba(7,6,16,.94), rgba(14,11,30,.94));
+    }
+    .modal-body{
+      overflow-y:auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 96px;
+    }
+    @supports (-webkit-touch-callout: none){
+      .modal-card{ transform: translateZ(0); }
+    }
+    :target{ scroll-margin-top: 86px; }
+
     /* ✅ RESPONSIVE */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns:1fr;}
@@ -1187,57 +1365,6 @@
       .psViz{grid-template-columns:1fr}
       .donut{width:100%; height:160px}
     }
-
-    /* =========================================================
-       ✅ FIX MAC / CTA MODALS — SCROLLABLE + HEADER STICKY
-       Objectif : ne plus “bouffer” l’écran, garder les CTA visibles
-       Sans changer tes dimensions globales du site.
-       ========================================================= */
-
-    /* Le overlay doit permettre le scroll interne sans bloquer la page */
-    .modal{
-      padding:14px;
-      overscroll-behavior: contain;
-    }
-
-    /* La carte du modal ne doit jamais dépasser la hauteur de l’écran */
-    .modal-card{
-      max-height: calc(100vh - 28px);
-      display:flex;
-      flex-direction:column;
-    }
-
-    /* Header sticky (titre + bouton fermer toujours visibles) */
-    .modal-top{
-      position: sticky;
-      top: 0;
-      z-index: 6;
-      background: rgba(7,10,18,.94);
-      backdrop-filter: blur(10px);
-    }
-
-    /* Même chose mais avec le fond premium du Profit Simulator */
-    .profit-theme .modal-top{
-      background:
-        radial-gradient(1000px 420px at 12% 0%, rgba(255,183,3,.14), transparent 60%),
-        radial-gradient(900px 420px at 88% 10%, rgba(34,211,238,.10), transparent 60%),
-        linear-gradient(180deg, rgba(7,6,16,.94), rgba(14,11,30,.94));
-    }
-
-    /* Le contenu du modal devient la zone scrollable */
-    .modal-body{
-      overflow-y:auto;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 96px; /* laisse respirer sous les CTA du contenu */
-    }
-
-    /* Empêche Safari de “sauter” quand un input focus (modals) */
-    @supports (-webkit-touch-callout: none){
-      .modal-card{ transform: translateZ(0); }
-    }
-
-    /* Bonus: scroll-margin pour que les ancres ne se cachent pas sous la nav sticky */
-    :target{ scroll-margin-top: 86px; }
   </style>
 </head>
 
@@ -1266,7 +1393,7 @@
   </header>
 
   <main id="top">
-    <!-- HERO (FAST TRACK SUPPRIMÉ) -->
+    <!-- HERO -->
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
@@ -1507,18 +1634,19 @@
       </div>
     </section>
 
-    <!-- CATALOGUE -->
+    <!-- CATALOGUE (THEME DIFF) -->
     <section id="catalogue">
       <div class="container">
         <div class="section-head">
           <div>
+            <div class="catRibbon"><span class="catDot" aria-hidden="true"></span> Catalogue Theme — ICE COPPER (nouvelle interface)</div>
             <h2>Catalogue clubs (modèles + configurations)</h2>
             <p class="sub">
               Chaque modèle est un <b>châssis</b> + un <b>usage</b>. Ensuite tu configures :
               <b>Face (FV/3K/12K/18K)</b>, <b>38/40mm</b>, EVA, finitions.
             </p>
           </div>
-          <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Configurer & envoyer</button>
+          <button class="btn btn-catPrimary" type="button" onclick="openConfigurator('SIM')">Configurer & envoyer</button>
         </div>
 
         <div class="grid-2">
@@ -1540,7 +1668,7 @@
               <h3>JV12 — “Club Ready” (durabilité & tolérance)</h3>
               <p>Confort + contrôle pour l’apprentissage et la location. Optimisée pour l’usage intensif.</p>
               <ul class="bullets">
-                <li><b>Face :</b> Fibre de verre <span style="color:var(--muted2)">(best value)</span> / Carbone 3K / Carbone 12K / Carbone 18K</li>
+                <li><b>Face :</b> Fibre de verre <span style="color:rgba(255,255,255,.66)">(best value)</span> / Carbone 3K / Carbone 12K / Carbone 18K</li>
                 <li><b>Épaisseur :</b> 38mm ou 40mm (au choix)</li>
                 <li><b>Mousse :</b> EVA Soft / EVA Medium (au choix)</li>
                 <li><b>Option :</b> personnalisation logo (sur demande)</li>
@@ -1551,7 +1679,8 @@
                 <span class="pill"><span class="check">✓</span> Club-use</span>
               </div>
               <div class="product-actions">
-                <button class="btn btn-primary" type="button" onclick="openConfigurator('JV12')">Configurer JV12</button>
+                <button class="btn btn-catPrimary" type="button" onclick="openConfigurator('JV12')">Configurer JV12</button>
+                <a class="btn btn-cat" href="#packs">Voir packs</a>
               </div>
               <p class="fine" style="margin-top:10px;">
                 Astuce : JV12 en <b>FV 38mm</b> = parc rentable. JV12 en <b>3K 40mm</b> = cours avancé / boutique accessible.
@@ -1577,7 +1706,7 @@
               <h3>JV21 — “Stable” (polyvalence & résistance)</h3>
               <p>Stabilité, contrôle et résistance pour clubs avec fréquence élevée et profils mixtes.</p>
               <ul class="bullets">
-                <li><b>Face :</b> Fibre de verre / Carbone 3K <span style="color:var(--muted2)">(équilibre)</span> / Carbone 12K / Carbone 18K</li>
+                <li><b>Face :</b> Fibre de verre / Carbone 3K <span style="color:rgba(255,255,255,.66)">(équilibre)</span> / Carbone 12K / Carbone 18K</li>
                 <li><b>Épaisseur :</b> 38mm ou 40mm (au choix)</li>
                 <li><b>Mousse :</b> EVA Soft / EVA Medium (au choix)</li>
                 <li><b>Option :</b> personnalisation logo (sur demande)</li>
@@ -1588,7 +1717,8 @@
                 <span class="pill"><span class="check">✓</span> Polyvalence</span>
               </div>
               <div class="product-actions">
-                <button class="btn btn-primary" type="button" onclick="openConfigurator('JV21')">Configurer JV21</button>
+                <button class="btn btn-catPrimary" type="button" onclick="openConfigurator('JV21')">Configurer JV21</button>
+                <button class="btn btn-cat" type="button" onclick="openProfitSimulator('COMPARE')">Comparer fournisseur</button>
               </div>
               <p class="fine" style="margin-top:10px;">
                 Astuce : JV21 en <b>3K 38mm</b> = club “mix” parfait. JV21 en <b>12K 40mm</b> = boutique + performance.
@@ -1614,9 +1744,9 @@
               <h3>JV13 — “Pro Feel” (premium & performance)</h3>
               <p>Plus de répondant, sensation premium. Idéale pour la vente en pro-shop et joueurs réguliers.</p>
               <ul class="bullets">
-                <li><b>Face :</b> Carbone 3K / Carbone 12K <span style="color:var(--muted2)">(premium)</span> / Carbone 18K / Fibre de verre (accessible)</li>
+                <li><b>Face :</b> Carbone 3K / Carbone 12K <span style="color:rgba(255,255,255,.66)">(premium)</span> / Carbone 18K / Fibre de verre (accessible)</li>
                 <li><b>Épaisseur :</b> 38mm ou 40mm (au choix)</li>
-                <li><b>Mousse :</b> EVA Medium <span style="color:var(--muted2)">(reco)</span> / EVA Soft</li>
+                <li><b>Mousse :</b> EVA Medium <span style="color:rgba(255,255,255,.66)">(reco)</span> / EVA Soft</li>
                 <li><b>Option :</b> personnalisation logo (sur demande)</li>
               </ul>
               <div style="margin-top:10px">
@@ -1625,7 +1755,8 @@
                 <span class="pill"><span class="check">✓</span> Performance</span>
               </div>
               <div class="product-actions">
-                <button class="btn btn-primary" type="button" onclick="openConfigurator('JV13')">Configurer JV13</button>
+                <button class="btn btn-catPrimary" type="button" onclick="openConfigurator('JV13')">Configurer JV13</button>
+                <button class="btn btn-cat" type="button" onclick="openProfitSimulator('EXTREME')">Calculer gain</button>
               </div>
               <p class="fine" style="margin-top:10px;">
                 Astuce : JV13 en <b>12K/18K 40mm</b> = “wow effect” boutique. JV13 en <b>FV 38mm</b> = entrée de gamme boutique.
@@ -1662,7 +1793,8 @@
                 <span class="pill"><span class="check">✓</span> Club-first</span>
               </div>
               <div class="product-actions">
-                <button class="btn btn-primary" type="button" onclick="openConfigurator('ACC')">Simuler un réassort</button>
+                <button class="btn btn-catPrimary" type="button" onclick="openConfigurator('ACC')">Simuler un réassort</button>
+                <a class="btn btn-cat" href="#simulation">Voir WhatsApp</a>
               </div>
             </div>
           </article>
@@ -1850,7 +1982,7 @@
       </div>
     </div>
 
-    <!-- ✅ MODAL PROFIT SIMULATOR (VERSION EXTREME + THEME DIFF + GRAPHIQUES) -->
+    <!-- ✅ MODAL PROFIT SIMULATOR -->
     <div class="modal profit-theme" id="modalProfit" aria-hidden="true">
       <div class="modal-card" role="dialog" aria-modal="true" aria-label="Club Profit Simulator">
         <div class="modal-top">
