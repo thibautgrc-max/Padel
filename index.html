@@ -12,14 +12,21 @@
       index.html
       /images
         hero-rackets.png
+        jv11.png
         jv12.png
-        jv21.png
         jv13.png
+        jv14.png
+        jv21.png
+        jv22.png
+        jv23.png
+        jv24.png
+        jv31.png
+        jv33.png
+        jv34.png
         accessoires.png
 
     ✅ IMPORTANT POUR VERCEL (STATIC)
-    - Utilise des chemins ABSOLUS: /images/hero-rackets.png (pas ./images/hero-rackets.png)
-    - Test direct: https://TON-DOMAINE.vercel.app/images/jv12.png doit afficher l'image.
+    - Utilise des chemins ABSOLUS: /images/jv12.png (pas ./images/jv12.png)
     - Respect strict des minuscules/majuscules: jv12.png ≠ JV12.png
   -->
 
@@ -464,234 +471,6 @@
     }
     .hero-placeholder b{display:block; color:rgba(255,255,255,.92); margin-bottom:6px}
 
-    /* ====== VALUE SECTION ====== */
-    .valueHero{
-      border-radius:var(--radius2);
-      border:1px solid rgba(255,255,255,.12);
-      background:
-        radial-gradient(860px 260px at 10% 0%, rgba(46,229,157,.16), transparent 55%),
-        radial-gradient(860px 260px at 90% 0%, rgba(124,92,255,.16), transparent 55%),
-        radial-gradient(860px 260px at 50% 120%, rgba(0,224,255,.12), transparent 60%),
-        rgba(255,255,255,.04);
-      box-shadow: var(--shadow2);
-      padding:18px;
-      overflow:hidden;
-      position:relative;
-    }
-    .valueHero::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(520px 140px at 12% 0%, rgba(0,224,255,.10), transparent 55%),
-        radial-gradient(520px 160px at 88% 0%, rgba(124,92,255,.12), transparent 60%);
-      pointer-events:none;
-      opacity:.95;
-    }
-    .valueHero > *{position:relative}
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      border-radius:999px;
-      padding:8px 12px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.04);
-      color:rgba(255,255,255,.86);
-      font-size:13px;
-      margin-bottom:10px;
-      width:fit-content;
-    }
-    .kicker .spark{
-      width:10px; height:10px; border-radius:50%;
-      background: linear-gradient(135deg, var(--good), var(--accent2));
-      box-shadow: 0 0 0 6px rgba(46,229,157,.12);
-    }
-    .valueHead{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    .valueCopy h2{margin:0 0 8px}
-    .valueCopy .sub{margin:0; max-width: 80ch}
-    .valueCTAs{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      align-items:stretch;
-      justify-content:center;
-    }
-    .trustRow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      color:var(--muted2);
-      font-size:12.5px;
-    }
-    .trustRow span{
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      padding:7px 10px;
-      border-radius:999px;
-    }
-
-    .valueGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:12px;
-      margin-top:12px;
-    }
-    .vcard{
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-      box-shadow: 0 12px 46px rgba(0,0,0,.24);
-      padding:16px;
-      position:relative;
-      overflow:hidden;
-    }
-    .vcard::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(560px 140px at 18% 0%, rgba(46,229,157,.12), transparent 55%),
-        radial-gradient(560px 160px at 82% 0%, rgba(0,224,255,.10), transparent 60%);
-      pointer-events:none;
-      opacity:.95;
-    }
-    .vcard > *{position:relative}
-    .vcard h3{margin:0 0 8px; font-size:16px}
-    .vcard p{margin:0 0 10px; color:var(--muted); font-size:14px}
-    .vlist{margin:0; padding:0; list-style:none; display:grid; gap:8px}
-    .vlist li{
-      display:flex; gap:10px; align-items:flex-start;
-      color: rgba(255,255,255,.82);
-      font-size:13.5px;
-      line-height:1.35;
-    }
-    .vlist .bullet{
-      width:18px; height:18px; border-radius:6px;
-      display:inline-flex; align-items:center; justify-content:center;
-      background: rgba(46,229,157,.14);
-      border: 1px solid rgba(46,229,157,.25);
-      color: rgba(46,229,157,1);
-      font-weight:900;
-      font-size:12px;
-      flex:0 0 auto;
-      margin-top:1px;
-    }
-    .vmetric{
-      margin-top:12px;
-      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
-    }
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(7,10,18,.50);
-      color: rgba(255,255,255,.88);
-      font-size:12px;
-      white-space:nowrap;
-    }
-    .metric{
-      color: rgba(255,255,255,.78);
-      font-size:12.5px;
-      white-space:nowrap;
-    }
-
-    .beforeAfter{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-      margin-top:12px;
-    }
-    .ba{
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      padding:14px;
-      position:relative;
-      overflow:hidden;
-    }
-    .ba::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(520px 140px at 10% 0%, rgba(255,92,124,.10), transparent 55%),
-        radial-gradient(520px 160px at 90% 0%, rgba(0,224,255,.10), transparent 60%);
-      pointer-events:none;
-      opacity:.9;
-    }
-    .ba > *{position:relative}
-    .ba h4{margin:0 0 8px; font-size:13px; letter-spacing:.2px}
-    .ba ul{margin:0; padding-left:18px; color:rgba(255,255,255,.78); font-size:13.5px}
-    .ba li{margin:6px 0}
-    .ba .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      border-radius:999px;
-      padding:6px 10px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(7,10,18,.55);
-      color: rgba(255,255,255,.86);
-      font-size:12px;
-      margin-bottom:8px;
-      width:fit-content;
-    }
-    .ba .badge i{
-      width:10px; height:10px; border-radius:50%;
-      background: linear-gradient(135deg, var(--bad), var(--warn));
-      box-shadow: 0 0 0 6px rgba(255,92,124,.10);
-      display:inline-block;
-    }
-    .ba.good .badge i{
-      background: linear-gradient(135deg, var(--good), var(--accent2));
-      box-shadow: 0 0 0 6px rgba(46,229,157,.10);
-    }
-
-    /* Sim Card */
-    .simGrid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:12px;
-      align-items:stretch;
-    }
-    .simCard{
-      padding:18px;
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.12);
-      background:
-        radial-gradient(760px 200px at 10% 0%, rgba(46,229,157,.14), transparent 55%),
-        radial-gradient(760px 200px at 90% 0%, rgba(0,224,255,.12), transparent 55%),
-        rgba(255,255,255,.04);
-      box-shadow: var(--shadow);
-    }
-    .simCard h3{margin:0 0 8px; font-size:18px}
-    .simCard p{margin:0 0 12px; color:var(--muted); font-size:14px}
-    .simFacts{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:10px;
-      margin-top:10px;
-    }
-    .fact{
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      padding:12px;
-    }
-    .fact b{display:block; font-size:14px}
-    .fact span{display:block; color:var(--muted2); font-size:12px; margin-top:3px}
-
-    .fine{
-      color:var(--muted2);
-      font-size:12px;
-      margin:0;
-    }
-    .divider{
-      height:1px;
-      background: rgba(255,255,255,.08);
-      margin:14px 0;
-    }
-
     /* Footer + sticky bar */
     footer{
       padding:26px 0 40px;
@@ -902,437 +681,42 @@
       line-height:1.35;
     }
 
-    /* =========================================
-       PROFIT SIMULATOR — THEME DÉDIÉ (DIFF)
-       ========================================= */
-    .profit-theme{
-      --pBg1:#070610;
-      --pBg2:#0E0B1E;
-      --pCard:rgba(255,255,255,.06);
-      --pStroke:rgba(255,255,255,.14);
-      --pText:rgba(255,255,255,.92);
-      --pMuted:rgba(255,255,255,.72);
-      --pMuted2:rgba(255,255,255,.55);
-
-      /* Palette premium distincte */
-      --pA:#FFB703;    /* gold */
-      --pB:#FB7185;    /* rose */
-      --pC:#22D3EE;    /* cyan */
-      --pG:#34D399;    /* green */
-      --pD:#A78BFA;    /* violet soft */
-
-      --pShadow: 0 30px 120px rgba(0,0,0,.72);
-    }
-
-    .profit-theme .modal-card{
-      border-color: rgba(255,255,255,.16);
-      background:
-        radial-gradient(1000px 420px at 12% 0%, rgba(255,183,3,.14), transparent 60%),
-        radial-gradient(900px 420px at 88% 10%, rgba(34,211,238,.10), transparent 60%),
-        radial-gradient(900px 420px at 50% 120%, rgba(167,139,250,.10), transparent 60%),
-        linear-gradient(180deg, rgba(7,6,16,.94), rgba(14,11,30,.94));
-      box-shadow: var(--pShadow);
-    }
-    .profit-theme .modal-top{
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-    .profit-theme .modal-top h3{
-      letter-spacing:-.2px;
-    }
-    .profit-theme .modal-top p{
-      color: rgba(255,255,255,.72);
-    }
-    .profit-theme .xbtn{
-      border-color: rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-    }
-
-    .psGrid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:12px;
-      align-items:stretch;
-    }
-    .psPanel{
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      padding:14px;
-      position:relative;
-      overflow:hidden;
-    }
-    .profit-theme .psPanel{
-      border-color: rgba(255,255,255,.14);
-      background:
-        radial-gradient(820px 260px at 12% 0%, rgba(255,183,3,.10), transparent 60%),
-        radial-gradient(820px 260px at 88% 10%, rgba(34,211,238,.08), transparent 60%),
-        rgba(255,255,255,.04);
-    }
-    .psTitle{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
-      margin-bottom:10px;
-    }
-    .psTitle b{font-size:15px}
-    .psTitle span{
-      font-family:var(--mono);
+    .fine{
+      color:var(--muted2);
       font-size:12px;
-      color: rgba(255,255,255,.70);
+      margin:0;
+    }
+    .divider{
+      height:1px;
+      background: rgba(255,255,255,.08);
+      margin:14px 0;
     }
 
-    .psKpis{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:10px;
-      margin-bottom:12px;
-    }
-    .kpi{
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      padding:12px;
-      overflow:hidden;
-      position:relative;
-      min-height: 92px;
-    }
-    .profit-theme .kpi{
-      border-color: rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-    }
-    .kpi::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(520px 140px at 18% 0%, rgba(46,229,157,.10), transparent 55%),
-        radial-gradient(520px 160px at 82% 0%, rgba(0,224,255,.08), transparent 60%);
-      pointer-events:none;
-      opacity:.90;
-    }
-    .profit-theme .kpi::before{
-      background:
-        radial-gradient(520px 160px at 18% 0%, rgba(255,183,3,.14), transparent 58%),
-        radial-gradient(520px 160px at 88% 0%, rgba(34,211,238,.10), transparent 62%);
-      opacity:.95;
-    }
-    .kpi > *{position:relative}
-    .kpi .l{color:rgba(255,255,255,.72); font-size:12px}
-    .kpi .v{font-size:20px; font-weight:900; letter-spacing:-.2px; margin-top:6px}
-    .kpi .h{color:rgba(255,255,255,.55); font-size:12px; margin-top:4px}
-
-    .psTable{
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.03);
-      padding:12px;
-      margin-top:10px;
-    }
-    .profit-theme .psTable{
-      border-color: rgba(255,255,255,.14);
-      background: rgba(0,0,0,.18);
-    }
-    .psRow{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:8px 0;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      font-size:13.5px;
-    }
-    .psRow:last-child{border-bottom:none}
-    .psRow span{color:rgba(255,255,255,.72)}
-    .psRow b{color:rgba(255,255,255,.92)}
-
-    .psActions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-top:12px;
-    }
-    .psNote{
-      color:rgba(255,255,255,.58);
-      font-size:12px;
-      margin-top:10px;
-    }
-
-    .psSummaryBox{
-      margin-top:12px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.18);
-      padding:12px;
-      font-family: var(--mono);
-      font-size:12px;
-      color:rgba(255,255,255,.78);
-      white-space:pre-wrap;
-      line-height:1.35;
-      max-height:260px;
-      overflow:auto;
-    }
-
-    /* Profit charts */
-    .psViz{
-      display:grid;
-      grid-template-columns: 140px 1fr;
-      gap:12px;
-      align-items:center;
-      margin-top:10px;
-    }
-    .donut{
-      width:140px; height:140px;
-      border-radius:24px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.18);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      overflow:hidden;
-    }
-    .profit-theme .donut{
-      border-color: rgba(255,255,255,.14);
-      background:
-        radial-gradient(280px 180px at 30% 10%, rgba(255,183,3,.14), transparent 60%),
-        rgba(0,0,0,.18);
-    }
-    .donut svg{display:block}
-    .donutCenter{
-      position:absolute;
-      inset:0;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      gap:4px;
-      pointer-events:none;
-    }
-    .donutCenter b{font-size:18px; letter-spacing:-.2px}
-    .donutCenter span{font-size:12px; color:rgba(255,255,255,.70)}
-    .barCard{
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.18);
-      padding:12px;
-    }
-    .profit-theme .barCard{
-      border-color: rgba(255,255,255,.14);
-      background: rgba(0,0,0,.18);
-    }
-    .barRow{
-      display:grid;
-      grid-template-columns: 1.2fr 3fr 1fr;
-      gap:10px;
-      align-items:center;
-      padding:8px 0;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      font-size:13px;
-    }
-    .barRow:last-child{border-bottom:none}
-    .barRow .name{color:rgba(255,255,255,.80)}
-    .bar{
-      height:10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.06);
-      overflow:hidden;
-    }
-    .bar > i{
-      display:block;
-      height:100%;
-      width:10%;
-      border-radius:999px;
-      background: linear-gradient(135deg, rgba(255,183,3,1), rgba(34,211,238,1));
-    }
-    .barRow .val{color:rgba(255,255,255,.88); text-align:right; white-space:nowrap; font-family:var(--mono); font-size:12px}
-
-    .badgeLine{
-      display:flex; gap:8px; flex-wrap:wrap; align-items:center;
-      margin-top:10px;
-    }
-    .pBadge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.18);
-      color: rgba(255,255,255,.86);
-      font-size:12px;
-      white-space:nowrap;
-    }
-    .pDot{
-      width:9px; height:9px; border-radius:50%;
-      background: linear-gradient(135deg, var(--pA), var(--pC));
-      box-shadow: 0 0 0 6px rgba(255,183,3,.10);
+    /* ✅ RESPONSIVE */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr;}
+      .stats{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .product{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .cfgGrid{grid-template-columns:1fr}
+      .summary{position:relative; top:auto;}
+      .cfgForm{grid-template-columns:1fr}
+      .media-box .hero-img{transform:none;}
     }
 
     /* =========================================================
-       ✅ NOUVEAU THEME CATALOGUE (DIFF GLOBAL)
-       Objectif : démarquer le catalogue de l’interface principale
-       Palette: "ICE COPPER" (cuivre + ice-blue + graphite)
-       ========================================================= */
-    #catalogue{
-      position:relative;
-      padding-top:44px;
-      padding-bottom:44px;
-      overflow:hidden;
-      background:
-        radial-gradient(900px 520px at 14% 10%, rgba(255,149,60,.16), transparent 60%),
-        radial-gradient(900px 520px at 86% 20%, rgba(56,189,248,.14), transparent 60%),
-        radial-gradient(900px 520px at 50% 120%, rgba(167,139,250,.12), transparent 60%),
-        linear-gradient(180deg, rgba(10,12,20,.88) 0%, rgba(6,8,14,.88) 100%);
-      border-top: 1px solid rgba(255,255,255,.08);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    #catalogue::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(700px 240px at 50% 0%, rgba(255,255,255,.06), transparent 62%),
-        linear-gradient(90deg, rgba(255,149,60,.06), transparent 38%, rgba(56,189,248,.06));
-      pointer-events:none;
-      opacity:.95;
-      mix-blend-mode:screen;
-    }
-    #catalogue .container{position:relative}
-    #catalogue .section-head{
-      align-items:center;
-      gap:14px;
-    }
-    #catalogue h2{
-      letter-spacing:-.3px;
-    }
-    #catalogue .sub{
-      color: rgba(255,255,255,.76);
-    }
-
-    /* Badge "Catalogue Theme" */
-    .catRibbon{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background:
-        radial-gradient(260px 120px at 18% 0%, rgba(255,149,60,.16), transparent 60%),
-        radial-gradient(260px 120px at 88% 0%, rgba(56,189,248,.14), transparent 60%),
-        rgba(0,0,0,.20);
-      color: rgba(255,255,255,.86);
-      font-size:12.5px;
-      width:fit-content;
-      margin-bottom:10px;
-    }
-    .catDot{
-      width:10px; height:10px; border-radius:50%;
-      background: linear-gradient(135deg, rgba(255,149,60,1), rgba(56,189,248,1));
-      box-shadow: 0 0 0 6px rgba(255,149,60,.10);
-    }
-
-    /* Cards du catalogue: nouvelle matière + bord cuivre/ice */
-    #catalogue .card{
-      border-radius: 22px;
-      border:1px solid rgba(255,255,255,.12);
-      background:
-        radial-gradient(720px 260px at 12% 0%, rgba(255,149,60,.10), transparent 60%),
-        radial-gradient(720px 260px at 88% 10%, rgba(56,189,248,.08), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      box-shadow: 0 18px 70px rgba(0,0,0,.42);
-      padding:18px;
-    }
-    #catalogue .card::before{
-      background:
-        radial-gradient(520px 160px at 12% 0%, rgba(255,149,60,.12), transparent 58%),
-        radial-gradient(520px 160px at 88% 0%, rgba(56,189,248,.10), transparent 62%);
-      opacity:.95;
-    }
-
-    /* Images: cadre plus premium */
-    #catalogue .product .img{
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.14);
-      background:
-        radial-gradient(520px 240px at 15% 0%, rgba(255,149,60,.10), transparent 62%),
-        radial-gradient(520px 240px at 85% 15%, rgba(56,189,248,.10), transparent 62%),
-        rgba(0,0,0,.18);
-      box-shadow: 0 18px 70px rgba(0,0,0,.40);
-    }
-    #catalogue .product .img::before{
-      background:
-        radial-gradient(520px 260px at 30% 10%, rgba(255,149,60,.12), transparent 62%),
-        radial-gradient(520px 260px at 80% 25%, rgba(56,189,248,.10), transparent 62%),
-        linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,0));
-    }
-    #catalogue .img-badge{
-      background:
-        radial-gradient(240px 120px at 12% 0%, rgba(255,149,60,.18), transparent 60%),
-        radial-gradient(240px 120px at 88% 0%, rgba(56,189,248,.14), transparent 60%),
-        rgba(0,0,0,.30);
-      border-color: rgba(255,255,255,.14);
-    }
-
-    /* Pills: cuivre/ice */
-    #catalogue .pill{
-      border-color: rgba(255,255,255,.14);
-      background:
-        radial-gradient(200px 100px at 10% 0%, rgba(255,149,60,.12), transparent 60%),
-        radial-gradient(200px 100px at 90% 0%, rgba(56,189,248,.10), transparent 60%),
-        rgba(0,0,0,.18);
-      color: rgba(255,255,255,.88);
-    }
-
-    /* CTA catalogue: nouveau style "Copper Ice" */
-    .btn-cat{
-      border:1px solid rgba(255,255,255,.18);
-      background:
-        radial-gradient(260px 120px at 18% 0%, rgba(255,149,60,.22), transparent 60%),
-        radial-gradient(260px 120px at 88% 0%, rgba(56,189,248,.16), transparent 60%),
-        linear-gradient(135deg, rgba(20,22,32,.60), rgba(8,10,16,.40));
-      color: rgba(255,255,255,.92);
-      box-shadow: 0 18px 70px rgba(0,0,0,.40);
-    }
-    .btn-cat:hover{
-      border-color: rgba(255,255,255,.26);
-      box-shadow: 0 22px 90px rgba(0,0,0,.48);
-    }
-    .btn-catPrimary{
-      border:1px solid rgba(255,255,255,.22);
-      background: linear-gradient(135deg, rgba(255,149,60,1), rgba(56,189,248,1));
-      color:#061018;
-      box-shadow: 0 18px 66px rgba(255,149,60,.16);
-    }
-    .btn-catPrimary:hover{
-      box-shadow: 0 24px 90px rgba(56,189,248,.14);
-    }
-
-    /* Typo / accents dans le catalogue */
-    #catalogue .eyebrow{color: rgba(255,255,255,.68)}
-    #catalogue .product p{color: rgba(255,255,255,.74)}
-    #catalogue .bullets{color: rgba(255,255,255,.82)}
-    #catalogue .fine{color: rgba(255,255,255,.62)}
-
-    /* =========================================
        ✅ FIX MAC / CTA MODALS — SCROLLABLE + HEADER STICKY
-       ========================================= */
-    .modal{
-      padding:14px;
-      overscroll-behavior: contain;
-    }
-    .modal-card{
-      max-height: calc(100vh - 28px);
-      display:flex;
-      flex-direction:column;
-    }
+       ========================================================= */
+    .modal{ padding:14px; overscroll-behavior: contain; }
+    .modal-card{ max-height: calc(100vh - 28px); display:flex; flex-direction:column; }
     .modal-top{
       position: sticky;
       top: 0;
       z-index: 6;
       background: rgba(7,10,18,.94);
       backdrop-filter: blur(10px);
-    }
-    .profit-theme .modal-top{
-      background:
-        radial-gradient(1000px 420px at 12% 0%, rgba(255,183,3,.14), transparent 60%),
-        radial-gradient(900px 420px at 88% 10%, rgba(34,211,238,.10), transparent 60%),
-        linear-gradient(180deg, rgba(7,6,16,.94), rgba(14,11,30,.94));
     }
     .modal-body{
       overflow-y:auto;
@@ -1344,26 +728,367 @@
     }
     :target{ scroll-margin-top: 86px; }
 
-    /* ✅ RESPONSIVE */
+    /* =========================================================
+       ✅ INTERFACE #2 — CATALOGUE COMPLET (MODAL PREMIUM)
+       ========================================================= */
+    .cb-modal{
+      position:fixed; inset:0;
+      display:none;
+      z-index:90;
+    }
+    .cb-modal[open]{display:block;}
+    .cb-modal__backdrop{
+      position:absolute; inset:0;
+      background: rgba(0,0,0,.62);
+      backdrop-filter: blur(12px);
+    }
+    .cb-modal__panel{
+      position:absolute;
+      inset: 14px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(1000px 420px at 12% 0%, rgba(124,92,255,.16), transparent 60%),
+        radial-gradient(900px 420px at 88% 10%, rgba(0,224,255,.12), transparent 60%),
+        radial-gradient(900px 420px at 50% 120%, rgba(46,229,157,.10), transparent 60%),
+        rgba(7,10,18,.94);
+      box-shadow: 0 30px 120px rgba(0,0,0,.70);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+    .cb-modal__topbar{
+      padding:16px 16px 12px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      position:sticky;
+      top:0;
+      z-index:5;
+      background: rgba(7,10,18,.85);
+      backdrop-filter: blur(10px);
+    }
+    .cb-kicker{
+      font-family:var(--mono);
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      font-size:11px;
+      color:rgba(255,255,255,.62);
+      margin-bottom:6px;
+    }
+    .cb-h1{
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:-.2px;
+      margin:0;
+    }
+    .cb-iconbtn{
+      border-radius:999px;
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.92);
+      cursor:pointer;
+    }
+    .cb-modal__content{
+      display:grid;
+      grid-template-columns: 410px 1fr;
+      gap:0;
+      min-height:0;
+      flex:1;
+    }
+    .cb-side{
+      border-right:1px solid rgba(255,255,255,.08);
+      padding:14px 14px 18px;
+      overflow:auto;
+      min-height:0;
+    }
+    .cb-main{
+      padding:14px 14px 18px;
+      overflow:auto;
+      min-height:0;
+    }
+    .cb-label{
+      font-size:12px;
+      color:rgba(255,255,255,.74);
+      margin-bottom:8px;
+    }
+    .cb-side__block{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius:18px;
+      padding:12px;
+      margin-bottom:12px;
+    }
+    .cb-filters{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .cb-chip{
+      border-radius:999px;
+      padding:8px 10px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.84);
+      font-size:12.5px;
+      cursor:pointer;
+      user-select:none;
+      transition:.15s ease;
+    }
+    .cb-chip:hover{transform:translateY(-1px); border-color: rgba(255,255,255,.18)}
+    .cb-chip.is-active{
+      border-color: rgba(0,224,255,.35);
+      background: rgba(0,224,255,.10);
+    }
+    .cb-search input{
+      width:100%;
+      margin-top:10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      padding:12px 12px;
+      outline:none;
+      font-size:14px;
+    }
+    .cb-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+    }
+    .cb-card{
+      display:grid;
+      grid-template-columns: 78px 1fr;
+      gap:10px;
+      align-items:center;
+      padding:10px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      cursor:pointer;
+      transition:.15s ease;
+    }
+    .cb-card:hover{transform:translateY(-1px); border-color: rgba(255,255,255,.18)}
+    .cb-card.is-active{
+      border-color: rgba(46,229,157,.35);
+      background: rgba(46,229,157,.08);
+    }
+    .cb-card__thumb{
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+      overflow:hidden;
+      height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .cb-card__thumb img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      padding:6px;
+      filter: drop-shadow(0 12px 28px rgba(0,0,0,.35));
+    }
+    .cb-card__title{
+      font-weight:900;
+      letter-spacing:-.2px;
+      margin:0 0 3px;
+      font-size:14px;
+    }
+    .cb-card__meta{
+      font-size:12.5px;
+      color: rgba(255,255,255,.70);
+      line-height:1.25;
+    }
+
+    .cb-product{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:12px;
+      align-items:stretch;
+    }
+    .cb-product__media,
+    .cb-product__info{
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      padding:12px;
+      overflow:hidden;
+      position:relative;
+    }
+    .cb-media{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      overflow:hidden;
+      min-height: 320px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .cb-media img{
+      width:100%;
+      height:100%;
+      max-height: 420px;
+      object-fit:contain;
+      padding:10px;
+      filter: drop-shadow(0 18px 46px rgba(0,0,0,.40));
+    }
+    .cb-media__nav{
+      position:absolute;
+      left:10px; right:10px; bottom:10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      pointer-events:auto;
+    }
+    .cb-mini{
+      border-radius:999px;
+      padding:8px 10px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(7,10,18,.55);
+      color: rgba(255,255,255,.92);
+      cursor:pointer;
+    }
+    .cb-mini__text{
+      font-family:var(--mono);
+      font-size:12px;
+      color: rgba(255,255,255,.72);
+      border-radius:999px;
+      padding:7px 10px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .cb-thumbs{
+      margin-top:10px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .cb-thumb{
+      width:64px;
+      height:52px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      overflow:hidden;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:.15s ease;
+    }
+    .cb-thumb:hover{transform:translateY(-1px); border-color: rgba(255,255,255,.20)}
+    .cb-thumb.is-active{
+      border-color: rgba(0,224,255,.35);
+      background: rgba(0,224,255,.10);
+    }
+    .cb-thumb img{width:100%; height:100%; object-fit:contain; padding:6px}
+
+    .cb-badges{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px}
+    .cb-badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      color: rgba(255,255,255,.88);
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .cb-dot{
+      width:9px; height:9px; border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(124,92,255,.10);
+    }
+
+    .cb-product__name{
+      font-size:18px;
+      font-weight:950;
+      letter-spacing:-.2px;
+      margin:0 0 6px;
+    }
+    .cb-product__meta{
+      color: rgba(255,255,255,.72);
+      font-size:13px;
+      margin-bottom:10px;
+    }
+    .cb-product__desc{
+      color: rgba(255,255,255,.78);
+      font-size:13.5px;
+      line-height:1.35;
+      margin-bottom:12px;
+    }
+    .cb-box{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      padding:12px;
+    }
+    .cb-box__title{
+      font-size:12px;
+      color: rgba(255,255,255,.74);
+      margin-bottom:8px;
+    }
+    .cb-box textarea{
+      width:100%;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      padding:12px 12px;
+      outline:none;
+      font-family: var(--mono);
+      font-size:12px;
+      line-height:1.35;
+      min-height: 160px;
+      resize: vertical;
+    }
+    .cb-actions{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .cb-btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius:999px;
+      padding:11px 14px;
+      font-weight:900;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.05);
+      color:rgba(255,255,255,.92);
+      transition:.18s ease;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+      text-decoration:none;
+    }
+    .cb-btn:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.22)}
+    .cb-btn--primary{
+      background: linear-gradient(135deg, rgba(46,229,157,1), rgba(0,224,255,1));
+      color:#04110d;
+      border:1px solid rgba(255,255,255,.20);
+    }
+    .cb-btn--ghost{background:rgba(255,255,255,.03)}
+    .cb-note{
+      margin-top:10px;
+      color: rgba(255,255,255,.58);
+      font-size:12px;
+    }
+
     @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr;}
-      .stats{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-      .product{grid-template-columns:1fr}
-      .nav-links{display:none}
-      .simGrid{grid-template-columns:1fr}
-      .cfgGrid{grid-template-columns:1fr}
-      .summary{position:relative; top:auto;}
-      .cfgForm{grid-template-columns:1fr}
-      .media-box .hero-img{transform:none;}
-      .valueHead{grid-template-columns:1fr}
-      .valueGrid{grid-template-columns:1fr}
-      .beforeAfter{grid-template-columns:1fr}
-      .psGrid{grid-template-columns:1fr}
-      .psKpis{grid-template-columns:1fr}
-      .psViz{grid-template-columns:1fr}
-      .donut{width:100%; height:160px}
+      .cb-modal__content{grid-template-columns: 1fr;}
+      .cb-side{border-right:none; border-bottom:1px solid rgba(255,255,255,.08)}
+      .cb-product{grid-template-columns:1fr}
+      .cb-media{min-height: 260px;}
     }
   </style>
 </head>
@@ -1417,9 +1142,9 @@
             </div>
 
             <div class="mini" aria-label="Points clés">
-              <span>✅ Fibre de verre / De carbonne / 3K / 12K / 18k</span>
+              <span>✅ Fibre de verre / Carbone / 3K / 12K / 18K</span>
               <span>✅ Épaisseur 38mm / 40mm</span>
-              <span>✅ location club / usage intensif / durabilité + Boutique + Réapprovisionement</span>
+              <span>✅ Location club / usage intensif / durabilité + Boutique + Réapprovisionnement</span>
               <span>✅ Devis WhatsApp instantané</span>
             </div>
           </div>
@@ -1461,7 +1186,7 @@
                 <span>Produits premium à forte marge</span>
               </div>
               <div class="stat">
-                <b>service réapprovisionement</b>
+                <b>service réapprovisionnement</b>
                 <span>Zéro rupture, zéro stress - Stock simple et rapide</span>
               </div>
             </div>
@@ -1470,7 +1195,7 @@
       </div>
     </section>
 
-    <!-- SOLUTION -->
+    <!-- SOLUTION (conservée) -->
     <section id="solution">
       <div class="container">
         <div class="section-head">
@@ -1480,173 +1205,41 @@
               Un système pensé pour la <b>performance économique</b> et <b>opérationnelle</b> de votre club.
             </p>
           </div>
-          <button class="btn btn-primary" type="button" onclick="openProfitSimulator('EXTREME')">
-            Calculer la rentabilité
+          <button class="btn btn-primary" type="button" onclick="openConfigurator('SIM')">
+            Ouvrir le configurateur
           </button>
         </div>
 
-        <div class="valueHero" aria-label="Value system club">
-          <div class="valueHead">
-            <div class="valueCopy">
-              <div class="kicker"><span class="spark" aria-hidden="true"></span>Piloté pour la performance annuelle du club</div>
-              <h2 style="margin:0 0 8px;">Structurez votre matériel comme un centre de profit.</h2>
-              <p class="sub" style="margin:0">
-                Vous entrez vos chiffres réels (stock, rotation, boutique, fournisseur actuel). Le système calcule le
-                <b>gain net</b>, la <b>projection</b>, et génère un <b>plan WhatsApp</b> prêt à envoyer.
-              </p>
-            </div>
-
-            <div class="valueCTAs" aria-label="Actions rapides">
-              <div class="ctaStack">
-                <button class="btn btn-ws" style="width:100%; flex-direction:column; gap:4px; padding:12px 14px;" type="button" onclick="openProfitSimulator('EXTREME')">
-                  Calculer le gain annuel de mon club
-                  <span style="font-size:12px; font-weight:800; opacity:.9; color:#04110d">net + projection 3 ans + plan d’action</span>
-                </button>
-
-                <button class="btn btn-ghost" style="width:100%; flex-direction:column; gap:4px; padding:12px 14px;" type="button" onclick="openProfitSimulator('COMPARE')">
-                  Comparer avec mon fournisseur actuel
-                  <span style="font-size:12px; font-weight:800; opacity:.85">écart chiffré + remplacements + boutique</span>
-                </button>
-
-                <div class="ctaMicroProof" aria-label="Micro preuves" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:2px;">
-                  <span style="border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); padding:7px 10px; border-radius:999px; color:var(--muted2); font-size:12.5px;">✅ chiffres lisibles</span>
-                  <span style="border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); padding:7px 10px; border-radius:999px; color:var(--muted2); font-size:12.5px;">✅ plan WhatsApp auto</span>
-                  <span style="border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); padding:7px 10px; border-radius:999px; color:var(--muted2); font-size:12.5px;">✅ projection 3 ans</span>
-                  <span style="border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); padding:7px 10px; border-radius:999px; color:var(--muted2); font-size:12.5px;">✅ pack test recommandé</span>
-                </div>
-              </div>
-
-              <div class="trustRow" aria-label="Garanties">
-                <span>✅ Pack test possible</span>
-                <span>✅ Réassort à la demande</span>
-                <span>✅ Gamme flexible</span>
-                <span>✅ Traitement 24h (après validation)</span>
-              </div>
-
-              <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-                <a class="btn" href="#catalogue">Catalogue</a>
-                <a class="btn btn-primary" href="#packs">Packs</a>
-                <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Simulation WhatsApp</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="valueGrid" aria-label="Gains clés">
-            <article class="vcard">
-              <div class="eyebrow">BUDGET</div>
-              <h3>Moins de budget matériel perdu</h3>
-              <ul class="vlist">
-                <li><span class="bullet">✓</span>Configs adaptées (FV/3K/12K/18K, 38/40, EVA)</li>
-                <li><span class="bullet">✓</span>Rotation pilotée → remplacements sous contrôle</li>
-                <li><span class="bullet">✓</span>Décision simple : 2–3 configs max, pas 40 références</li>
-              </ul>
-              <div class="vmetric">
-                <span class="tag">Impact</span>
-                <span class="metric">↓ Remplacements • ↑ Durée de vie</span>
-              </div>
-            </article>
-
-            <article class="vcard">
-              <div class="eyebrow">MARGE</div>
-              <h3>Boutique + location plus rentables</h3>
-              <ul class="vlist">
-                <li><span class="bullet">✓</span>Pro-shop plus rentable (upsell premium)</li>
-                <li><span class="bullet">✓</span>Location/cours fluides (dispo sécurisée)</li>
-                <li><span class="bullet">✓</span>Option logo club (après pack test)</li>
-              </ul>
-              <div class="vmetric">
-                <span class="tag">Impact</span>
-                <span class="metric">↑ Marge • ↑ Panier moyen</span>
-              </div>
-            </article>
-
-            <article class="vcard">
-              <div class="eyebrow">SÉRÉNITÉ</div>
-              <h3>Réassort zéro stress</h3>
-              <ul class="vlist">
-                <li><span class="bullet">✓</span>Réassort rapide (raquettes + accessoires)</li>
-                <li><span class="bullet">✓</span>Process simple : demande → validation → livraison</li>
-                <li><span class="bullet">✓</span>Partenariat long terme = continuité sur la saison</li>
-              </ul>
-              <div class="vmetric">
-                <span class="tag">Impact</span>
-                <span class="metric">↓ Ruptures • ↓ Charge mentale</span>
-              </div>
-            </article>
-          </div>
-
-          <div class="beforeAfter" aria-label="Avant / Avec nous">
-            <div class="ba">
-              <div class="badge"><i aria-hidden="true"></i> Avant</div>
-              <h4>Réalité club classique</h4>
-              <ul>
-                <li>Matériel qui s’use vite → budget qui saute</li>
-                <li>Boutique peu rentable → stock qui dort</li>
-                <li>Ruptures en saison → stress + pertes</li>
-                <li>Trop de fournisseurs / trop de choix</li>
-              </ul>
-            </div>
-
-            <div class="ba good">
-              <div class="badge"><i aria-hidden="true"></i> Avec notre système</div>
-              <h4>Exécution propre</h4>
-              <ul>
-                <li>Configs adaptées → parc durable</li>
-                <li>Gamme flexible → marge pro-shop</li>
-                <li>Réassort piloté → zéro friction</li>
-                <li>Plan WhatsApp structuré → décision rapide</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="grid-3" aria-label="Next steps">
-            <div class="card" style="border-radius:22px; padding:18px;">
-              <div class="eyebrow">STEP 1</div>
-              <h3 style="margin:0 0 8px;">Diagnostic rentabilité</h3>
-              <p style="margin:0; color:var(--muted); font-size:14px;">
-                Stock + rotation + boutique + fournisseur actuel → chiffres + delta net.
-              </p>
-            </div>
-            <div class="card" style="border-radius:22px; padding:18px;">
-              <div class="eyebrow">STEP 2</div>
-              <h3 style="margin:0 0 8px;">Pack test (si besoin)</h3>
-              <p style="margin:0; color:var(--muted); font-size:14px;">
-                Validation qualité → sensations → décision sans doute.
-              </p>
-            </div>
-            <div class="card" style="border-radius:22px; padding:18px;">
-              <div class="eyebrow">STEP 3</div>
-              <h3 style="margin:0 0 8px;">Déploiement + réassort</h3>
-              <p style="margin:0; color:var(--muted); font-size:14px;">
-                Déploiement parc/boutique + réassort récurrent selon saison.
-              </p>
-            </div>
-          </div>
-
-          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-            <button class="btn btn-primary" type="button" onclick="openProfitSimulator('EXTREME')">Ouvrir le calculateur</button>
+        <div class="card" style="border-radius:22px; padding:18px;">
+          <div class="eyebrow">SYSTÈME</div>
+          <h3 style="margin:0 0 8px;">Parc + Boutique + Réassort : une seule machine</h3>
+          <p style="margin:0; color:var(--muted); font-size:14px;">
+            Tu gardes 2–3 configs max. Résultat : décision rapide, stock propre, marge pro-shop, et réassort fluide.
+          </p>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
             <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Simulation WhatsApp</button>
-            <span class="pill"><span class="check">✓</span> Vous gardez le contrôle : on structure l’exécution</span>
+            <button class="btn btn-primary" type="button" onclick="openFullCatalog()">Catalogue complet</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CATALOGUE (THEME DIFF) -->
+    <!-- CATALOGUE -->
     <section id="catalogue">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="catRibbon"><span class="catDot" aria-hidden="true"></span> Catalogue Theme — ICE COPPER (nouvelle interface)</div>
             <h2>Catalogue clubs (modèles + configurations)</h2>
             <p class="sub">
               Chaque modèle est un <b>châssis</b> + un <b>usage</b>. Ensuite tu configures :
               <b>Face (FV/3K/12K/18K)</b>, <b>38/40mm</b>, EVA, finitions.
             </p>
           </div>
-          <button class="btn btn-catPrimary" type="button" onclick="openConfigurator('SIM')">Configurer & envoyer</button>
+
+          <!-- ✅ MODIFICATION : le bouton “Configurer & envoyer” ouvre l’Interface #2 -->
+          <button class="btn btn-ws" id="openFullCatalogBtn" type="button">
+            Configurer & envoyer
+          </button>
         </div>
 
         <div class="grid-2">
@@ -1668,7 +1261,7 @@
               <h3>JV12 — “Club Ready” (durabilité & tolérance)</h3>
               <p>Confort + contrôle pour l’apprentissage et la location. Optimisée pour l’usage intensif.</p>
               <ul class="bullets">
-                <li><b>Face :</b> Fibre de verre <span style="color:rgba(255,255,255,.66)">(best value)</span> / Carbone 3K / Carbone 12K / Carbone 18K</li>
+                <li><b>Face :</b> Fibre de verre <span style="color:var(--muted2)">(best value)</span> / Carbone 3K / Carbone 12K / Carbone 18K</li>
                 <li><b>Épaisseur :</b> 38mm ou 40mm (au choix)</li>
                 <li><b>Mousse :</b> EVA Soft / EVA Medium (au choix)</li>
                 <li><b>Option :</b> personnalisation logo (sur demande)</li>
@@ -1679,12 +1272,9 @@
                 <span class="pill"><span class="check">✓</span> Club-use</span>
               </div>
               <div class="product-actions">
-                <button class="btn btn-catPrimary" type="button" onclick="openConfigurator('JV12')">Configurer JV12</button>
-                <a class="btn btn-cat" href="#packs">Voir packs</a>
+                <button class="btn btn-primary" type="button" onclick="openFullCatalog('JV12')">Voir JV12 (catalogue complet)</button>
+                <button class="btn btn-ghost" type="button" onclick="openConfigurator('JV12')">Configurer JV12</button>
               </div>
-              <p class="fine" style="margin-top:10px;">
-                Astuce : JV12 en <b>FV 38mm</b> = parc rentable. JV12 en <b>3K 40mm</b> = cours avancé / boutique accessible.
-              </p>
             </div>
           </article>
 
@@ -1706,7 +1296,7 @@
               <h3>JV21 — “Stable” (polyvalence & résistance)</h3>
               <p>Stabilité, contrôle et résistance pour clubs avec fréquence élevée et profils mixtes.</p>
               <ul class="bullets">
-                <li><b>Face :</b> Fibre de verre / Carbone 3K <span style="color:rgba(255,255,255,.66)">(équilibre)</span> / Carbone 12K / Carbone 18K</li>
+                <li><b>Face :</b> Fibre de verre / Carbone 3K <span style="color:var(--muted2)">(équilibre)</span> / Carbone 12K / Carbone 18K</li>
                 <li><b>Épaisseur :</b> 38mm ou 40mm (au choix)</li>
                 <li><b>Mousse :</b> EVA Soft / EVA Medium (au choix)</li>
                 <li><b>Option :</b> personnalisation logo (sur demande)</li>
@@ -1717,12 +1307,9 @@
                 <span class="pill"><span class="check">✓</span> Polyvalence</span>
               </div>
               <div class="product-actions">
-                <button class="btn btn-catPrimary" type="button" onclick="openConfigurator('JV21')">Configurer JV21</button>
-                <button class="btn btn-cat" type="button" onclick="openProfitSimulator('COMPARE')">Comparer fournisseur</button>
+                <button class="btn btn-primary" type="button" onclick="openFullCatalog('JV21')">Voir JV21 (catalogue complet)</button>
+                <button class="btn btn-ghost" type="button" onclick="openConfigurator('JV21')">Configurer JV21</button>
               </div>
-              <p class="fine" style="margin-top:10px;">
-                Astuce : JV21 en <b>3K 38mm</b> = club “mix” parfait. JV21 en <b>12K 40mm</b> = boutique + performance.
-              </p>
             </div>
           </article>
 
@@ -1744,9 +1331,9 @@
               <h3>JV13 — “Pro Feel” (premium & performance)</h3>
               <p>Plus de répondant, sensation premium. Idéale pour la vente en pro-shop et joueurs réguliers.</p>
               <ul class="bullets">
-                <li><b>Face :</b> Carbone 3K / Carbone 12K <span style="color:rgba(255,255,255,.66)">(premium)</span> / Carbone 18K / Fibre de verre (accessible)</li>
+                <li><b>Face :</b> Carbone 3K / Carbone 12K <span style="color:var(--muted2)">(premium)</span> / Carbone 18K / Fibre de verre (accessible)</li>
                 <li><b>Épaisseur :</b> 38mm ou 40mm (au choix)</li>
-                <li><b>Mousse :</b> EVA Medium <span style="color:rgba(255,255,255,.66)">(reco)</span> / EVA Soft</li>
+                <li><b>Mousse :</b> EVA Medium <span style="color:var(--muted2)">(reco)</span> / EVA Soft</li>
                 <li><b>Option :</b> personnalisation logo (sur demande)</li>
               </ul>
               <div style="margin-top:10px">
@@ -1755,12 +1342,9 @@
                 <span class="pill"><span class="check">✓</span> Performance</span>
               </div>
               <div class="product-actions">
-                <button class="btn btn-catPrimary" type="button" onclick="openConfigurator('JV13')">Configurer JV13</button>
-                <button class="btn btn-cat" type="button" onclick="openProfitSimulator('EXTREME')">Calculer gain</button>
+                <button class="btn btn-primary" type="button" onclick="openFullCatalog('JV13')">Voir JV13 (catalogue complet)</button>
+                <button class="btn btn-ghost" type="button" onclick="openConfigurator('JV13')">Configurer JV13</button>
               </div>
-              <p class="fine" style="margin-top:10px;">
-                Astuce : JV13 en <b>12K/18K 40mm</b> = “wow effect” boutique. JV13 en <b>FV 38mm</b> = entrée de gamme boutique.
-              </p>
             </div>
           </article>
 
@@ -1793,8 +1377,7 @@
                 <span class="pill"><span class="check">✓</span> Club-first</span>
               </div>
               <div class="product-actions">
-                <button class="btn btn-catPrimary" type="button" onclick="openConfigurator('ACC')">Simuler un réassort</button>
-                <a class="btn btn-cat" href="#simulation">Voir WhatsApp</a>
+                <button class="btn btn-primary" type="button" onclick="openConfigurator('ACC')">Simuler un réassort</button>
               </div>
             </div>
           </article>
@@ -1816,30 +1399,20 @@
           <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">Lancer la simulation</button>
         </div>
 
-        <div class="simGrid">
-          <div class="simCard">
-            <h3>Décision rapide (zéro friction)</h3>
-            <p>
-              Les clubs n’ont pas le temps de comparer 40 références.
-              Tu prends 2–3 configs max et tu avances : <b>parc</b> + <b>boutique</b> + <b>réassort</b>.
-            </p>
-            <div class="divider"></div>
-            <div class="simFacts">
-              <div class="fact"><b>Parc club</b><span>Durable & tolérant</span></div>
-              <div class="fact"><b>Boutique</b><span>Marge + premium</span></div>
-              <div class="fact"><b>Réassort</b><span>Récurrence</span></div>
-            </div>
-            <div class="divider"></div>
-            <p class="fine">
-              Bonus : personnalisation logo (MOQ, coût, délais) après validation qualité via pack test.
+        <div class="grid-2">
+          <div class="card" style="border-radius:22px; padding:18px;">
+            <div class="eyebrow">SIMPLE</div>
+            <h3 style="margin:0 0 8px;">Décision rapide (zéro friction)</h3>
+            <p style="margin:0; color:var(--muted); font-size:14px;">
+              Les clubs n’ont pas le temps de comparer 40 références. Tu prends 2–3 configs max : <b>parc</b> + <b>boutique</b> + <b>réassort</b>.
             </p>
           </div>
 
-          <div class="simCard" style="border-color: rgba(46,229,157,.26);">
-            <h3>1 clic = WhatsApp envoyé</h3>
-            <p>
-              Message structuré : infos club, objectif, config, quantités, délai, notes.
-              Tu reçois une réponse rapide → pack test / devis.
+          <div class="card" style="border-radius:22px; padding:18px; border-color: rgba(46,229,157,.26);">
+            <div class="eyebrow">EXEC</div>
+            <h3 style="margin:0 0 8px;">1 clic = WhatsApp envoyé</h3>
+            <p style="margin:0; color:var(--muted); font-size:14px;">
+              Message structuré : infos club, objectif, config, quantités, délai, notes. Réponse rapide → pack test / devis.
             </p>
             <div class="divider"></div>
             <button class="btn btn-ws" type="button" style="width:100%" onclick="openConfigurator('SIM')">
@@ -1875,7 +1448,6 @@
               <li>Accessoires essentiels</li>
               <li>Process réassort standard</li>
             </ul>
-            <p class="fine">Recommandé pour clubs qui veulent tester vite.</p>
             <div class="product-actions">
               <button class="btn btn-primary" type="button" onclick="openConfigurator('PACK_STARTER')">Configurer pack</button>
             </div>
@@ -1891,7 +1463,6 @@
               <li>Priorité réassort</li>
               <li>Suivi partenariat</li>
             </ul>
-            <p class="fine">Le meilleur ratio : simplicité / marge / récurrence.</p>
             <div class="product-actions">
               <button class="btn btn-primary" type="button" onclick="openConfigurator('PACK_PRO')">Configurer pack</button>
             </div>
@@ -1906,7 +1477,6 @@
               <li>Conditions partenaires</li>
               <li>Option personnalisation logo (après test)</li>
             </ul>
-            <p class="fine">Pour clubs en croissance / multi-sites.</p>
             <div class="product-actions">
               <button class="btn btn-primary" type="button" onclick="openConfigurator('PACK_ELITE')">Configurer pack</button>
             </div>
@@ -1938,18 +1508,6 @@
               Les deux sont possibles. En général : <b>38mm</b> = tolérance/contrôle, <b>40mm</b> = stabilité/répondant.
             </p>
           </div>
-          <div class="card">
-            <h3 style="margin:0 0 8px;">Personnalisation logo ?</h3>
-            <p style="margin:0; color:var(--muted); font-size:14px;">
-              Possible. Recommandation : d’abord <b>pack test</b> (validation qualité), ensuite personnalisation (MOQ/délais).
-            </p>
-          </div>
-          <div class="card">
-            <h3 style="margin:0 0 8px;">Comment ça se passe ensuite ?</h3>
-            <p style="margin:0; color:var(--muted); font-size:14px;">
-              Diagnostic → WhatsApp → réponse → pack test / devis → déploiement → réassort.
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -1972,221 +1530,17 @@
     <div class="sticky" aria-hidden="false">
       <div class="sticky-inner">
         <div class="left">
-          <b>Diagnostic rentabilité → Plan WhatsApp</b>
-          <span>stock + rotation + boutique + fournisseur actuel • delta net</span>
+          <b>Catalogue complet → Brief WhatsApp</b>
+          <span>choix modèle + config + quantités • message prêt à envoyer</span>
         </div>
         <div class="right">
-          <button class="btn btn-primary" type="button" onclick="openProfitSimulator('EXTREME')">Calculer</button>
+          <button class="btn btn-primary" type="button" onclick="openFullCatalog()">Catalogue complet</button>
           <button class="btn btn-ws" type="button" onclick="openConfigurator('SIM')">WhatsApp</button>
         </div>
       </div>
     </div>
 
-    <!-- ✅ MODAL PROFIT SIMULATOR -->
-    <div class="modal profit-theme" id="modalProfit" aria-hidden="true">
-      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Club Profit Simulator">
-        <div class="modal-top">
-          <div>
-            <h3>Club Profit Simulator — Diagnostic rentabilité (mode conversion)</h3>
-            <p>
-              Vous entrez vos chiffres. On calcule <b>le gain net</b> (économies + profit boutique + impact location),
-              et on génère un <b>plan WhatsApp</b> prêt à envoyer.
-            </p>
-          </div>
-          <button class="xbtn" type="button" onclick="closeProfit()">Fermer</button>
-        </div>
-
-        <div class="modal-body">
-          <div class="psGrid">
-            <!-- LEFT -->
-            <div class="psPanel">
-              <div class="psTitle">
-                <b>Vos données (réel club)</b>
-                <span>MODE: <span id="psMode">EXTREME</span></span>
-              </div>
-
-              <div class="cfgForm">
-                <div class="field">
-                  <label for="f_rentStock">Raquettes location (stock)</label>
-                  <input id="f_rentStock" type="number" min="0" step="1" value="40">
-                </div>
-                <div class="field">
-                  <label for="f_replaceRate">Rotation / remplacements (% / an)</label>
-                  <input id="f_replaceRate" type="number" min="0" step="1" value="60">
-                </div>
-
-                <div class="field">
-                  <label for="f_rentPrice">Prix location (€)</label>
-                  <input id="f_rentPrice" type="number" min="0" step="0.5" value="3">
-                </div>
-                <div class="field">
-                  <label for="f_rentSessionsWeek">Locations / semaine (est.)</label>
-                  <input id="f_rentSessionsWeek" type="number" min="0" step="1" value="120">
-                </div>
-
-                <div class="field">
-                  <label for="f_shopSalesMonth">Ventes boutique / mois</label>
-                  <input id="f_shopSalesMonth" type="number" min="0" step="1" value="10">
-                </div>
-                <div class="field">
-                  <label for="f_shopSellAvg">Prix moyen boutique (vente) (€)</label>
-                  <input id="f_shopSellAvg" type="number" min="0" step="1" value="160">
-                </div>
-
-                <div class="field">
-                  <label for="b_buyPrice">Achat moyen actuel (€/raquette)</label>
-                  <input id="b_buyPrice" type="number" min="0" step="1" value="100">
-                </div>
-                <div class="field">
-                  <label for="b_replaceCostYear">Coût remplacements actuel / an (€)</label>
-                  <input id="b_replaceCostYear" type="number" min="0" step="50" value="3500">
-                </div>
-
-                <div class="field">
-                  <label for="b_shopMarginPct">Marge boutique actuelle (%)</label>
-                  <input id="b_shopMarginPct" type="number" min="0" max="95" step="1" value="35">
-                </div>
-                <div class="field">
-                  <label for="b_stockRupturePct">Ruptures (pertes estimées %) (optionnel)</label>
-                  <input id="b_stockRupturePct" type="number" min="0" max="40" step="1" value="6">
-                </div>
-
-                <div class="field fieldFull">
-                  <label for="psClubName">Nom du club (pour le plan WhatsApp)</label>
-                  <input id="psClubName" placeholder="Ex : Padel Center Montpellier">
-                </div>
-                <div class="field fieldFull">
-                  <label for="psCity">Ville (optionnel)</label>
-                  <input id="psCity" placeholder="Ex : Montpellier">
-                </div>
-              </div>
-
-              <div class="psActions">
-                <button class="btn btn-primary" type="button" onclick="runProfitSim()">Lancer le diagnostic</button>
-                <button class="btn btn-ghost" type="button" onclick="resetProfitSim()">Réinitialiser</button>
-              </div>
-
-              <div class="badgeLine" aria-label="Promesses calcul">
-                <span class="pBadge"><span class="pDot" aria-hidden="true"></span> gain net = économies + boutique + impact</span>
-                <span class="pBadge"><span class="pDot" aria-hidden="true"></span> projection 3 ans</span>
-                <span class="pBadge"><span class="pDot" aria-hidden="true"></span> plan WhatsApp auto</span>
-              </div>
-
-              <p class="psNote">
-                Hypothèses (éditables si besoin) : MOQ logo <b>300</b> (après test) • traitement <b>24h</b> après validation • livraison <b>10–14 jours</b>.
-              </p>
-
-              <div class="psTable" aria-label="Prix club indicatifs (approvisionnement)">
-                <div class="psRow"><span>FV (parc/location)</span><b id="p_priceFV">—</b></div>
-                <div class="psRow"><span>Carbone (mix club)</span><b id="p_priceC">—</b></div>
-                <div class="psRow"><span>Carbone 3K (boutique)</span><b id="p_price3K">—</b></div>
-                <div class="psRow"><span>Carbone 12K (premium)</span><b id="p_price12K">—</b></div>
-                <div class="psRow"><span>Carbone 18K (premium+)</span><b id="p_price18K">—</b></div>
-              </div>
-            </div>
-
-            <!-- RIGHT -->
-            <div class="psPanel">
-              <div class="psTitle">
-                <b>Résultats (gain net + preuve visuelle)</b>
-                <span>LIVE</span>
-              </div>
-
-              <div class="psKpis">
-                <div class="kpi">
-                  <div class="l">Gain net estimé / an</div>
-                  <div class="v" id="k_gainNetYear">—</div>
-                  <div class="h">économies + profit + impact</div>
-                </div>
-                <div class="kpi">
-                  <div class="l">Projection 3 ans</div>
-                  <div class="v" id="k_gainNet3y">—</div>
-                  <div class="h">effet cumulé</div>
-                </div>
-                <div class="kpi">
-                  <div class="l">ROI estimé</div>
-                  <div class="v" id="k_roi">—</div>
-                  <div class="h">vs budget matériel annuel</div>
-                </div>
-              </div>
-
-              <div class="psViz" aria-label="Graphiques gain">
-                <div class="donut" aria-label="Donut ROI">
-                  <svg width="120" height="120" viewBox="0 0 120 120" aria-hidden="true">
-                    <defs>
-                      <linearGradient id="gradDonut" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0" stop-color="#FFB703"/>
-                        <stop offset="1" stop-color="#22D3EE"/>
-                      </linearGradient>
-                    </defs>
-                    <circle cx="60" cy="60" r="44" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="12"/>
-                    <circle id="roiArc" cx="60" cy="60" r="44" fill="none" stroke="url(#gradDonut)" stroke-linecap="round" stroke-width="12"
-                            stroke-dasharray="276.46" stroke-dashoffset="276.46"
-                            transform="rotate(-90 60 60)"/>
-                  </svg>
-                  <div class="donutCenter">
-                    <b id="roiPct">—</b>
-                    <span>ROI</span>
-                  </div>
-                </div>
-
-                <div class="barCard" aria-label="Breakdown gains">
-                  <div class="barRow">
-                    <div class="name">Économies remplacements</div>
-                    <div class="bar"><i id="barSave"></i></div>
-                    <div class="val" id="vSave">—</div>
-                  </div>
-                  <div class="barRow">
-                    <div class="name">Profit boutique (delta)</div>
-                    <div class="bar"><i id="barShop"></i></div>
-                    <div class="val" id="vShop">—</div>
-                  </div>
-                  <div class="barRow">
-                    <div class="name">Impact ruptures évitées</div>
-                    <div class="bar"><i id="barRupt"></i></div>
-                    <div class="val" id="vRupt">—</div>
-                  </div>
-                  <div class="barRow">
-                    <div class="name">Total gain net</div>
-                    <div class="bar"><i id="barNet"></i></div>
-                    <div class="val" id="vNet">—</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="psTable" aria-label="Comparatif clair">
-                <div class="psRow"><span>Budget matériel annuel (estimé)</span><b id="c_budget">—</b></div>
-                <div class="psRow"><span>Écart vs fournisseur actuel</span><b id="c_vsSupplier">—</b></div>
-                <div class="psRow"><span>Plan recommandé</span><b id="c_planReco">Pack test → déploiement → réassort</b></div>
-              </div>
-
-              <div class="divider"></div>
-
-              <div class="psTitle" style="margin:0 0 10px;">
-                <b>Plan prêt à envoyer</b>
-                <span>WhatsApp</span>
-              </div>
-
-              <div class="psSummaryBox" id="psSummary">Lance le diagnostic pour générer le plan.</div>
-
-              <div class="psActions">
-                <button class="btn btn-ws" type="button" onclick="sendProfitWhatsApp()">Recevoir mon plan sur WhatsApp</button>
-                <button class="btn" type="button" onclick="copyProfitSummary()">Copier le plan</button>
-              </div>
-
-              <p class="psNote">
-                Pack test recommandé : <b>12 raquettes</b> (6 FV • 4 en 3K • 2 en 12K) → validation → déploiement → réassort.
-              </p>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-          <p class="fine">Confidentialité : le calcul est local (aucune donnée stockée). Le message part uniquement via WhatsApp.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- MODAL CONFIGURATEUR -->
+    <!-- MODAL CONFIGURATEUR (conservé) -->
     <div class="modal" id="modalCfg" aria-hidden="true">
       <div class="modal-card" role="dialog" aria-modal="true" aria-label="Configurateur club">
         <div class="modal-top">
@@ -2346,13 +1700,7 @@
             <!-- RIGHT: SUMMARY -->
             <div class="summary">
               <h4>Résumé + recommandation (auto)</h4>
-              <ul class="sumList" id="sumList">
-                <li>Modèle : <b>Auto</b></li>
-                <li>Face : <b>Auto</b></li>
-                <li>Épaisseur : <b>Auto</b></li>
-                <li>EVA : <b>Auto</b></li>
-                <li>Finition : <b>Auto</b></li>
-              </ul>
+              <ul class="sumList" id="sumList"></ul>
 
               <div class="scoreRow">
                 <div class="meter" aria-label="Score fit"><i id="meterBar" style="width:42%"></i></div>
@@ -2383,6 +1731,94 @@
         </div>
       </div>
     </div>
+
+    <!-- =========================================================
+         ✅ INTERFACE #2 — MODAL CATALOGUE COMPLET
+         (Cards modèles + Fiche + photos + WhatsApp)
+         ========================================================= -->
+    <div id="fullCatalogModal" class="cb-modal" aria-hidden="true">
+      <div class="cb-modal__backdrop" data-close="1"></div>
+
+      <div class="cb-modal__panel" role="dialog" aria-modal="true" aria-label="Catalogue complet">
+        <div class="cb-modal__topbar">
+          <div class="cb-modal__title">
+            <div class="cb-kicker">Catalogue complet</div>
+            <div class="cb-h1">Modèles JV — Sélection clubs</div>
+          </div>
+
+          <button class="cb-iconbtn" id="closeFullCatalog" type="button" aria-label="Fermer">✕</button>
+        </div>
+
+        <div class="cb-modal__content">
+          <!-- Left -->
+          <aside class="cb-side">
+            <div class="cb-side__block">
+              <div class="cb-label">Filtrer</div>
+
+              <div class="cb-filters">
+                <button class="cb-chip is-active" type="button" data-filter="all">Tous</button>
+                <button class="cb-chip" type="button" data-filter="round">Rond</button>
+                <button class="cb-chip" type="button" data-filter="teardrop">Goutte</button>
+                <button class="cb-chip" type="button" data-filter="diamond">Diamant</button>
+              </div>
+
+              <div class="cb-search">
+                <input id="cbSearch" type="search" placeholder="Rechercher (ex: JV22, 38mm, rond...)">
+              </div>
+            </div>
+
+            <div class="cb-side__block">
+              <div class="cb-label">Modèles</div>
+              <div id="cbGrid" class="cb-grid"></div>
+            </div>
+          </aside>
+
+          <!-- Right -->
+          <main class="cb-main">
+            <div class="cb-product">
+              <div class="cb-product__media">
+                <div class="cb-media">
+                  <img id="cbMainImg" alt="Photo raquette" />
+                  <div class="cb-media__nav">
+                    <button id="cbPrevImg" class="cb-mini" type="button">←</button>
+                    <div id="cbImgIndex" class="cb-mini__text">1 / 1</div>
+                    <button id="cbNextImg" class="cb-mini" type="button">→</button>
+                  </div>
+                </div>
+
+                <div id="cbThumbs" class="cb-thumbs"></div>
+              </div>
+
+              <div class="cb-product__info">
+                <div class="cb-badges" id="cbBadges"></div>
+                <div class="cb-product__name" id="cbName">Choisis un modèle à gauche</div>
+                <div class="cb-product__meta" id="cbMeta">—</div>
+                <div class="cb-product__desc" id="cbDesc">
+                  Objectif : sélectionner un modèle → config (face/mm/EVA/finition) → brief WhatsApp prêt à envoyer.
+                </div>
+
+                <div class="cb-box">
+                  <div class="cb-box__title">Brief club (pré-rempli)</div>
+                  <textarea id="cbBrief" rows="10" spellcheck="false"></textarea>
+
+                  <div class="cb-actions">
+                    <button id="cbCopy" class="cb-btn cb-btn--ghost" type="button">Copier</button>
+                    <a id="cbWhatsApp" class="cb-btn cb-btn--primary" href="#" target="_blank" rel="noopener">
+                      Envoyer sur WhatsApp
+                    </a>
+                  </div>
+
+                  <div class="cb-note">
+                    Tu peux modifier le brief, puis l’envoyer directement.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <script>
@@ -2425,279 +1861,15 @@
     }
     window.heroFail = heroFail;
 
-    // ====== PROFIT SIMULATOR ENGINE (CONVERSION / EXTREME) ======
-    // Coûts livrés (hypothèse actuelle)
-    const COST = { FV:32, C:35, K3:37, K12:40, K18:42 };
-
-    // Marges (pour notre modèle d'offre, côté agence / partenaire)
-    const MARGIN = { FV:17.5, C:22.5, K3:35, K12:45, K18:55 };
-
-    // Prix club indicatifs (approvisionnement via notre réseau)
-    const SELL = {
-      FV: COST.FV + MARGIN.FV,
-      C:  COST.C  + MARGIN.C,
-      K3: COST.K3 + MARGIN.K3,
-      K12:COST.K12+ MARGIN.K12,
-      K18:COST.K18+ MARGIN.K18
-    };
-
-    const fmtEUR = (n) => (isFinite(n) ? `${Math.round(n).toLocaleString('fr-FR')} €` : "—");
-    const fmtPct = (n) => (isFinite(n) ? `${Math.round(n)}%` : "—");
-    const clamp = (v,min,max)=>Math.min(max,Math.max(min,v));
-
-    let profitMode = "EXTREME";
-
-    function openProfitSimulator(mode){
-      profitMode = mode || "EXTREME";
-      const m = $("modalProfit");
-      m.setAttribute("open","");
-      m.setAttribute("aria-hidden","false");
-      const tag = $("psMode");
-      if(tag) tag.textContent = profitMode;
-
-      // inject prices
-      $("p_priceFV").textContent  = fmtEUR(SELL.FV);
-      $("p_priceC").textContent   = fmtEUR(SELL.C);
-      $("p_price3K").textContent  = fmtEUR(SELL.K3);
-      $("p_price12K").textContent = fmtEUR(SELL.K12);
-      $("p_price18K").textContent = fmtEUR(SELL.K18);
-
-      setTimeout(()=>{ $("f_rentStock")?.focus(); }, 50);
-    }
-    window.openProfitSimulator = openProfitSimulator;
-
-    function closeProfit(){
-      const m = $("modalProfit");
-      m.removeAttribute("open");
-      m.setAttribute("aria-hidden","true");
-    }
-    window.closeProfit = closeProfit;
-
-    $("modalProfit")?.addEventListener("click", (e) => {
-      if(e.target?.id === "modalProfit") closeProfit();
-    });
-
+    // Escape to close
     document.addEventListener("keydown", (e) => {
       if(e.key === "Escape"){
-        closeProfit();
         closeCfg();
+        closeFullCatalog();
       }
     });
 
-    function resetProfitSim(){
-      $("f_rentStock").value = 40;
-      $("f_replaceRate").value = 60;
-      $("f_rentPrice").value = 3;
-      $("f_rentSessionsWeek").value = 120;
-      $("f_shopSalesMonth").value = 10;
-      $("f_shopSellAvg").value = 160;
-      $("b_buyPrice").value = 100;
-      $("b_replaceCostYear").value = 3500;
-      $("b_shopMarginPct").value = 35;
-      $("b_stockRupturePct").value = 6;
-      $("psClubName").value = "";
-      $("psCity").value = "";
-
-      ["k_gainNetYear","k_gainNet3y","k_roi","roiPct","vSave","vShop","vRupt","vNet","c_budget","c_vsSupplier"].forEach(id=>{
-        const el = $(id);
-        if(el) el.textContent = "—";
-      });
-      ["barSave","barShop","barRupt","barNet"].forEach(id=>{
-        const el = $(id);
-        if(el) el.style.width = "10%";
-      });
-      const arc = $("roiArc");
-      if(arc) arc.setAttribute("stroke-dashoffset", "276.46");
-
-      $("psSummary").textContent = "Lance le diagnostic pour générer le plan.";
-    }
-    window.resetProfitSim = resetProfitSim;
-
-    function setDonut(percent){
-      const p = clamp(percent, 0, 100);
-      const arc = $("roiArc");
-      const total = 276.46; // 2πr where r=44
-      const offset = total - (total * (p/100));
-      if(arc) arc.setAttribute("stroke-dashoffset", String(offset));
-      const t = $("roiPct");
-      if(t) t.textContent = `${Math.round(p)}%`;
-    }
-
-    function setBar(id, ratio){
-      const el = $(id);
-      if(!el) return;
-      const w = clamp(Math.round(ratio * 100), 8, 98);
-      el.style.width = w + "%";
-    }
-
-    function runProfitSim(){
-      // Inputs
-      const rentStock = Math.max(0, Number($("f_rentStock").value || 0));
-      const replaceRate = clamp(Number($("f_replaceRate").value || 0), 0, 200) / 100;
-      const rentPrice = Math.max(0, Number($("f_rentPrice").value || 0));
-      const rentSessionsW = Math.max(0, Number($("f_rentSessionsWeek").value || 0));
-
-      const shopSalesMonth = Math.max(0, Number($("f_shopSalesMonth").value || 0));
-      const shopSellAvg = Math.max(0, Number($("f_shopSellAvg").value || 0));
-
-      const baselineBuy = Math.max(0, Number($("b_buyPrice").value || 0));
-      const baselineReplace = Math.max(0, Number($("b_replaceCostYear").value || 0));
-      const baselineShopMarginPct = clamp(Number($("b_shopMarginPct").value || 0), 0, 95) / 100;
-      const rupturePct = clamp(Number($("b_stockRupturePct").value || 0), 0, 40) / 100;
-
-      // Derived
-      const replacedYear = rentStock * replaceRate;
-      const shopUnitsYear = shopSalesMonth * 12;
-
-      // Baseline (club aujourd'hui)
-      const baselineRentRevenueYear = rentSessionsW * 52 * rentPrice;
-
-      // Baseline boutique profit = CA * marge%
-      const baselineShopRevenueYear = shopUnitsYear * shopSellAvg;
-      const baselineShopProfitYear = baselineShopRevenueYear * baselineShopMarginPct;
-
-      // Ruptures = pertes estimées sur CA boutique + location (simple & lisible)
-      const baselineRuptureLoss = (baselineShopRevenueYear + baselineRentRevenueYear) * rupturePct;
-
-      // Notre scénario (approvisionnement + structuration)
-      // 1) Remplacements: coût chez nous (conservateur) basé sur FV pour parc
-      const ourReplaceCost = replacedYear * SELL.FV;
-      const saveReplace = (baselineReplace > 0) ? (baselineReplace - ourReplaceCost) : (baselineBuy > 0 ? (replacedYear * (baselineBuy - SELL.FV)) : 0);
-
-      // 2) Boutique: delta profit via upsell + conversion + mix
-      const upsellPct = 0.08;
-      const convPct = 0.06;
-
-      const ourShopUnits = shopUnitsYear * (1 + convPct);
-      const ourShopSell = shopSellAvg * (1 + upsellPct);
-
-      const mix = { K3:0.60, K12:0.30, K18:0.10 };
-      const ourCogsAvg =
-        (SELL.K3 * mix.K3) + (SELL.K12 * mix.K12) + (SELL.K18 * mix.K18);
-
-      const ourShopRevenueYear = ourShopUnits * ourShopSell;
-      const ourShopProfitYear = (ourShopSell - ourCogsAvg) * ourShopUnits;
-
-      const deltaShopProfit = ourShopProfitYear - baselineShopProfitYear;
-
-      // 3) Ruptures évitées: -60% via réassort piloté
-      const ruptureReduction = 0.60;
-      const savedRuptures = baselineRuptureLoss * ruptureReduction;
-
-      // Budget matériel annuel (pour ROI)
-      const materialBudgetYear = (baselineReplace > 0 ? baselineReplace : (replacedYear * baselineBuy)) + (shopUnitsYear * (shopSellAvg * (1 - baselineShopMarginPct)));
-
-      // Gain net
-      const netYear = (saveReplace || 0) + (deltaShopProfit || 0) + (savedRuptures || 0);
-      const net3y = netYear * 3;
-
-      // ROI = gain net / budget matériel annuel
-      const roi = materialBudgetYear > 0 ? (netYear / materialBudgetYear) : 0;
-      const roiPct = clamp(roi * 100, 0, 300);
-
-      // UI: KPIs
-      $("k_gainNetYear").textContent = fmtEUR(netYear);
-      $("k_gainNet3y").textContent = fmtEUR(net3y);
-      $("k_roi").textContent = materialBudgetYear > 0 ? `${fmtPct(roi*100)} / an` : "—";
-
-      // UI: tables
-      $("c_budget").textContent = fmtEUR(materialBudgetYear);
-      $("c_vsSupplier").textContent = fmtEUR(netYear);
-
-      // UI: breakdown values
-      $("vSave").textContent = fmtEUR(saveReplace);
-      $("vShop").textContent = fmtEUR(deltaShopProfit);
-      $("vRupt").textContent = fmtEUR(savedRuptures);
-      $("vNet").textContent  = fmtEUR(netYear);
-
-      // Bars
-      const maxComp = Math.max(1, Math.abs(saveReplace), Math.abs(deltaShopProfit), Math.abs(savedRuptures), Math.abs(netYear));
-      setBar("barSave", Math.abs(saveReplace) / maxComp);
-      setBar("barShop", Math.abs(deltaShopProfit) / maxComp);
-      setBar("barRupt", Math.abs(savedRuptures) / maxComp);
-      setBar("barNet",  Math.abs(netYear) / maxComp);
-
-      // Donut
-      setDonut(roiPct);
-
-      // Plan WhatsApp
-      const clubName = ($("psClubName").value || "").trim() || "(à préciser)";
-      const city = ($("psCity").value || "").trim() || "(à préciser)";
-
-      const plan =
-`Bonjour, je souhaite un plan matériel club + devis.
-
-[CLUB]
-- Nom : ${clubName}
-- Ville : ${city}
-
-[DONNÉES ACTUELLES]
-- Stock location : ${rentStock} raquettes
-- Rotation/remplacements : ${Math.round(replaceRate*100)}% / an (≈ ${Math.round(replacedYear)} remplacements/an)
-- Locations/semaine (est.) : ${rentSessionsW} | Prix location : ${rentPrice}€
-- Boutique : ${shopSalesMonth}/mois (≈ ${Math.round(shopUnitsYear)}/an) | Prix moyen : ${Math.round(shopSellAvg)}€
-- Coût remplacements actuel/an : ${fmtEUR(baselineReplace)}
-- Marge boutique actuelle : ${Math.round(baselineShopMarginPct*100)}% | Ruptures (pertes est.) : ${Math.round(rupturePct*100)}%
-
-[DIAGNOSTIC — GAIN NET]
-- Économies remplacements : ${fmtEUR(saveReplace)} / an
-- Delta profit boutique : ${fmtEUR(deltaShopProfit)} / an
-- Ruptures évitées (estim.) : ${fmtEUR(savedRuptures)} / an
-=> Gain net total : ${fmtEUR(netYear)} / an (≈ ${fmtEUR(net3y)} sur 3 ans)
-
-[PRIX APPRO (INDICATIFS)]
-- FV : ${fmtEUR(SELL.FV)} | Carbone : ${fmtEUR(SELL.C)}
-- 3K : ${fmtEUR(SELL.K3)} | 12K : ${fmtEUR(SELL.K12)} | 18K : ${fmtEUR(SELL.K18)}
-
-[RECO DÉPLOIEMENT]
-- Pack test : 12 raquettes (6 FV • 4 en 3K • 2 en 12K)
-- Objectif : valider qualité → déployer parc + boutique → réassort récurrent
-
-Merci de me proposer :
-1) un pack test adapté à mon club,
-2) une proposition de déploiement (parc + boutique),
-3) un plan de réassort (délais, fréquence, accessoires).
-
-Infos: MOQ logo 300 (après test) • traitement 24h après validation • livraison 10–14 jours.`;
-
-      $("psSummary").textContent = plan;
-    }
-    window.runProfitSim = runProfitSim;
-
-    function sendProfitWhatsApp(){
-      const text = ($("psSummary")?.textContent || "").trim();
-      if(!WHATSAPP_NUMBER){
-        alert("WHATSAPP_NUMBER est vide.");
-        return;
-      }
-      if(!text || text.includes("Lance le diagnostic")){
-        alert("Lance le diagnostic d’abord.");
-        return;
-      }
-      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
-    window.sendProfitWhatsApp = sendProfitWhatsApp;
-
-    async function copyProfitSummary(){
-      const text = ($("psSummary")?.textContent || "").trim();
-      if(!text) return;
-      try{
-        await navigator.clipboard.writeText(text);
-        alert("Plan copié.");
-      }catch(e){
-        const ta = document.createElement("textarea");
-        ta.value = text;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand("copy");
-        ta.remove();
-        alert("Plan copié.");
-      }
-    }
-    window.copyProfitSummary = copyProfitSummary;
-
-    // ====== CONFIGURATEUR (CONSERVÉ) ======
+    // ====== CONFIGURATEUR (conservé) ======
     function openCfg(){
       const m = $("modalCfg");
       m.setAttribute("open","");
@@ -2897,8 +2069,7 @@ Infos: MOQ logo 300 (après test) • traitement 24h après validation • livra
         return map[k] || k;
       });
 
-      const header =
-`Bonjour, je veux une simulation + devis club (padel).
+      return `Bonjour, je veux une simulation + devis club (padel).
 
 [CLUB]
 - Club : ${club || "(à préciser)"}
@@ -2926,14 +2097,10 @@ Infos: MOQ logo 300 (après test) • traitement 24h après validation • livra
 - Fit : ${score}/100 (recommandation auto)
 
 [NOTES]
-${notes ? notes : "(aucune)"}`;
+${notes ? notes : "(aucune)"}
 
-      const closing =
-`
 Merci.
 Objectif : pack test si pertinent → validation qualité → déploiement → réassort récurrent.`;
-
-      return header + closing;
     }
 
     function refreshAll(){
@@ -2989,8 +2156,280 @@ Objectif : pack test si pertinent → validation qualité → déploiement → r
     }
     window.copyMsg = copyMsg;
 
-    // Init
+    // ==============================
+    // ✅ INTERFACE #2 — CATALOGUE COMPLET (DATA + UI)
+    // ==============================
+    const FULL_MODELS = [
+      // ROUND (圆形)
+      { id:"JV11", shape:"round", name:"JV11", thickness:"40mm", usage:"Contrôle / tolérance", tags:["Rond","Contrôle"], imgs:["/images/jv11.png"] },
+      { id:"JV12", shape:"round", name:"JV12", thickness:"38mm", usage:"Parc club / durable", tags:["Rond","Parc club"], imgs:["/images/jv12.png"] },
+      { id:"JV13", shape:"round", name:"JV13", thickness:"40mm", usage:"Boutique / premium", tags:["Rond","Premium"], imgs:["/images/jv13.png"] },
+      { id:"JV14", shape:"round", name:"JV14", thickness:"38mm", usage:"Contrôle / club", tags:["Rond","Club"], imgs:["/images/jv14.png"] },
+
+      // TEARDROP (泪滴)
+      { id:"JV21", shape:"teardrop", name:"JV21", thickness:"38mm", usage:"Polyvalent / stable", tags:["Goutte","Polyvalent"], imgs:["/images/jv21.png"] },
+      { id:"JV22", shape:"teardrop", name:"JV22", thickness:"38mm", usage:"Polyvalent / club", tags:["Goutte","Club"], imgs:["/images/jv22.png"] },
+      { id:"JV23", shape:"teardrop", name:"JV23", thickness:"38mm", usage:"Contrôle / confort", tags:["Goutte","Confort"], imgs:["/images/jv23.png"] },
+      { id:"JV24", shape:"teardrop", name:"JV24", thickness:"38mm", usage:"Répondant / intensif", tags:["Goutte","Intensif"], imgs:["/images/jv24.png"] },
+
+      // DIAMOND (钻石)
+      { id:"JV31", shape:"diamond", name:"JV31", thickness:"38mm", usage:"Puissance / attaque", tags:["Diamant","Puissance"], imgs:["/images/jv31.png"] },
+      { id:"JV33", shape:"diamond", name:"JV33", thickness:"38mm", usage:"Puissance / premium", tags:["Diamant","Premium"], imgs:["/images/jv33.png"] },
+      { id:"JV34", shape:"diamond", name:"JV34", thickness:"38mm", usage:"Puissance / stabilité", tags:["Diamant","Stable"], imgs:["/images/jv34.png"] },
+    ];
+
+    const SHAPE_LABEL = { round:"Rond", teardrop:"Goutte", diamond:"Diamant" };
+
+    let cbState = {
+      filter: "all",
+      query: "",
+      activeId: null,
+      imgIndex: 0,
+    };
+
+    function openFullCatalog(preselectId){
+      const m = $("fullCatalogModal");
+      if(!m) return;
+      m.setAttribute("open","");
+      m.setAttribute("aria-hidden","false");
+
+      // default selection
+      const target = preselectId || cbState.activeId || "JV12";
+      selectModel(target);
+      renderGrid();
+
+      setTimeout(()=> $("cbSearch")?.focus(), 50);
+    }
+    window.openFullCatalog = openFullCatalog;
+
+    function closeFullCatalog(){
+      const m = $("fullCatalogModal");
+      if(!m) return;
+      m.removeAttribute("open");
+      m.setAttribute("aria-hidden","true");
+    }
+    window.closeFullCatalog = closeFullCatalog;
+
+    $("closeFullCatalog")?.addEventListener("click", closeFullCatalog);
+    $("fullCatalogModal")?.addEventListener("click", (e) => {
+      if(e.target && e.target.getAttribute("data-close") === "1") closeFullCatalog();
+    });
+
+    // Bind main button in Catalogue section
+    $("openFullCatalogBtn")?.addEventListener("click", () => openFullCatalog());
+
+    // Filters
+    document.querySelectorAll(".cb-chip").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        document.querySelectorAll(".cb-chip").forEach(b=>b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        cbState.filter = btn.getAttribute("data-filter") || "all";
+        renderGrid();
+      });
+    });
+
+    $("cbSearch")?.addEventListener("input", (e)=>{
+      cbState.query = (e.target.value || "").trim().toLowerCase();
+      renderGrid();
+    });
+
+    function getFilteredModels(){
+      return FULL_MODELS.filter(m=>{
+        const okFilter = (cbState.filter === "all") ? true : (m.shape === cbState.filter);
+        const q = cbState.query;
+        if(!q) return okFilter;
+        const hay = `${m.id} ${m.name} ${m.thickness} ${m.usage} ${m.tags.join(" ")}`.toLowerCase();
+        return okFilter && hay.includes(q);
+      });
+    }
+
+    function renderGrid(){
+      const grid = $("cbGrid");
+      if(!grid) return;
+      const list = getFilteredModels();
+
+      grid.innerHTML = list.map(m=>{
+        const active = (m.id === cbState.activeId) ? "is-active" : "";
+        return `
+          <div class="cb-card ${active}" data-id="${m.id}">
+            <div class="cb-card__thumb">
+              <img src="${m.imgs[0]}" alt="${m.id}" loading="lazy" decoding="async">
+            </div>
+            <div>
+              <div class="cb-card__title">${m.id} — ${SHAPE_LABEL[m.shape]}</div>
+              <div class="cb-card__meta">${m.thickness} • ${m.usage}</div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      grid.querySelectorAll(".cb-card").forEach(card=>{
+        card.addEventListener("click", ()=>{
+          const id = card.getAttribute("data-id");
+          selectModel(id);
+          renderGrid();
+        });
+      });
+
+      // if list empty
+      if(list.length === 0){
+        grid.innerHTML = `
+          <div style="color:rgba(255,255,255,.72); font-size:13px; padding:6px;">
+            Aucun modèle trouvé (filtre/recherche).
+          </div>
+        `;
+      }
+    }
+
+    function buildBrief(model){
+      const club = ($("clubName")?.value || "").trim() || "(à préciser)";
+      const city = ($("clubCity")?.value || "").trim() || "(à préciser)";
+
+      return `Bonjour, je souhaite un devis + pack test (padel).
+
+[CLUB]
+- Nom : ${club}
+- Ville : ${city}
+
+[MODÈLE]
+- Modèle : ${model.id} (${SHAPE_LABEL[model.shape]})
+- Épaisseur : ${model.thickness}
+- Usage : ${model.usage}
+
+[CONFIG SOUHAITÉE]
+- Face : Fibre de verre / Carbone 3K / Carbone 12K / Carbone 18K
+- EVA : Soft / Medium
+- Finition : Smooth / Sandy / 3D
+- Quantité : (à préciser)
+- Logo : (optionnel — après pack test)
+
+[OBJECTIF]
+- Parc location / Boutique / Mix / Réassort
+
+Merci de me proposer :
+1) un pack test adapté,
+2) une recommandation de config (matière/mm/EVA/finition),
+3) délai + conditions de réassort.`;
+    }
+
+    function selectModel(id){
+      const model = FULL_MODELS.find(m=>m.id === id) || FULL_MODELS[0];
+      cbState.activeId = model.id;
+      cbState.imgIndex = 0;
+
+      // badges
+      const badges = $("cbBadges");
+      if(badges){
+        badges.innerHTML = `
+          <span class="cb-badge"><span class="cb-dot" aria-hidden="true"></span>${SHAPE_LABEL[model.shape]}</span>
+          <span class="cb-badge"><span class="cb-dot" aria-hidden="true"></span>${model.thickness}</span>
+          <span class="cb-badge"><span class="cb-dot" aria-hidden="true"></span>${model.tags.join(" • ")}</span>
+        `;
+      }
+
+      // text
+      $("cbName").textContent = `${model.id} — ${model.usage}`;
+      $("cbMeta").textContent = `Châssis: ${SHAPE_LABEL[model.shape]} • Épaisseur: ${model.thickness}`;
+      $("cbDesc").textContent =
+        `Sélection club : ${model.id}. Usage: ${model.usage}. Objectif: choisir la face (FV/3K/12K/18K), EVA et finition, puis envoyer le brief.`;
+
+      // thumbs
+      renderThumbs(model);
+
+      // main image
+      setMainImg(model, cbState.imgIndex);
+
+      // brief + whatsapp
+      const brief = $("cbBrief");
+      if(brief){
+        if(!brief.value || brief.value.includes("Choisis un modèle")){
+          brief.value = buildBrief(model);
+        }else{
+          // si l'utilisateur avait déjà un texte, on ne l'écrase pas
+        }
+      }
+      syncWhatsAppLink();
+    }
+
+    function renderThumbs(model){
+      const wrap = $("cbThumbs");
+      if(!wrap) return;
+
+      wrap.innerHTML = model.imgs.map((src, idx)=>{
+        const active = idx === cbState.imgIndex ? "is-active" : "";
+        return `
+          <div class="cb-thumb ${active}" data-idx="${idx}">
+            <img src="${src}" alt="${model.id} photo ${idx+1}" loading="lazy" decoding="async">
+          </div>
+        `;
+      }).join("");
+
+      wrap.querySelectorAll(".cb-thumb").forEach(t=>{
+        t.addEventListener("click", ()=>{
+          cbState.imgIndex = Number(t.getAttribute("data-idx") || 0);
+          setMainImg(model, cbState.imgIndex);
+          renderThumbs(model);
+        });
+      });
+
+      // nav buttons
+      $("cbPrevImg")?.onclick = ()=>{
+        cbState.imgIndex = (cbState.imgIndex - 1 + model.imgs.length) % model.imgs.length;
+        setMainImg(model, cbState.imgIndex);
+        renderThumbs(model);
+      };
+      $("cbNextImg")?.onclick = ()=>{
+        cbState.imgIndex = (cbState.imgIndex + 1) % model.imgs.length;
+        setMainImg(model, cbState.imgIndex);
+        renderThumbs(model);
+      };
+    }
+
+    function setMainImg(model, idx){
+      const img = $("cbMainImg");
+      if(!img) return;
+      const src = model.imgs[idx] || model.imgs[0];
+      img.src = src;
+
+      const counter = $("cbImgIndex");
+      if(counter) counter.textContent = `${idx+1} / ${model.imgs.length}`;
+    }
+
+    function syncWhatsAppLink(){
+      const a = $("cbWhatsApp");
+      const brief = ($("cbBrief")?.value || "").trim();
+
+      if(!a) return;
+      if(!WHATSAPP_NUMBER){
+        a.href = "#";
+        return;
+      }
+      a.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(brief)}`;
+    }
+
+    $("cbBrief")?.addEventListener("input", syncWhatsAppLink);
+
+    $("cbCopy")?.addEventListener("click", async ()=>{
+      const text = ($("cbBrief")?.value || "").trim();
+      try{
+        await navigator.clipboard.writeText(text);
+        alert("Brief copié.");
+      }catch(e){
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+        alert("Brief copié.");
+      }
+    });
+
+    // Init configurateur preview
     refreshAll();
+
+    // Init catalogue grid on load (non ouvert)
+    renderGrid();
   </script>
 </body>
 </html>
